@@ -1,0 +1,49 @@
+.main {
+
+  &-video {
+
+    &-container {
+      max-width: 153.5rem;
+      margin: 0 auto;
+    }
+
+    &-bg {
+      height: 75.2rem;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+
+      &__fill {
+        img {
+          object-fit: fill;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &__star {
+        height: 281.38%;
+        position: absolute;
+        right: -40%;
+        pointer-events: none;
+        animation: starRotation 60s linear infinite;
+
+        img {
+          object-fit: contain;
+          height: 100%;
+        }
+
+        @keyframes starRotation {
+          0% {
+            transform: rotate(0);
+          }
+
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      }
+    }
+  }
+}

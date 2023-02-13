@@ -243,6 +243,7 @@
 
       &__content {
         position: absolute;
+        z-index: 10;
         left: 1.6rem;
         background-color: #fff;
         padding: 1.6rem 0.8rem;

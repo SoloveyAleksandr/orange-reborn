@@ -65,3 +65,104 @@
     pointer-events: none;
   }
 }
+
+.big-icon-btn {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+
+  @include breakpoint($sm-bp) {
+    display: inline-block;
+    width: fit-content;
+    padding: 1.6rem 2rem;
+    border: 0.1rem solid $orange;
+    border-radius: 5.6rem;
+    background-color: $orange;
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-family: Arial, sans-serif;
+    transition: .3s;
+
+    &:hover {
+      background-color: transparent;
+      color: $text-black;
+    }
+  }
+
+  &__text {
+    max-width: 10.7rem;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: $f-b;
+    text-align: left;
+    transition: .3s;
+    text-transform: uppercase;
+
+    @include breakpoint($sm-bp) {
+      max-width: none;
+      font-size: inherit;
+      font-weight: inherit;
+      font-family: inherit;
+      text-transform: unset;
+      color: inherit;
+    }
+  }
+
+  &-icon {
+    width: 14.8rem;
+    height: 14.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    @include breakpoint($sm-bp) {
+      display: none;
+    }
+
+    &__star {
+      object-fit: cover;
+      object-position: center center;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      stroke: $orange;
+
+      &_1 {
+        animation: starRotation 30s linear reverse infinite;
+      }
+
+      &_2 {
+        animation: starRotation 30s linear infinite;
+      }
+    }
+
+    &__arrow {
+      object-fit: contain;
+      object-position: center center;
+      width: 4.8rem;
+      height: 4.8rem;
+      fill: $orange;
+    }
+  }
+
+  &:hover & {
+    &__text {
+      color: $orange;
+    }
+  }
+
+  @keyframes starRotation {
+    0% {
+      transform: rotate(0);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
