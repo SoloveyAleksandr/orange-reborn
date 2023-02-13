@@ -1,1 +1,67 @@
 @import "./vars";
+
+*,
+*::before,
+*::after {
+  font-weight: $f-r;
+  font-family: "Gilroy";
+  color: $text-black;
+}
+
+.default-btn {
+  display: inline-block;
+  width: fit-content;
+  padding: 1.6rem 2rem;
+  border: 0.1rem solid $orange;
+  border-radius: 5.6rem;
+  background-color: $orange;
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  font-family: Arial, sans-serif;
+  transition: .3s;
+
+  &:hover {
+    background-color: transparent;
+    color: $text-black;
+  }
+}
+
+.dropdown {
+
+  &._open & {
+    &-btn {
+      svg {
+        transform: rotate(0);
+      }
+    }
+
+    &-content {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &-btn {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    padding: 0;
+
+    svg {
+      flex: none;
+      width: 1.8rem;
+      height: 1.8rem;
+      fill: $text-black;
+      transform: rotate(180deg);
+      transition: .3s;
+    }
+  }
+
+  &-content {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

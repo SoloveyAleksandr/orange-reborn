@@ -1,0 +1,291 @@
+@import "../vars";
+
+.header {
+  background-color: #fff;
+
+  @include breakpoint($jb-bp) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+  }
+
+  &-container {
+    max-width: 156.8rem;
+    margin: 0 auto;
+    padding: 2.6rem 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include breakpoint($jb-bp) {
+      padding: 1.2rem 2.4rem;
+    }
+  }
+
+  &-logo {
+    flex: none;
+    width: 23.8rem;
+    height: 5.6rem;
+
+    @include breakpoint($mm-bp) {
+      width: 21.6rem;
+      height: 4.3rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      width: 16.3rem;
+      height: 3.5rem;
+    }
+
+    &__img {
+      object-fit: contain;
+      object-position: left center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    position: relative;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+
+    display: none;
+
+    &__icon {
+      object-fit: contain;
+      object-position: center center;
+      height: 100%;
+      position: absolute;
+      transition: .3s;
+
+      &_burger {
+        width: 3.6rem;
+      }
+
+      &_close {
+        width: 2.4rem;
+        transform: scale(0);
+      }
+    }
+
+    &._active & {
+      &__icon {
+        &_burger {
+          transform: scale(0);
+        }
+
+        &_close {
+          transform: scale(1);
+        }
+      }
+    }
+
+    @include breakpoint($jb-bp) {
+      display: flex;
+    }
+  }
+
+  &-menu {
+    display: flex;
+    align-items: center;
+    gap: 17.4rem;
+    position: relative;
+
+    @include breakpoint($mm-bp) {
+      gap: 3rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      position: absolute;
+      width: 100vw;
+      height: calc(100vh - 9.5rem);
+      top: 100%;
+      left: 0;
+      overflow-y: auto;
+      flex-direction: column;
+      gap: 0rem;
+      padding: 2.4rem 2.4rem 10rem 2.4rem;
+      align-items: flex-start;
+      opacity: 0;
+      pointer-events: none;
+      transition: .3s;
+
+      &._active {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    &-contacts {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      @include breakpoint($jb-bp) {
+        order: 2;
+        margin-bottom: 4rem;
+        gap: 1.6rem;
+      }
+
+      &__link {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        font-weight: $f-s;
+
+        @include breakpoint($jb-bp) {
+          font-size: 2.4rem;
+          line-height: 2.9rem;
+        }
+      }
+
+      &__text {
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+
+        @include breakpoint($jb-bp) {
+          font-size: 2rem;
+          line-height: 2.4rem;
+        }
+      }
+    }
+
+    &-list {
+      padding: 1.9rem 17.7rem 1.9rem 0.8rem;
+      border: 0.1rem solid $grey;
+      border-radius: 9.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+
+      @include breakpoint($mm-bp) {
+        padding: 1.5rem 17.1rem 1.5rem 0.4rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        border: none;
+        padding: 0;
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: flex-start;
+        order: 1;
+        margin-bottom: 7.2rem;
+      }
+
+      &__link {
+        display: flex;
+        border-radius: 4rem;
+        font-family: Arial, sans-serif;
+        padding: 0.5rem 1.6rem;
+        font-size: 1.6rem;
+        line-height: 2rem;
+        transition: .3s;
+
+        &:hover {
+          background-color: rgba(133, 133, 133, 0.2);
+        }
+
+        @include breakpoint($mm-bp) {
+          padding: 0.5rem 1rem;
+          font-size: 1.4rem;
+        }
+
+        @include breakpoint($jb-bp) {
+          padding: 0.8rem 0;
+          font-size: 2rem;
+
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+    &__btn {
+      position: absolute;
+      right: 0.8rem;
+
+      @include breakpoint($mm-bp) {
+        right: 0.4rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        position: static;
+        order: 3;
+      }
+
+      @include breakpoint($xs-bp) {
+        width: 100%;
+      }
+    }
+
+    &-dropdown {
+      position: relative;
+
+      @include breakpoint($jb-bp) {
+        display: flex;
+        flex-direction: column;
+
+        &._open & {
+          &__content {
+            padding-top: 0.8rem;
+          }
+        }
+      }
+
+      &__content {
+        position: absolute;
+        left: 1.6rem;
+        background-color: #fff;
+        padding: 1.6rem 0.8rem;
+        border-radius: 0.8rem;
+        box-shadow: 0 0 0.8rem rgba(34, 34, 34, 0.08);
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+
+        @include breakpoint($jb-bp) {
+          position: static;
+          transition: .3s;
+          padding: 0;
+          background-color: transparent;
+          box-shadow: none;
+        }
+      }
+
+      &__link {
+        border-radius: 4rem;
+        white-space: nowrap;
+        font-family: Arial, sans-serif;
+        padding: 0.5rem 1.6rem;
+        font-size: 1.6rem;
+        line-height: 2rem;
+        transition: .3s;
+
+        &:hover {
+          background-color: rgba(133, 133, 133, 0.2);
+        }
+
+        @include breakpoint($mm-bp) {
+          padding: 0.5rem 1rem;
+          font-size: 1.4rem;
+        }
+
+        @include breakpoint($jb-bp) {
+          padding: 0.4rem 0;
+          font-size: 1.6rem;
+          line-height: 2rem;
+          color: #848484;
+        }
+      }
+    }
+  }
+}
