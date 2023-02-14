@@ -59,74 +59,139 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  // MAIN BLOB
-  // const canvas = document.getElementById("main-canvas");
-  const canvas = document.querySelector("canvas");
+  // MAIN
+  if (document.querySelector(".main-video")) {
+    const canvas = document.querySelector(".main-video canvas");
 
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(45, canvas.offsetWidth / canvas.offsetHeight, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer({
-    canvas: canvas,
-    context: canvas.getContext("webgl"),
-    antialias: true,
-    alpha: true
-  });
+    // BLOB
+    if (canvas) {
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, canvas.offsetWidth / canvas.offsetHeight, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer({
+        canvas: canvas,
+        context: canvas.getContext("webgl"),
+        antialias: true,
+        alpha: true
+      });
 
-  const simplex = new SimplexNoise();
+      const simplex = new SimplexNoise();
 
-  renderer.setSize(canvas.offsetWidth, canvas.offsetHeight);
-  renderer.setPixelRatio(window.devicePixelRatio || 1);
+      const startWindowSize = window.innerWidth;
 
-  camera.position.z = 5;
+      const breakpoints = [375, 500, 850, 1200, 1920];
+      let maxBreakpoint = Infinity;
+      let minBreakpoint = null;
 
-  let geometry = new THREE.SphereGeometry(0.8, 128, 128);
+      for (let i = 0; i < breakpoints.length; i++) {
+        if (startWindowSize < breakpoints[i]) {
+          maxBreakpoint = breakpoints[i];
+          break;
+        }
+      }
 
-  let material = new THREE.MeshPhongMaterial({
-    color: 0xFAC68D,
-    shininess: 100
-  });
+      for (let i = breakpoints.length - 1; i > 0; i--) {
+        if (startWindowSize > breakpoints[i]) {
+          minBreakpoint = breakpoints[i];
+          break;
+        }
+      }
 
-  let lightTop = new THREE.DirectionalLight(0xF990B3, 1);
-  lightTop.position.set(0, 500, 200);
-  lightTop.castShadow = true;
-  scene.add(lightTop);
+      if (breakpoints.includes(startWindowSize)) {
+        maxBreakpoint = startWindowSize;
+      }
 
-  let lightBottom = new THREE.DirectionalLight(0xF99B6E, 1);
-  lightBottom.position.set(0, -500, 400);
-  lightBottom.castShadow = true;
-  scene.add(lightBottom);
+      console.log(minBreakpoint, maxBreakpoint)
 
-  let ambientLight = new THREE.AmbientLight(0xFF518A);
-  scene.add(ambientLight);
+      const canvasWidth = canvas.offsetWidth;
+      const canvasHeight = canvas.offsetHeight;
+      const canvasWidthPrec = canvasWidth / (window.innerWidth / 100) / 100;
+      const canvasHeightPrec = canvasHeight / (window.innerWidth / 100) / 100;
 
-  let sphere = new THREE.Mesh(geometry, material);
+      renderer.setSize(canvasWidth, canvasHeight);
 
-  scene.add(sphere);
+      window.addEventListener("resize", () => {
+        const width = window.innerWidth;
+        renderer.setSize(window.innerWidth * canvasWidthPrec, window.innerWidth * canvasHeightPrec);
+        if (width >= maxBreakpoint || width <= minBreakpoint) {
+          location.reload();
+        }
+      })
 
-  const animSpeed = 50;
-  const animSpikes = 0.9;
-  const animProccesing = 1.3;
+      renderer.setPixelRatio(window.devicePixelRatio || 1);
 
-  let update = () => {
-    let time = performance.now() * 0.00001 * animSpeed * Math.pow(1, 3),
-      spikes = animSpikes * animProccesing;
+      camera.position.z = 5;
 
-    for (let i = 0; i < sphere.geometry.vertices.length; i++) {
-      let p = sphere.geometry.vertices[i];
-      p.normalize().multiplyScalar(1.5 + 0.3 * simplex.noise3D(p.x * spikes, p.y * spikes, p.z * spikes + time));
+      let geometry = new THREE.SphereGeometry(0.8, 32, 32);
+
+      let material = new THREE.MeshPhongMaterial({
+        color: 0xFAC68D,
+        shininess: 100
+      });
+
+      let lightTop = new THREE.DirectionalLight(0xF990B3, 1);
+      lightTop.position.set(0, 500, 200);
+      lightTop.castShadow = true;
+      scene.add(lightTop);
+
+      let lightBottom = new THREE.DirectionalLight(0xFDEAD3, 1);
+      lightBottom.position.set(0, -500, 400);
+      lightBottom.castShadow = true;
+      scene.add(lightBottom);
+
+      let ambientLight = new THREE.AmbientLight(0xFF518A);
+      scene.add(ambientLight);
+
+      let sphere = new THREE.Mesh(geometry, material);
+
+      scene.add(sphere);
+
+      const animSpeed = 50;
+      const animSpikes = 0.5;
+      const animProccesing = 1.3;
+
+      let update = () => {
+        let time = performance.now() * 0.00001 * animSpeed * Math.pow(1, 3),
+          spikes = animSpikes * animProccesing;
+
+        for (let i = 0; i < sphere.geometry.vertices.length; i++) {
+          let p = sphere.geometry.vertices[i];
+          p.normalize().multiplyScalar(1.5 + 0.4 * simplex.noise3D(p.x * spikes, p.y * spikes, p.z * spikes + time));
+        }
+
+        sphere.geometry.computeVertexNormals();
+        sphere.geometry.normalsNeedUpdate = true;
+        sphere.geometry.verticesNeedUpdate = true;
+      }
+
+      function animate() {
+        update();
+        renderer.render(scene, camera);
+        requestAnimationFrame(animate);
+      }
+
+      requestAnimationFrame(animate);
     }
 
-    sphere.geometry.computeVertexNormals();
-    sphere.geometry.normalsNeedUpdate = true;
-    sphere.geometry.verticesNeedUpdate = true;
+    // BANER
+    const banerContainers = gsap.utils.toArray(".main-video-baner-box");
+
+    banerContainers.forEach((container, index) => {
+      const list = container.querySelector(".main-video-baner-list");
+      const listClone = list.cloneNode(true);
+
+      container.appendChild(listClone);
+
+      const tl = gsap.timeline({ repeat: -1 });
+      tl.to(list, {
+        x: index % 2 ? "-100%" : "100%",
+        duration: 30,
+        ease: "none"
+      }, "sin")
+      tl.to(listClone, {
+        x: index % 2 ? "-100%" : "100%",
+        duration: 30,
+        ease: "none"
+      }, "sin")
+    })
   }
-
-  function animate() {
-    update();
-    renderer.render(scene, camera);
-    requestAnimationFrame(animate);
-  }
-
-  requestAnimationFrame(animate);
-
 })

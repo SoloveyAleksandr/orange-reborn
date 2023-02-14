@@ -8,6 +8,12 @@
   color: $text-black;
 }
 
+span {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
 .default-btn {
   display: inline-block;
   width: fit-content;
@@ -165,4 +171,8 @@
       transform: rotate(360deg);
     }
   }
+}
+
+.orange-text {
+  color: $orange;
 }

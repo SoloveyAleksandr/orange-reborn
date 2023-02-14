@@ -2,9 +2,15 @@
 
   &-video {
 
+    @include breakpoint($jb-bp) {
+      padding-top: 6.7rem;
+    }
+
     &-container {
-      max-width: 153.5rem;
+      max-width: 154rem;
+      padding: 0 2.4rem;
       margin: 0 auto;
+      position: relative;
     }
 
     &-bg {
@@ -14,7 +20,22 @@
       display: flex;
       align-items: center;
 
+      @include breakpoint($mm-bp) {
+        height: 55.6rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        justify-content: center;
+      }
+
+      @include breakpoint($sm-bp) {
+        height: 44.3rem;
+      }
+
       &__fill {
+        width: 100%;
+        height: 100%;
+
         img {
           object-fit: fill;
           width: 100%;
@@ -23,11 +44,27 @@
       }
 
       &__star {
-        width: 137.76%;
+        width: 211.6rem;
         position: absolute;
         left: 9.3rem;
         pointer-events: none;
         animation: starRotation 120s linear reverse infinite;
+
+        @include breakpoint($mm-bp) {
+          width: 156.4rem;
+          left: 6.8rem;
+        }
+
+        @include breakpoint($jb-bp) {
+          top: -50%;
+        }
+
+        @include breakpoint($sm-bp) {
+          width: 71.4rem;
+          height: 71.4rem;
+          top: 2.8rem;
+          left: 0.4rem;
+        }
 
         img {
           object-fit: contain;
@@ -51,6 +88,219 @@
         right: 8.6rem;
         width: 57.8rem;
         height: 55.3rem;
+
+        @include breakpoint($mm-bp) {
+          width: 46.6rem;
+          height: 44.4rem;
+          right: 6.1rem;
+          top: unset;
+        }
+
+        @include breakpoint($jb-bp) {
+          right: unset;
+        }
+
+        @include breakpoint($sm-bp) {
+          width: 22.8rem;
+          height: 21.8rem;
+          top: 18.9rem;
+        }
+      }
+    }
+
+    &-inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 20.9rem 0rem 0rem 12.4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4.25rem;
+
+      @include breakpoint($mm-bp) {
+        padding: 0rem 0rem 0rem 6.4rem;
+        justify-content: center;
+        gap: 1.9rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        gap: 1rem;
+      }
+    }
+
+    &__title {
+      font-size: 8.6rem;
+
+      @include breakpoint($mm-bp) {
+        font-size: 6.4rem;
+        line-height: 7.8rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        font-size: 3.2rem;
+        line-height: 3.9rem;
+      }
+    }
+
+    &__text {
+      font-size: 2.6rem;
+      font-family: Arial, sans-serif;
+
+      @include breakpoint($mm-bp) {
+        font-size: 2rem;
+        line-height: 2.4rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+      }
+    }
+
+    &-slide {
+      position: absolute;
+      right: 6.7rem;
+      bottom: 2rem;
+      width: 18rem;
+      height: 18rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &-img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+
+        &:nth-child(1) {
+          animation: slideImgAnim 10s linear reverse infinite;
+        }
+
+        &:nth-child(2) {
+          animation: slideImgAnim 10s linear infinite;
+        }
+
+        &__img {
+          object-fit: contain;
+          object-position: center center;
+          width: 100%;
+          height: 100%;
+        }
+
+        @keyframes slideImgAnim {
+          0% {
+            transform: rotate(0);
+          }
+
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      }
+
+      @include breakpoint($mm-bp) {
+        width: 12rem;
+        height: 12rem;
+        right: 4.8rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        width: 6rem;
+        height: 6rem;
+        bottom: 1.6rem;
+        right: calc(50% - 3rem);
+      }
+    }
+
+    &-baner {
+      background-color: $text-black;
+      padding: 2rem 0;
+      transform: rotate(1.25deg) translateX(-1rem);
+      min-width: calc(100% + 2rem);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      @include breakpoint($mm-bp) {
+        gap: 0rem;
+        padding: 1rem 0;
+      }
+
+      &-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 23.1rem;
+        overflow: hidden;
+
+        @include breakpoint($mm-bp) {
+          height: 18rem;
+        }
+      }
+
+      &-box {
+        display: flex;
+        align-items: center;
+        gap: 1.49rem;
+
+        &:nth-child(odd) {
+          flex-direction: row-reverse;
+        }
+      }
+
+      &-list {
+        display: flex;
+        align-items: center;
+        gap: 1.49rem;
+
+        &__item {
+          color: #fff;
+          text-transform: uppercase;
+          font-size: 5rem;
+          line-height: 6.1rem;
+          font-weight: $f-m;
+          white-space: nowrap;
+          display: flex;
+          align-items: center;
+          gap: 1.49rem;
+
+          &::after {
+            content: "";
+            display: block;
+          }
+
+          &:nth-child(even) {
+            &::after {
+              height: 5rem;
+              width: 7.95rem;
+              background-image: url(../images/line.png);
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: center center;
+            }
+          }
+
+          &:nth-child(odd) {
+            &::after {
+              height: 5rem;
+              width: 7.95rem;
+              background-image: url(../images/lighter.png);
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: center center;
+            }
+          }
+
+          @include breakpoint($mm-bp) {
+            font-size: 4rem;
+            line-height: 4.9rem;
+          }
+        }
       }
     }
   }
