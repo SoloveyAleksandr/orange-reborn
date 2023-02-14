@@ -23,15 +23,15 @@
       }
 
       &__star {
-        height: 281.38%;
+        width: 137.76%;
         position: absolute;
-        right: -40%;
+        left: 9.3rem;
         pointer-events: none;
-        animation: starRotation 60s linear infinite;
+        animation: starRotation 120s linear reverse infinite;
 
         img {
           object-fit: contain;
-          height: 100%;
+          width: 100%;
         }
 
         @keyframes starRotation {
@@ -43,6 +43,14 @@
             transform: rotate(360deg);
           }
         }
+      }
+
+      &-canvas {
+        position: absolute;
+        top: 8rem;
+        right: 8.6rem;
+        width: 57.8rem;
+        height: 55.3rem;
       }
     }
   }
