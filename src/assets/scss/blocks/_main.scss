@@ -603,35 +603,35 @@
 
       }
     }
-  }
 
-  &-swiper {
-    width: 63.7rem;
-    margin: 0;
-    height: 47rem;
+    &-swiper {
+      width: 63.7rem;
+      margin: 0;
+      height: 47rem;
 
-    @include breakpoint($mm-bp) {
-      width: 56.8rem;
-      height: 35rem;
-    }
+      @include breakpoint($mm-bp) {
+        width: 56.8rem;
+        height: 35rem;
+      }
 
-    @include breakpoint($jb-bp) {
-      display: none;
-    }
+      @include breakpoint($jb-bp) {
+        display: none;
+      }
 
-    &-slide {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 3.2rem;
-      height: fit-content;
+      &-slide {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 3.2rem;
+        height: fit-content;
 
-      &::after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 0.1rem;
-        background-color: $grey;
+        &::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 0.1rem;
+          background-color: $grey;
+        }
       }
     }
   }
