@@ -4,7 +4,11 @@
     <div class="main-video-container">
       <div class="main-video-bg">
         <div class="main-video-bg__fill">
-          <img src="assets/images/main-video-bg.png" alt="fill">
+          <!-- <img src="assets/images/main-video-bg.png" alt="fill"> -->
+          <picture>
+            <source srcset="assets/images/main-video-bg_mob.png" media="(max-width: 850px)">
+            <img src="assets/images/main-video-bg.png" alt="fill">
+          </picture>
         </div>
         <div class="main-video-bg__star">
           <img src="assets/images/main-video-bg-star.png" alt="star">
@@ -55,6 +59,124 @@
           </ul>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="works">
+    <div class="works-container">
+
+      <div class="works-head">
+        <h3 class="works-head__title">Наши работы</h3>
+        <p class="works-head__description">
+          Проводим комплексную работу по разработке сайтов. В основе работы глубокая аналитика, улучшение поведенческого
+          фактора, учет трендов дизайна.
+        </p>
+      </div>
+
+      <div class="works-inner">
+        <div class="swiper works-tag-wrapper">
+          <ul class="swiper-wrapper works-tag">
+            <li class="swiper-slide works-tag__item">
+              <a href="#" class="default-tag">Разработка</a>
+            </li>
+            <li class="swiper-slide works-tag__item">
+              <a href="#" class="default-tag default-tag_light">SEO-продвижение</a>
+            </li>
+            <li class="swiper-slide works-tag__item">
+              <a href="#" class="default-tag default-tag_white">Контекстная реклама</a>
+            </li>
+            <li class="swiper-slide works-tag__item">
+              <a href="#" class="default-tag default-tag_white">Видео продакшн</a>
+            </li>
+            <li class="swiper-slide works-tag__item">
+              <a href="#" class="default-tag default-tag_white">SMM</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="swiper works-list-wrapper main-works">
+          <ul class="swiper-wrapper works-list main-works-list">
+            <li class="swiper-slide works-list-item main-works-list-item">
+              <a href="#" class="works-list-item__link">
+                <div class="works-list-item-img">
+                  <img src="assets/images/works-1.jpg" alt="work" class="works-list-item-img__img">
+                </div>
+                <p class="works-list-item__text">
+                  Panh Helicopters
+                  <svg>
+                    <use href="#link-arrow-icon"></use>
+                  </svg>
+                </p>
+              </a>
+            </li>
+            <li class="swiper-slide works-list-item main-works-list-item">
+              <a href="#" class="works-list-item__link">
+                <div class="works-list-item-img">
+                  <img src="assets/images/works-2.jpg" alt="work" class="works-list-item-img__img">
+                </div>
+
+                <p class="works-list-item__text">
+                  Panh Helicopters
+                  <svg>
+                    <use href="#link-arrow-icon"></use>
+                  </svg>
+                </p>
+
+                <ul class="works-list-item__labels">
+                  <li class="works-list-item__label default-label">ux/ui</li>
+                  <li class="works-list-item__label default-label">frontend</li>
+                  <li class="works-list-item__label default-label">backend</li>
+                </ul>
+              </a>
+            </li>
+            <li class="swiper-slide works-list-item main-works-list-item">
+              <a href="#" class="works-list-item__link">
+                <div class="works-list-item-img">
+                  <img src="assets/images/works-3.jpg" alt="work" class="works-list-item-img__img">
+                </div>
+
+                <p class="works-list-item__text">
+                  Panh Helicopters
+                  <svg>
+                    <use href="#link-arrow-icon"></use>
+                  </svg>
+                </p>
+              </a>
+            </li>
+            <li class="swiper-slide works-list-item main-works-list-item">
+              <a href="#" class="works-list-item__link">
+                <div class="works-list-item-img">
+                  <img src="assets/images/works-4.jpg" alt="work" class="works-list-item-img__img">
+                </div>
+
+                <p class="works-list-item__text">
+                  Panh Helicopters
+                  <svg>
+                    <use href="#link-arrow-icon"></use>
+                  </svg>
+                </p>
+              </a>
+            </li>
+          </ul>
+
+          <div class="main-works-pagination">
+            <!-- <span class="main-works-pagination__item main-works-pagination__item_active"></span>
+            <span class="main-works-pagination__item"></span>
+            <span class="main-works-pagination__item"></span>
+            <span class="main-works-pagination__item"></span> -->
+          </div>
+        </div>
+
+        <a href="#" class="default-icon-link works-link">
+          Смотреть все проекты
+          <span class="default-icon-link__icon">
+            <svg>
+              <use href="#link-arrow-icon"></use>
+            </svg>
+          </span>
+        </a>
+      </div>
+
     </div>
   </div>
 

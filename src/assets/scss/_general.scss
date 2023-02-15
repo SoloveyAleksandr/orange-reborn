@@ -176,3 +176,103 @@ span {
 .orange-text {
   color: $orange;
 }
+
+.default-tag {
+  display: inline-block;
+  padding: 1rem 1.4rem;
+  background-color: $orange;
+  color: #fff;
+  border-radius: 6.4rem;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  border: 0.2rem solid $orange;
+
+  @include breakpoint($mm-bp) {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+
+  &.default-tag_light {
+    background-color: #FEEEE9;
+    color: $text-black;
+  }
+
+  &.default-tag_white {
+    padding: 1.1rem 1.5rem;
+    color: $text-black;
+    background-color: transparent;
+    border: 0.1rem solid $grey;
+  }
+}
+
+.default-icon-link {
+  width: fit-content;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding-left: 1.6rem;
+  color: $orange;
+  transition: .3s;
+
+  @include breakpoint($mm-bp) {
+    font-size: 1.6rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    border: 0.1rem solid $orange;
+    border-radius: 9.6rem;
+    padding: 1.4rem 2.8rem 1.4rem 3.4rem;
+    gap: 2.6rem;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &__icon {
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 50%;
+    border: 0.1rem solid $orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint($sm-bp) {
+      width: unset;
+      height: unset;
+      border: none;
+    }
+
+    svg {
+      width: 1.6rem;
+      height: 1.6rem;
+      object-fit: contain;
+      object-position: center center;
+      fill: $orange;
+
+      @include breakpoint($sm-bp) {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
+  }
+}
+
+.default-label {
+  padding: 0.6rem 0.8rem;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  font-family: $ff-a;
+  color: $orange;
+  background-color: #fff;
+  border-radius: 7.2rem;
+
+  @include breakpoint($sm-bp) {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+}
