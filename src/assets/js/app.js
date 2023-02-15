@@ -32,19 +32,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     open() {
       this.wrapper.classList.add("_open");
+      this.btn.classList.add("_active");
       this.content.style.maxHeight = this.maxHeight;
       this.isOpen = true;
     }
 
     close() {
       this.wrapper.classList.remove("_open");
+      this.btn.classList.remove("_active");
       this.content.style.maxHeight = 0;
       this.isOpen = false;
     }
   }
 
-  const dropdownList = gsap.utils.toArray(".dropdown");
-  dropdownList.forEach(item => new Dropdown(item));
+  // HEADER
+  const menuDropdownList = gsap.utils.toArray(".header-menu-dropdown");
+  menuDropdownList.forEach(item => new Dropdown(item));
 
   if (window.matchMedia("(max-width: 850px)").matches) {
     const MENU_BTN = document.querySelector(".header-btn");
@@ -57,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     }
   }
-
+  //<==
 
   // MAIN
   if (document.querySelector(".main-video")) {
@@ -100,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
         maxBreakpoint = startWindowSize;
       }
 
-      console.log(minBreakpoint, maxBreakpoint)
+      // console.log(minBreakpoint, maxBreakpoint)
 
       const canvasWidth = canvas.offsetWidth;
       const canvasHeight = canvas.offsetHeight;
@@ -195,23 +198,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // WORKS 
-  const worksTags = document.querySelector(".works-tag-wrapper");
-
-  if (worksTags) {
-    const swiper = new Swiper(worksTags, {
-      speed: 400,
-      slidesPerView: "auto",
-      freeMode: true,
-      spaceBetween: 0,
-      breakpoints: {
-        850: {
-          spaceBetween: 10
-        },
-      }
-    });
-  }
-
   const mainWorks = document.querySelector(".main-works");
 
   if (mainWorks) {
@@ -229,4 +215,74 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
+
+  const mainServiceSwiper = document.querySelector(".main-service-swiper");
+  const mainServiceItems = gsap.utils.toArray(".main-service-list-item");
+
+  if (window.matchMedia("(min-width: 851px)").matches) {
+    if (mainServiceSwiper) {
+      const swiperWrapper = mainServiceSwiper.querySelector(".swiper-wrapper");
+      const docFragment = document.createDocumentFragment();
+
+      mainServiceItems.forEach(item => {
+        const slide = document.createElement("div");
+        slide.className = "swiper-slide main-service-swiper-slide";
+
+        const content = item.querySelector(".main-service-list-item-content").innerHTML;
+        slide.innerHTML = content;
+        docFragment.appendChild(slide);
+      })
+
+      swiperWrapper.append(docFragment);
+
+      const swiper = new Swiper(mainServiceSwiper, {
+        direction: "vertical",
+        spaceBetween: 50,
+        autoHeight: true,
+        allowTouchMove: false,
+        speed: 1000,
+      })
+
+      const swiperNavBtns = gsap.utils.toArray(".main-service-list-item-btn");
+
+      swiperNavBtns.forEach((btn, index) => {
+        btn.addEventListener("click", () => swiperHandler(index));
+        if (swiper.activeIndex === index) {
+          btn.classList.add("_active");
+        }
+      })
+
+      function swiperHandler(index) {
+        swiperNavBtns.forEach((btn, i) => {
+          btn.classList.remove("_active");
+          if (index === i) {
+            btn.classList.add("_active");
+            swiper.slideTo(index);
+          }
+        })
+      }
+      
+    }
+  } else {
+    mainServiceItems.forEach(item => new Dropdown(item));
+  }
+  // <==
+
+  // WORKS 
+  const worksTags = document.querySelector(".works-tag-wrapper");
+  if (worksTags) {
+    const swiper = new Swiper(worksTags, {
+      speed: 400,
+      slidesPerView: "auto",
+      freeMode: true,
+      spaceBetween: 0,
+      breakpoints: {
+        850: {
+          spaceBetween: 10
+        },
+      }
+    });
+  }
+  //<==
+
 })

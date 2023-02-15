@@ -276,3 +276,34 @@ span {
     line-height: 1.4rem;
   }
 }
+
+.default-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  font-weight: $f-m;
+  transition: .3s;
+  width: fit-content;
+
+  @include breakpoint($xs-bp) {
+    font-size: 1.6rem;
+  }
+
+  &:hover {
+    color: $orange;
+
+    svg {
+      fill: $orange;
+    }
+  }
+
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    object-fit: contain;
+    object-position: center center;
+    fill: $text-black;
+  }
+}

@@ -404,4 +404,235 @@
       }
     }
   }
+
+  &-service {
+    max-width: 133.8rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+
+    &-container {
+      border-top: 0.1rem solid $grey;
+      padding: 7rem 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      @include breakpoint($jb-bp) {
+        padding: 5rem 0;
+        border: none;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+
+      @include breakpoint($mm-bp) {
+        gap: 1.6rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        gap: 0rem;
+        border-bottom: 0.1rem solid $grey;
+        flex: 1;
+      }
+
+      &-item {
+
+        @include breakpoint($jb-bp) {
+          padding: 2rem 0.8rem;
+          border-top: 0.1rem solid $grey;
+
+          &._open & {
+            &-content {
+              padding: 0.8rem 0rem 0rem;
+            }
+          }
+        }
+
+        &-btn {
+          display: flex;
+          align-items: flex-start;
+          gap: 8.9rem;
+          color: $grey;
+
+          &._active {
+            color: $text-black;
+          }
+
+          &._active & {
+            &__icon {
+              &::after {
+                transform: rotate(0);
+              }
+            }
+          }
+
+          @include breakpoint($jb-bp) {
+            position: relative;
+            align-items: center;
+            gap: 1.5rem;
+            width: 100%;
+          }
+
+          @include breakpoint($xs-bp) {
+            gap: 0.8rem;
+          }
+
+          &__number {
+            font-size: 1.6rem;
+            font-weight: $f-s;
+            color: inherit;
+            transition: .3;
+
+            @include breakpoint($xs-bp) {
+              font-size: 1.2rem;
+            }
+          }
+
+          &__text {
+            font-size: 3.8rem;
+            font-weight: $f-s;
+            color: inherit;
+            transition: .3s;
+
+            @include breakpoint($mm-bp) {
+              font-size: 3.2rem;
+            }
+
+            @include breakpoint($sm-bp) {
+              font-size: 2.4rem;
+            }
+
+            @include breakpoint($xs-bp) {
+              font-size: 1.6rem;
+            }
+          }
+
+          &__icon {
+            position: absolute;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            border: 0.1rem solid $orange;
+            right: 0rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: none;
+
+            @include breakpoint($jb-bp) {
+              display: flex;
+            }
+
+            &::after,
+            &::before {
+              content: "";
+              width: 0.6rem;
+              height: 0.1rem;
+              background-color: $orange;
+              position: absolute;
+            }
+
+            &::after {
+              transform: rotate(90deg);
+              transition: .3s;
+            }
+          }
+        }
+
+        &-content {
+          display: none;
+
+          @include breakpoint($jb-bp) {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+            transition: .3s;
+          }
+        }
+      }
+    }
+
+    &-content {
+
+      &__text {
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        font-family: $ff-a;
+        max-width: 52.8rem;
+
+        @include breakpoint($mm-bp) {
+          max-width: 464rem;
+          font-size: 1.6rem;
+          line-height: 2.2rem;
+        }
+
+        @include breakpoint($jb-bp) {
+          max-width: 80%;
+        }
+
+        @include breakpoint($xs-bp) {
+          font-size: 1.2rem;
+          line-height: 1.6rem;
+          max-width: 22rem;
+        }
+      }
+
+      &-links {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+
+        @include breakpoint($xs-bp) {
+          gap: 1.2rem;
+        }
+      }
+
+      &__link {
+        @include breakpoint($jb-bp) {
+          color: $orange;
+        }
+
+        svg {
+          @include breakpoint($jb-bp) {
+            fill: $orange;
+          }
+        }
+
+      }
+    }
+  }
+
+  &-swiper {
+    width: 63.7rem;
+    margin: 0;
+    height: 47rem;
+
+    @include breakpoint($mm-bp) {
+      width: 56.8rem;
+      height: 35rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      display: none;
+    }
+
+    &-slide {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 3.2rem;
+      height: fit-content;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 0.1rem;
+        background-color: $grey;
+      }
+    }
+  }
 }
