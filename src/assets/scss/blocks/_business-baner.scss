@@ -1,0 +1,184 @@
+.business-baner {
+  padding: 7rem 0;
+
+  @include breakpoint($mm-bp) {
+    padding: 5rem 0;
+  }
+
+  @include breakpoint($jb-bp) {
+    padding: 3rem 0;
+  }
+
+  &-container {
+    max-width: 158.3rem;
+    padding: 0rem 2.4rem;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  &-bg {
+    height: 57.8rem;
+    position: relative;
+    overflow: hidden;
+
+    @include breakpoint($mm-bp) {
+      height: 42.8rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      height: 38rem;
+    }
+
+    &__fill {
+      width: 100%;
+      height: 100%;
+
+      img {
+        object-fit: fill;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-left: 12.4rem;
+    padding-top: 15.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.8rem;
+
+    @include breakpoint($mm-bp) {
+      padding-left: 6.4rem;
+      padding-top: 8.8rem;
+      gap: 0.8rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      padding: 3.2rem 6rem;
+    }
+  }
+
+  &__title {
+    font-size: 9.8rem;
+    line-height: 11.3rem;
+    font-weight: $f-s;
+    color: #FFF;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include breakpoint($mm-bp) {
+      font-size: 7.8rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      font-size: 4.8rem;
+      line-height: 4.8rem;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: inherit;
+      line-height: inherit;
+      color: inherit;
+      white-space: nowrap;
+      margin-right: 3.3rem;
+    }
+
+    svg {
+      object-fit: contain;
+      width: 14.3rem;
+      height: 7.1rem;
+      flex: none;
+      margin-right: 3.3rem;
+
+      @include breakpoint($mm-bp) {
+        width: 11.1rem;
+        height: 5.5rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        height: 3.8rem;
+        width: 7.6rem;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    color: #FFF;
+    font-family: $ff-a;
+    max-width: 41.8rem;
+    margin-left: 65.3rem;
+
+    @include breakpoint($mm-bp) {
+      margin-left: 57.6rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      margin-left: 45%;
+    }
+  }
+
+  &__btn {
+    border: 0.2rem solid $orange;
+    background-color: $orange;
+    color: #FFF;
+    width: 14.8rem;
+    height: 14.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: $f-b;
+    text-transform: uppercase;
+    position: absolute;
+    top: 18.2rem;
+    left: 41rem;
+    transition: .3s;
+
+    &:hover {
+      background-color: $orange-light;
+      color: $orange;
+    }
+
+    @include breakpoint($mm-bp) {
+      top: 11.5rem;
+      left: 27.5rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      left: 14rem;
+      top: unset;
+      bottom: 3rem;
+    }
+  }
+}
