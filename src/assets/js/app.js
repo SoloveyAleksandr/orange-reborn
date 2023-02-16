@@ -427,8 +427,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tl.from(btn, {
       opacity: 0,
-      y: "50rem",
-      duration: 1,
+      x: "10rem",
+      duration: 1.5,
       ease: "back.out(2)",
     })
 
