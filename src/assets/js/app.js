@@ -285,15 +285,52 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   //<==
 
-  // BUSINESS BANER
-  // if (document.querySelector(".business-baner")) {
-  // const SVGLine = document.querySelector(".business-baner-bg__line svg");
-  // console.log(SVGLine)
-  // gsap.from(SVGLine, {
-  //   duration: 5,
-  //   drawSVG: 0,
-  // })
-  // }
+  // TEAM
+  if (document.querySelector(".team")) {
+    if (window.matchMedia("(min-width: 501px)").matches) {
+      const teamImgContainer = document.querySelector(".team-img");
+      const teamImg = document.querySelector(".team-img__img");
+      const teamList = document.querySelector(".team-list");
+      const teamListItems = gsap.utils.toArray(".team-list-item");
+
+      teamListItems.forEach(item => {
+        const data = item.getAttribute("data-img");
+
+        item.addEventListener("mouseenter", (e) => setImg(e, data, item));
+        item.addEventListener("mouseleave", () => {
+          item.classList.remove("_active")
+        });
+      })
+
+      teamList.addEventListener("mouseleave", hideImg);
+
+      function setImg(e, data, item) {
+        const mousePos = e.clientX;
+        const listRects = teamList.getClientRects();
+        const listCenter = listRects[0].left + (listRects[0].width / 2);
+        const isLeft = mousePos > listCenter;
+
+        item.classList.add("_active");
+
+        teamImg.setAttribute("src", data);
+        teamImgContainer.classList.add("_active");
+
+        if (isLeft) {
+          teamImgContainer.classList.add("_left");
+          teamImgContainer.classList.remove("_right");
+        } else {
+          teamImgContainer.classList.add("_right");
+          teamImgContainer.classList.remove("_left");
+        }
+      }
+
+      function hideImg() {
+        teamImgContainer.classList.remove("_active");
+        teamImgContainer.classList.remove("_left");
+        teamImgContainer.classList.remove("_right");
+      }
+    }
+  }
   //<==
 
 })

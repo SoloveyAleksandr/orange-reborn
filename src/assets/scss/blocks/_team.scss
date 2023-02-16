@@ -1,0 +1,163 @@
+.team {
+  padding: 8.2rem 0rem 11.2rem;
+
+  @include breakpoint($mm-bp) {
+    padding: 5rem 0 10.5rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    padding: 3rem 0;
+  }
+
+  &-container {
+    max-width: 134rem;
+    padding: 0 2.4rem;
+    margin: 0 auto;
+  }
+
+  &-title {
+    font-size: 7rem;
+    line-height: 7.2rem;
+    font-weight: $f-s;
+    margin-bottom: 4.2rem;
+
+    @include breakpoint($mm-bp) {
+      font-size: 4.8rem;
+      line-height: 5rem;
+      margin-bottom: 4rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      font-size: 2.4rem;
+      line-height: 2.8rem;
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &-inner {
+    position: relative;
+    width: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @include breakpoint($jb-bp) {
+      width: 100%;
+    }
+  }
+
+  &-img {
+    position: absolute;
+    width: 34.2rem;
+    height: 43rem;
+    border-radius: 2rem;
+    background-color: rgb(255, 157, 157);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    pointer-events: none;
+    left: calc(50% - 34.2rem / 2);
+    transform: scale(0.3);
+    opacity: 0;
+    transition: 0.5s;
+
+    &._active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    &._left {
+      left: 7.3rem;
+
+      @include breakpoint($mm-bp) {
+        left: 6.3rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        left: calc(50% - 32.1rem / 2);
+      }
+    }
+
+    &._right {
+      left: calc(100% - 34.2rem - 7.3rem);
+
+      @include breakpoint($mm-bp) {
+        left: calc(100% - 32.1rem - 6.3rem);
+      }
+
+      @include breakpoint($jb-bp) {
+        left: calc(50% - 32.1rem / 2);
+      }
+    }
+
+    @include breakpoint($mm-bp) {
+      width: 32.1rem;
+      height: 38.2rem;
+    }
+
+    @include breakpoint($sm-bp) {
+    display: none;
+    }
+
+    &__img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 11rem;
+    width: fit-content;
+
+    @include breakpoint($mm-bp) {
+      column-gap: 9.6rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    &-item {
+      width: 54.4rem;
+      padding: 3.9rem 0 4rem;
+      border-top: 0.1rem solid $grey;
+      font-size: 2.4rem;
+      line-height: 2.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: $grey;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &._active {
+        color: $text-black;
+        padding-left: 2.4rem;
+      }
+
+      @include breakpoint($mm-bp) {
+        width: 48rem;
+        padding: 3.1rem 0rem 3.2rem;
+        font-size: 2rem;
+        line-height: 2.4rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        width: 100%;
+      }
+
+      @include breakpoint($sm-bp) {
+        padding: 1.1rem 0rem 1.2rem 0.8rem;
+        font-size: 1.4rem;
+      }
+
+      span {
+        color: inherit;
+      }
+    }
+  }
+}
