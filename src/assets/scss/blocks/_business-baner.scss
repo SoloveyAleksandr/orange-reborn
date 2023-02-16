@@ -29,6 +29,10 @@
       height: 38rem;
     }
 
+    @include breakpoint($xs-bp) {
+      height: 29.2rem;
+    }
+
     &__fill {
       width: 100%;
       height: 100%;
@@ -47,7 +51,13 @@
       left: 0;
       right: 0;
 
-      img {
+      // img {
+      //   object-fit: cover;
+      //   width: 100%;
+      //   height: 100%;
+      // }
+
+      svg {
         object-fit: cover;
         width: 100%;
         height: 100%;
@@ -77,13 +87,17 @@
     @include breakpoint($jb-bp) {
       padding: 3.2rem 6rem;
     }
+
+    @include breakpoint($sm-bp) {
+      gap: 1.6rem;
+    }
   }
 
   &__title {
     font-size: 9.8rem;
     line-height: 11.3rem;
     font-weight: $f-s;
-    color: #FFF;
+    color: #fff;
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
@@ -98,6 +112,11 @@
       line-height: 4.8rem;
     }
 
+    @include breakpoint($sm-bp) {
+      font-size: 2.4rem;
+      line-height: 2.2rem;
+    }
+
     span {
       display: flex;
       align-items: center;
@@ -107,6 +126,10 @@
       color: inherit;
       white-space: nowrap;
       margin-right: 3.3rem;
+
+      @include breakpoint($xs-bp) {
+        margin-right: 0;
+      }
     }
 
     svg {
@@ -125,13 +148,19 @@
         height: 3.8rem;
         width: 7.6rem;
       }
+
+      @include breakpoint($sm-bp) {
+        width: 3.5rem;
+        height: 1.7rem;
+        margin-right: 1.2rem;
+      }
     }
   }
 
   &__text {
     font-size: 1.8rem;
     line-height: 2.4rem;
-    color: #FFF;
+    color: #fff;
     font-family: $ff-a;
     max-width: 41.8rem;
     margin-left: 65.3rem;
@@ -143,12 +172,19 @@
     @include breakpoint($jb-bp) {
       margin-left: 45%;
     }
+
+    @include breakpoint($sm-bp) {
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+      margin-left: 0;
+      margin-bottom: 0.8rem;
+    }
   }
 
   &__btn {
     border: 0.2rem solid $orange;
     background-color: $orange;
-    color: #FFF;
+    color: #fff;
     width: 14.8rem;
     height: 14.8rem;
     display: flex;
@@ -163,7 +199,7 @@
     position: absolute;
     top: 18.2rem;
     left: 41rem;
-    transition: .3s;
+    transition: 0.3s;
 
     &:hover {
       background-color: $orange-light;
@@ -179,6 +215,23 @@
       left: 14rem;
       top: unset;
       bottom: 3rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      position: static;
+      margin: 0 auto;
+    }
+
+    @include breakpoint($xs-bp) {
+      width: 100%;
+      height: fit-content;
+      padding: 1.6rem;
+      border-radius: 5.6rem;
+      font-size: 1.6rem;
+      line-height: 2rem;
+      text-transform: none;
+      font-family: $ff-a;
+      font-weight: $f-r;
     }
   }
 }

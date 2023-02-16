@@ -261,7 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         })
       }
-      
+
     }
   } else {
     mainServiceItems.forEach(item => new Dropdown(item));
@@ -283,6 +283,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+  //<==
+
+  // BUSINESS BANER
+  // if (document.querySelector(".business-baner")) {
+  // const SVGLine = document.querySelector(".business-baner-bg__line svg");
+  // console.log(SVGLine)
+  // gsap.from(SVGLine, {
+  //   duration: 5,
+  //   drawSVG: 0,
+  // })
+  // }
   //<==
 
 })
