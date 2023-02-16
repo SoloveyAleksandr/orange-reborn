@@ -338,23 +338,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const items = gsap.utils.toArray(".partners-list-item");
 
     (() => {
-      let lastNum = 0;
+      // let animatedItems = [];
+      const animatedItems = new Map();
+      
       (function animate() {
         const num = Math.round(gsap.utils.random(0, items.length - 1));
 
-        if (num === lastNum) {
+        if (animatedItems[num]) {
           animate();
           return;
         } else {
-          lastNum = num;
+          animatedItems[num] = true;
           gsap.to(items[num], {
             scale: 1.2,
             filter: "grayscale(0) drop-shadow(0 0 1rem rgba(0, 0, 0, 0.5))",
             y: "-2rem",
             duration: 2,
+            delay: 1,
             yoyo: true,
             repeat: 1,
-            onComplete: animate
+            onComplete: () => animatedItems[num] = false,
+            onStart: animate
           });
         }
       })()
