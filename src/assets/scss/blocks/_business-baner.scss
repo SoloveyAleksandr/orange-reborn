@@ -1,5 +1,6 @@
 .business-baner {
   padding: 7rem 0;
+  overflow: hidden;
 
   @include breakpoint($mm-bp) {
     padding: 5rem 0;

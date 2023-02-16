@@ -340,7 +340,7 @@ document.addEventListener("DOMContentLoaded", () => {
     (() => {
       // let animatedItems = [];
       const animatedItems = new Map();
-      
+
       (function animate() {
         const num = Math.round(gsap.utils.random(0, items.length - 1));
 
@@ -388,4 +388,98 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   //<==
 
+  // business-baner
+  const businessBaner = document.querySelector(".business-baner");
+  if (businessBaner) {
+    const line = businessBaner.querySelector(".business-baner-bg__line");
+    const btn = businessBaner.querySelector(".business-baner__btn");
+    const title = businessBaner.querySelector(".business-baner__title");
+    const text = businessBaner.querySelector(".business-baner__text");
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: businessBaner,
+        start: "top 80%",
+        end: "bottom top",
+        toggleActions: "play none none reverse",
+      }
+    });
+
+    tl.from(line, {
+      x: "-100vw",
+      duration: 2,
+      ease: "back.out(2)",
+    }, "sin");
+
+    tl.from(title, {
+      y: "-10rem",
+      opacity: 0,
+      duration: 1,
+      delay: 0.8
+    }, "sin")
+
+    tl.from(text, {
+      y: "10rem",
+      opacity: 0,
+      duration: 1,
+      delay: 1.5,
+    }, "sin")
+
+    tl.fromTo(btn, {
+      opacity: 0,
+    }, {
+      opacity: 1,
+      duration: 0.5,
+    })
+
+  }
+  //<==
+
+  //
+  const digitalPack = document.querySelector(".digital-pack");
+  if (digitalPack) {
+    const arrows = gsap.utils.toArray(".digital-pack-bg__arrow");
+    const btn = digitalPack.querySelector(".digital-pack__btn");
+    const title = digitalPack.querySelector(".digital-pack__title");
+    const text = digitalPack.querySelector(".digital-pack__text");
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: digitalPack,
+        start: "top 80%",
+        end: "bottom top",
+        toggleActions: "play none none reverse",
+      }
+    });
+
+    arrows.forEach((el, i) => {
+      tl.from(el, {
+        x: "-100vw",
+        ease: "back.out(2)",
+        duration: 2,
+      }, "sin")
+    })
+
+    tl.from(title, {
+      opacity: 0,
+      y: "-10rem",
+      duration: 1,
+      delay: 0.5,
+    }, "sin");
+
+    tl.from(text, {
+      opacity: 0,
+      y: "10rem",
+      duration: 1,
+      delay: 1,
+    }, "sin");
+
+    tl.from(btn, {
+      opacity: 0,
+      x: "10rem",
+      duration: 1,
+    });
+
+  }
+  //<==
 })
