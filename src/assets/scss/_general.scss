@@ -25,7 +25,7 @@ span {
   font-size: 1.6rem;
   line-height: 2rem;
   font-family: Arial, sans-serif;
-  transition: .3s;
+  transition: 0.3s;
 
   &:hover {
     background-color: transparent;
@@ -34,7 +34,6 @@ span {
 }
 
 .dropdown {
-
   &._open & {
     &-btn {
       svg {
@@ -62,7 +61,7 @@ span {
       height: 1.8rem;
       fill: $text-black;
       transform: rotate(180deg);
-      transition: .3s;
+      transition: 0.3s;
     }
   }
 
@@ -91,7 +90,7 @@ span {
     font-size: 1.6rem;
     line-height: 2rem;
     font-family: Arial, sans-serif;
-    transition: .3s;
+    transition: 0.3s;
 
     &:hover {
       background-color: transparent;
@@ -105,8 +104,9 @@ span {
     line-height: 1.6rem;
     font-weight: $f-b;
     text-align: left;
-    transition: .3s;
+    transition: 0.3s;
     text-transform: uppercase;
+    color: inherit;
 
     @include breakpoint($sm-bp) {
       max-width: none;
@@ -114,7 +114,6 @@ span {
       font-weight: inherit;
       font-family: inherit;
       text-transform: unset;
-      color: inherit;
     }
   }
 
@@ -156,10 +155,8 @@ span {
     }
   }
 
-  &:hover & {
-    &__text {
-      color: $orange;
-    }
+  &:hover {
+    color: $orange;
   }
 
   @keyframes starRotation {
@@ -193,7 +190,7 @@ span {
   }
 
   &.default-tag_light {
-    background-color: #FEEEE9;
+    background-color: #feeee9;
     color: $text-black;
   }
 
@@ -215,7 +212,7 @@ span {
   gap: 1.2rem;
   padding-left: 1.6rem;
   color: $orange;
-  transition: .3s;
+  transition: 0.3s;
 
   @include breakpoint($mm-bp) {
     font-size: 1.6rem;
@@ -284,7 +281,7 @@ span {
   font-size: 2rem;
   line-height: 2.4rem;
   font-weight: $f-m;
-  transition: .3s;
+  transition: 0.3s;
   width: fit-content;
 
   @include breakpoint($xs-bp) {
