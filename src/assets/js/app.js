@@ -333,4 +333,55 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   //<==
 
+  // PARTNERS
+  if (document.querySelector(".partners")) {
+    const items = gsap.utils.toArray(".partners-list-item");
+
+    (() => {
+      let lastNum = 0;
+      (function animate() {
+        const num = Math.round(gsap.utils.random(0, items.length - 1));
+
+        if (num === lastNum) {
+          animate();
+          return;
+        } else {
+          lastNum = num;
+          gsap.to(items[num], {
+            scale: 1.2,
+            filter: "grayscale(0) drop-shadow(0 0 1rem rgba(0, 0, 0, 0.5))",
+            y: "-2rem",
+            duration: 2,
+            yoyo: true,
+            repeat: 1,
+            onComplete: animate
+          });
+        }
+      })()
+    })()
+    // gsap.to(items[0], {
+    //   scale: 1.2,
+    //   filter: "grayscale(0) drop-shadow(0 2rem 1rem rgba(0, 0, 0, 0.5))",
+    //   y: "-2rem",
+    //   duration: 2,
+    //   yoyo: true,
+    //   repeat: 1,
+    //   onComplete: () => console.log("end")
+    // });
+
+    // const tl = gsap.timeline({ repeat: -1 });
+
+    // items.forEach(item => {
+    //   tl.to(item, {
+    //     scale: 1.2,
+    //     filter: "grayscale(0) drop-shadow(0 2rem 1rem rgba(0, 0, 0, 0.5))",
+    //     y: "-2rem",
+    //     duration: 2,
+    //     yoyo: true,
+    //     repeat: 1,
+    //   });
+    // })
+  }
+  //<==
+
 })
