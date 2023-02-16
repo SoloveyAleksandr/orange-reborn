@@ -425,11 +425,11 @@ document.addEventListener("DOMContentLoaded", () => {
       delay: 1.5,
     }, "sin")
 
-    tl.fromTo(btn, {
+    tl.from(btn, {
       opacity: 0,
-    }, {
-      opacity: 1,
-      duration: 0.5,
+      y: "50rem",
+      duration: 1,
+      ease: "back.out(2)",
     })
 
   }
