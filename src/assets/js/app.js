@@ -452,4 +452,105 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   //<==
+
+  // TYPES 
+  if (document.querySelector(".types")) {
+    const typesList = document.querySelector(".types-list");
+    const typesListRect = typesList.getBoundingClientRect();
+    const startPos = typesListRect.top + window.scrollY;
+
+    class Types {
+      constructor(item) {
+        this.wrapper = typeof item === "string" ? document.querySelector(item) : item;
+        this.content = this.wrapper.querySelector(".types-list-item-content");
+        this.isOpen = this.wrapper.getAttribute("data-open") !== null ? true : false;
+
+        if (this.wrapper && this.content) {
+          this.init();
+        }
+      }
+
+      init() {
+        this.rect = this.wrapper.getBoundingClientRect();
+        this.maxHeight = this.content.offsetHeight * 2 / 10 + "rem";
+
+        this.center = (((this.rect.top + window.scrollY) + this.rect.height / 2) - startPos) / 10 + "rem";
+
+        if (this.isOpen) {
+          this.open();
+        } else this.close();
+      }
+
+      open() {
+        this.content.style.maxHeight = this.maxHeight;
+        this.wrapper.classList.add("_open");
+        this.isOpen = true;
+      }
+
+      close() {
+        this.content.style.maxHeight = 0;
+        this.wrapper.classList.remove("_open");
+        this.wrapper.classList.remove("_next");
+        this.wrapper.classList.remove("_prev");
+        this.isOpen = false;
+      }
+
+      next() {
+        this.wrapper.classList.add("_next");
+      }
+
+      prev() {
+        this.wrapper.classList.add("_prev");
+      }
+    }
+
+    class TypesController {
+      constructor(types) {
+        this.types = types;
+        this.imgContainer = document.querySelector(".types-img");
+        this.img = this.imgContainer.querySelector("img");
+
+        if (this.img && this.imgContainer) {
+          this.init();
+        }
+      }
+
+      init() {
+        this.imgHeight = this.imgContainer.offsetHeight / 10 / 2 + "rem";
+
+        this.types.forEach((type, index) => {
+          if (type.isOpen) {
+            this.imgContainer.style.top = `calc(${type.center} - ${this.imgHeight})`;
+          }
+          type.wrapper.addEventListener("mouseenter", (e) => {
+            this.open.call(this, index);
+          })
+        })
+      }
+
+      open(index) {
+        this.types.forEach((type) => {
+          type.close();
+        })
+        this.types[index].open();
+        if (this.types[index - 1]) {
+          this.types[index - 1].prev();
+        }
+        if (this.types[index + 1]) {
+          this.types[index + 1].next();
+        }
+        this.imgContainer.style.top = `calc(${this.types[index].center} - ${this.imgHeight})`;
+      }
+    }
+
+    const items = gsap.utils.toArray(".types-list-item");
+    const types = [];
+
+    items.forEach(item => {
+      types.push(new Types(item));
+    })
+
+    new TypesController(types);
+  }
+  //<==
 })
