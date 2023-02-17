@@ -3,6 +3,14 @@
   padding: 6.2rem 2.4rem 7rem;
   margin: 0 auto;
 
+  @include breakpoint($mm-bp) {
+    padding: 5rem 2.4rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    padding: 3rem 2.4rem;
+  }
+
   &__title {
     font-size: 7rem;
     line-height: 7.2rem;
@@ -12,8 +20,30 @@
     gap: 1.2rem;
     margin-bottom: 5.6rem;
 
+    @include breakpoint($mm-bp) {
+      font-size: 4.8rem;
+      line-height: 5.2rem;
+      margin-bottom: 4.8rem;
+      gap: 0rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      font-size: 2.4rem;
+      line-height: 2.8rem;
+      display: inline-block;
+      margin-bottom: 2.4rem;
+    }
+
     span {
       padding-left: 10.9rem;
+
+      @include breakpoint($mm-bp) {
+        padding-left: 9.6rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        padding: 0;
+      }
     }
   }
 
@@ -33,6 +63,10 @@
       border-bottom: 0.1rem solid #EEEEF4;
       cursor: pointer;
 
+      @include breakpoint($sm-bp) {
+        padding: 2rem;
+      }
+
       &._open {
         border-radius: 2.4rem;
         background-color: #EEEEF4;
@@ -41,6 +75,11 @@
       &._open & {
         &__link {
           background-color: $orange;
+
+          @include breakpoint($jb-bp) {
+            opacity: 1;
+            pointer-events: all;
+          }
 
           svg {
             fill: #fff;
@@ -77,6 +116,18 @@
         border: 0.1rem solid $orange;
         border-radius: 50%;
 
+        @include breakpoint($jb-bp) {
+          top: unset;
+          bottom: 4rem;
+        }
+
+        @include breakpoint($jb-bp) {
+          bottom: 2rem;
+          right: 2rem;
+          opacity: 0;
+          pointer-events: none;
+        }
+
         svg {
           object-fit: contain;
           object-position: center center;
@@ -89,6 +140,14 @@
       &__title {
         font-size: 3.8rem;
         font-weight: $f-s;
+
+        @include breakpoint($mm-bp) {
+          font-size: 3.2rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          font-size: 1.6rem;
+        }
       }
 
       &-content {
@@ -99,6 +158,14 @@
         pointer-events: none;
         overflow: hidden;
         // transition: .5s;
+
+        @include breakpoint($mm-bp) {
+          max-width: 44rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          max-width: 100%;
+        }
       }
 
       &__text {
@@ -106,12 +173,61 @@
         font-size: 1.8rem;
         line-height: 2.4rem;
         font-family: $ff-a;
+
+        @include breakpoint($mm-bp) {
+          padding: 0.8rem 0rem;
+          font-size: 1.6rem;
+          line-height: 2.2rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          font-size: 1.2rem;
+          line-height: 1.6rem;
+        }
       }
 
       &__price {
         font-size: 2.4rem;
         line-height: 2.4rem;
         font-weight: $f-b;
+
+        @include breakpoint($mm-bp) {
+          font-size: 2rem;
+        }
+
+        @include breakpoint($jb-bp) {
+          margin-bottom: 2rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          font-size: 1.4rem;
+          line-height: 2.4rem;
+          margin-bottom: 1.2rem;
+        }
+      }
+
+      &__img {
+        width: 100%;
+        border-radius: 2.4rem;
+        overflow: hidden;
+        display: none;
+
+        @include breakpoint($jb-bp) {
+          display: block;
+        }
+
+        @include breakpoint($sm-bp) {
+          width: unset;
+          margin-right: 2.9rem;
+          margin-bottom: 6.4rem;
+          border-radius: 1.6rem;
+        }
+
+        img {
+          object-fit: cover;
+          object-position: center center;
+          width: 100%;
+        }
       }
     }
   }
@@ -126,13 +242,23 @@
     transition: .1s;
     transform-style: preserve-3d;
 
+    @include breakpoint($mm-bp) {
+      width: 45rem;
+      height: 25rem;
+      transform: rotateY(-10deg) rotateX(6deg);
+    }
+
     &-wrapper {
       padding: 5rem;
       position: absolute;
-      right: 20rem;
+      right: 15rem;
       transition: .5s ease-in-out;
       perspective: 50rem;
       pointer-events: none;
+
+      @include breakpoint($jb-bp) {
+        display: none;
+      }
     }
 
     img {

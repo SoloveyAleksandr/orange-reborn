@@ -564,15 +564,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       function rotateImage(mouseX, mouseY) {
         const xCenter = (imgRect.left + window.scrollX) + (imgRect.width / 2);
-        // const yCenter = (imgRect.top + window.scrollY) + (imgRect.height / 2);
         const xDiff = Math.abs(mouseX - xCenter) / ((imgRect.width / 2) / 100) / 100 * 3;
-        // const yDiff = Math.abs(mouseY - yCenter) / ((imgRect.height / 2) / 100) / 100 * 2;
 
         const xDeg = gsap.utils.clamp(0, 5, xDiff);
-        // const yDeg = gsap.utils.clamp(0, 5, yDiff);
 
         imgCard.style.transform = `rotateY(${mouseX > xCenter ? xDeg : xDeg * -1}deg)`;
-        // imgCard.style.transform = `rotateX(${mouseY > xCenter ? yDeg * -1 : yDeg}deg) rotateY(${mouseX > yCenter ? xDeg : xDeg * -1}deg)`;
       }
     }
 
