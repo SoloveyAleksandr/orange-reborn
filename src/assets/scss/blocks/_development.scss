@@ -121,4 +121,55 @@
       }
     }
   }
+
+  &-history {
+    background-color: $text-black;
+    border-top-left-radius: 6.4rem;
+    border-top-right-radius: 6.4rem;
+    padding-bottom: 14rem;
+
+    @include breakpoint($jb-bp) {
+      border-top-left-radius: 4rem;
+      border-top-right-radius: 4rem;
+    }
+
+    *:not(.development-history__link) {
+      color: #fff;
+    }
+
+    &-swiper {
+      width: 100%;
+      height: 42.4rem;
+      margin-bottom: 14rem;
+      padding: 0 2.4rem;
+
+      @include breakpoint($mm-bp) {
+        margin-bottom: 8rem;
+        height: 37rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        height: 19rem;
+        margin-bottom: 4rem;
+      }
+
+      &-wrapper {
+        height: 100%;
+        width: fit-content;
+      }
+
+      &-slide {
+        height: 100%;
+        width: auto;
+        border-radius: 1.6rem;
+        overflow: hidden;
+
+        &__img {
+          object-fit: cover;
+          object-position: center center;
+          height: 100%;
+        }
+      }
+    }
+  }
 }

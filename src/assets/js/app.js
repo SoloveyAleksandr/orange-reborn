@@ -571,7 +571,19 @@ document.addEventListener("DOMContentLoaded", () => {
         imgCard.style.transform = `rotateY(${mouseX > xCenter ? xDeg : xDeg * -1}deg)`;
       }
     }
+  }
+  //<==
 
+  // DEVELOPMENT
+  const devHistorySwiper = document.querySelector(".development-history-swiper");
+
+  if (devHistorySwiper) {
+    const swiper = new Swiper(devHistorySwiper, {
+      speed: 400,
+      slidesPerView: "auto",
+      freeMode: true,
+      spaceBetween: 16,
+    })
   }
   //<==
 })
