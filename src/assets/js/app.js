@@ -432,21 +432,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const aboutMainImgWrapper = document.querySelector(".about-main-img-wrapper");
 
   if (aboutMainImgWrapper) {
-    const aboutMainImg = aboutMainImgWrapper.querySelector(".about-main-img");
-    const imagRect = aboutMainImg.getBoundingClientRect();
-    const xCenter = (imagRect.left + window.scrollX) + (imagRect.width / 2);
-    const yCenter = (imagRect.top + window.scrollY) + (imagRect.height / 2);
+    if (window.matchMedia("(min-width: 1201px)").matches) {
+      const aboutMainImg = aboutMainImgWrapper.querySelector(".about-main-img");
+      const imagRect = aboutMainImg.getBoundingClientRect();
+      const xCenter = (imagRect.left + window.scrollX) + (imagRect.width / 2);
+      const yCenter = (imagRect.top + window.scrollY) + (imagRect.height / 2);
 
-    window.addEventListener("mousemove", (e) => rotateImage(e.pageX, e.pageY));
+      window.addEventListener("mousemove", (e) => rotateImage(e.pageX, e.pageY));
 
-    function rotateImage(mouseX, mouseY) {
-      const xDiff = Math.abs(mouseX - xCenter) / ((imagRect.width / 2) / 100) / 100;
-      const yDiff = Math.abs(mouseY - yCenter) / ((imagRect.height / 2) / 100) / 100;
+      function rotateImage(mouseX, mouseY) {
+        const xDiff = Math.abs(mouseX - xCenter) / ((imagRect.width / 2) / 100) / 100;
+        const yDiff = Math.abs(mouseY - yCenter) / ((imagRect.height / 2) / 100) / 100;
 
-      const xDeg = gsap.utils.clamp(0, 1.5, xDiff);
-      const yDeg = gsap.utils.clamp(0, 1.5, yDiff);
+        const xDeg = gsap.utils.clamp(0, 1.5, xDiff);
+        const yDeg = gsap.utils.clamp(0, 1.5, yDiff);
 
-      aboutMainImg.style.transform = `rotateX(${mouseY > xCenter ? yDeg * -1 : yDeg}deg) rotateY(${mouseX > yCenter ? xDeg : xDeg * -1}deg) translateZ(-1rem)`
+        aboutMainImg.style.transform = `rotateX(${mouseY > xCenter ? yDeg * -1 : yDeg}deg) rotateY(${mouseX > yCenter ? xDeg : xDeg * -1}deg) translateZ(-1rem)`
+      }
     }
   }
   //<==
