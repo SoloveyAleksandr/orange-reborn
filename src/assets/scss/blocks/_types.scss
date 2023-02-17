@@ -31,7 +31,7 @@
       position: relative;
       border-top: 0.1rem solid #EEEEF4;
       border-bottom: 0.1rem solid #EEEEF4;
-      transition: .3s;
+      cursor: pointer;
 
       &._open {
         border-radius: 2.4rem;
@@ -98,7 +98,7 @@
         opacity: 0;
         pointer-events: none;
         overflow: hidden;
-        transition: .5s;
+        // transition: .5s;
       }
 
       &__text {
@@ -117,15 +117,23 @@
   }
 
   &-img {
-    position: absolute;
     width: 50.4rem;
     height: 29rem;
     overflow: hidden;
     border-radius: 2.4rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
     background-color: $orange;
-    right: 20rem;
-    transition: .3s;
+    transition: .1s;
+    transform-style: preserve-3d;
+
+    &-wrapper {
+      padding: 5rem;
+      position: absolute;
+      right: 20rem;
+      transition: .5s ease-in-out;
+      perspective: 50rem;
+      pointer-events: none;
+    }
 
     img {
       object-fit: cover;

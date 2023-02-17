@@ -459,11 +459,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const typesListRect = typesList.getBoundingClientRect();
     const startPos = typesListRect.top + window.scrollY;
 
+    const imgContainer = document.querySelector(".types-img-wrapper");
+    const imgCard = imgContainer.querySelector(".types-img");
+    const img = imgContainer.querySelector("img");
+    const imgRect = imgContainer.getBoundingClientRect();
+
     class Types {
       constructor(item) {
         this.wrapper = typeof item === "string" ? document.querySelector(item) : item;
         this.content = this.wrapper.querySelector(".types-list-item-content");
-        this.isOpen = this.wrapper.getAttribute("data-open") !== null ? true : false;
+        this.data = this.wrapper.getAttribute("data-img");
 
         if (this.wrapper && this.content) {
           this.init();
@@ -471,19 +476,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       init() {
-        this.rect = this.wrapper.getBoundingClientRect();
         this.maxHeight = this.content.offsetHeight * 2 / 10 + "rem";
+      }
 
-        this.center = (((this.rect.top + window.scrollY) + this.rect.height / 2) - startPos) / 10 + "rem";
-
-        if (this.isOpen) {
-          this.open();
-        } else this.close();
+      setCenter() {
+        const rect = this.wrapper.getBoundingClientRect();
+        this.center = (rect.top + window.scrollY) + (rect.height / 2) - startPos;
       }
 
       open() {
         this.content.style.maxHeight = this.maxHeight;
         this.wrapper.classList.add("_open");
+        img.setAttribute("src", this.data);
         this.isOpen = true;
       }
 
@@ -507,24 +511,26 @@ document.addEventListener("DOMContentLoaded", () => {
     class TypesController {
       constructor(types) {
         this.types = types;
-        this.imgContainer = document.querySelector(".types-img");
-        this.img = this.imgContainer.querySelector("img");
 
-        if (this.img && this.imgContainer) {
-          this.init();
-        }
+        this.init();
       }
 
       init() {
-        this.imgHeight = this.imgContainer.offsetHeight / 10 / 2 + "rem";
-
         this.types.forEach((type, index) => {
-          if (type.isOpen) {
-            this.imgContainer.style.top = `calc(${type.center} - ${this.imgHeight})`;
-          }
-          type.wrapper.addEventListener("mouseenter", (e) => {
+          type.open();
+          type.setCenter();
+          type.close();
+          type.wrapper.addEventListener("click", (e) => {
             this.open.call(this, index);
           })
+        })
+        this.types.forEach((type) => {
+          type.wrapper.style.transition = "0.5s";
+          type.content.style.transition = "0.5s";
+          if (type.wrapper.getAttribute("data-open") !== null) {
+            type.open();
+            imgContainer.style.top = type.center - (imgRect.height / 2) + "px";
+          }
         })
       }
 
@@ -539,7 +545,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (this.types[index + 1]) {
           this.types[index + 1].next();
         }
-        this.imgContainer.style.top = `calc(${this.types[index].center} - ${this.imgHeight})`;
+
+        imgContainer.style.top = this.types[index].center - (imgRect.height / 2) + "px";
       }
     }
 
@@ -551,6 +558,23 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     new TypesController(types);
+
+    if (window.matchMedia("(min-width: 1201px)").matches) {
+      window.addEventListener("mousemove", (e) => rotateImage(e.pageX, e.pageY));
+
+      function rotateImage(mouseX, mouseY) {
+        const xCenter = (imgRect.left + window.scrollX) + (imgRect.width / 2);
+        const yCenter = (imgRect.top + window.scrollY) + (imgRect.height / 2);
+        const xDiff = Math.abs(mouseX - xCenter) / ((imgRect.width / 2) / 100) / 100 * 2;
+        const yDiff = Math.abs(mouseY - yCenter) / ((imgRect.height / 2) / 100) / 100 * 2;
+
+        const xDeg = gsap.utils.clamp(0, 5, xDiff);
+        const yDeg = gsap.utils.clamp(0, 5, yDiff);
+
+        imgCard.style.transform = `rotateX(${mouseY > xCenter ? yDeg * -1 : yDeg}deg) rotateY(${mouseX > yCenter ? xDeg : xDeg * -1}deg)`;
+      }
+    }
+
   }
   //<==
 })
