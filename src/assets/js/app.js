@@ -333,61 +333,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   //<==
 
-  // PARTNERS
-  if (document.querySelector(".partners")) {
-    const items = gsap.utils.toArray(".partners-list-item");
-
-    (() => {
-      // let animatedItems = [];
-      const animatedItems = new Map();
-
-      (function animate() {
-        const num = Math.round(gsap.utils.random(0, items.length - 1));
-
-        if (animatedItems[num]) {
-          animate();
-          return;
-        } else {
-          animatedItems[num] = true;
-          gsap.to(items[num], {
-            scale: 1.2,
-            filter: "grayscale(0) drop-shadow(0 0 1rem rgba(0, 0, 0, 0.5))",
-            y: "-2rem",
-            duration: 2,
-            delay: 1,
-            yoyo: true,
-            repeat: 1,
-            onComplete: () => animatedItems[num] = false,
-            onStart: animate
-          });
-        }
-      })()
-    })()
-    // gsap.to(items[0], {
-    //   scale: 1.2,
-    //   filter: "grayscale(0) drop-shadow(0 2rem 1rem rgba(0, 0, 0, 0.5))",
-    //   y: "-2rem",
-    //   duration: 2,
-    //   yoyo: true,
-    //   repeat: 1,
-    //   onComplete: () => console.log("end")
-    // });
-
-    // const tl = gsap.timeline({ repeat: -1 });
-
-    // items.forEach(item => {
-    //   tl.to(item, {
-    //     scale: 1.2,
-    //     filter: "grayscale(0) drop-shadow(0 2rem 1rem rgba(0, 0, 0, 0.5))",
-    //     y: "-2rem",
-    //     duration: 2,
-    //     yoyo: true,
-    //     repeat: 1,
-    //   });
-    // })
-  }
-  //<==
-
   // business-baner
   const businessBaner = document.querySelector(".business-baner");
   if (businessBaner) {
@@ -435,7 +380,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   //<==
 
-  //
+  // digital-pack
   const digitalPack = document.querySelector(".digital-pack");
   if (digitalPack) {
     const arrows = gsap.utils.toArray(".digital-pack-bg__arrow");
@@ -480,6 +425,29 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: 1,
     });
 
+  }
+  //<==
+
+  // ABOUT
+  const aboutMainImgWrapper = document.querySelector(".about-main-img-wrapper");
+
+  if (aboutMainImgWrapper) {
+    const aboutMainImg = aboutMainImgWrapper.querySelector(".about-main-img");
+    const imagRect = aboutMainImg.getBoundingClientRect();
+    const xCenter = (imagRect.left + window.scrollX) + (imagRect.width / 2);
+    const yCenter = (imagRect.top + window.scrollY) + (imagRect.height / 2);
+
+    window.addEventListener("mousemove", (e) => rotateImage(e.pageX, e.pageY));
+
+    function rotateImage(mouseX, mouseY) {
+      const xDiff = Math.abs(mouseX - xCenter) / ((imagRect.width / 2) / 100) / 100;
+      const yDiff = Math.abs(mouseY - yCenter) / ((imagRect.height / 2) / 100) / 100;
+
+      const xDeg = gsap.utils.clamp(0, 1.5, xDiff);
+      const yDeg = gsap.utils.clamp(0, 1.5, yDiff);
+
+      aboutMainImg.style.transform = `rotateX(${mouseY > xCenter ? yDeg * -1 : yDeg}deg) rotateY(${mouseX > yCenter ? xDeg : xDeg * -1}deg) translateZ(-1rem)`
+    }
   }
   //<==
 })
