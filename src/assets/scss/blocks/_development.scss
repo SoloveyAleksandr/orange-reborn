@@ -172,4 +172,126 @@
       }
     }
   }
+
+  &-questions {
+    max-width: 133.8rem;
+    padding: 7rem 2.4rem;
+    margin: 0 auto;
+
+    &__title {
+      font-size: 7rem;
+      line-height: 7.4rem;
+      font-weight: $f-s;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 6rem;
+
+      span {
+        padding-left: 10.9rem;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+
+      &-item {
+        padding: 4rem 3.2rem;
+        border-top: 0.1rem solid $grey;
+
+        &:last-child {
+          border-bottom: 0.1rem solid $grey;
+        }
+
+        &__btn {
+          width: 100%;
+          font-size: 3.2rem;
+          font-weight: $f-s;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          &._active {
+            .development-questions-list-item__icon {
+              &::after {
+                transform: rotate(0);
+              }
+            }
+          }
+        }
+
+        &__icon {
+          width: 4.8rem;
+          height: 4.8rem;
+          border-radius: 50%;
+          border: 0.1rem solid $orange;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          @include breakpoint($jb-bp) {
+            display: flex;
+          }
+
+          &::after,
+          &::before {
+            content: "";
+            width: 1.6rem;
+            height: 0.1rem;
+            background-color: $orange;
+            position: absolute;
+          }
+
+          &::after {
+            transform: rotate(90deg);
+            transition: .3s;
+          }
+        }
+
+        &__content {
+          transition: .3s;
+          overflow: hidden;
+          max-width: 63.6rem;
+
+          &> {
+            p {
+              font-size: 1.8rem;
+              line-height: 2.4rem;
+              font-family: $ff-a;
+
+              &:first-child {
+                padding-top: 1.2rem;
+              }
+            }
+
+            ul {
+              display: flex;
+              flex-direction: column;
+
+              &> {
+                li {
+                  font-size: 1.8rem;
+                  line-height: 2.4rem;
+                  font-family: $ff-a;
+                  padding-left: 1rem;
+                  display: flex;
+                  align-items: center;
+                  gap: 1rem;
+
+                  &::before {
+                    content: "";
+                    width: 0.4rem;
+                    height: 0.4rem;
+                    background-color: $text-black;
+                    border-radius: 50%;
+                    flex: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

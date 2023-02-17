@@ -14,11 +14,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     init() {
       this.maxHeight = this.content.offsetHeight * 2 / 10 + "rem";
-      if (window.matchMedia("(min-width: 851px)").matches) {
-        this.wrapper.addEventListener("mouseenter", this.open.bind(this));
-        this.wrapper.addEventListener("mouseleave", this.close.bind(this));
-      } else {
+
+      if (this.wrapper.getAttribute("data-click") !== null) {
         this.btn.addEventListener("click", this.handleClick.bind(this));
+      } else {
+        if (window.matchMedia("(min-width: 851px)").matches) {
+          this.wrapper.addEventListener("mouseenter", this.open.bind(this));
+          this.wrapper.addEventListener("mouseleave", this.close.bind(this));
+        } else {
+          this.btn.addEventListener("click", this.handleClick.bind(this));
+        }
       }
 
       if (this.isOpen) {
@@ -585,5 +590,8 @@ document.addEventListener("DOMContentLoaded", () => {
       spaceBetween: 16,
     })
   }
+
+  const developmentQuestionsItems = gsap.utils.toArray(".development-questions-list-item");
+  developmentQuestionsItems.forEach(item => new Dropdown(item));
   //<==
 })
