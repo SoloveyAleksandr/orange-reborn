@@ -331,6 +331,11 @@
       align-items: center;
       justify-content: center;
       gap: 1.2rem;
+      display: none;
+
+      @include breakpoint($jb-bp) {
+        display: flex;
+      }
 
       &__bullet {
         width: 1.6rem;
