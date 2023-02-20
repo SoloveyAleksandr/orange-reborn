@@ -1,0 +1,166 @@
+.service {
+  position: relative;
+  max-width: 133.8rem;
+  padding: 7rem 2.4rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+
+  @include breakpoint($mm-bp) {
+    padding: 5rem 2.4rem;
+  }
+
+  @include breakpoint($jb-bp) {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  &-info {
+    position: sticky;
+    top: 10rem;
+    left: 0;
+    flex: 1;
+    height: 63.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint($mm-bp) {
+      height: 56rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      flex: content;
+      width: 100%;
+      height: 27.6rem;
+      position: static;
+    }
+
+    picture {
+      width: 100%;
+      height: 100%;
+    }
+
+    &__bg {
+      object-fit: fill;
+      object-position: center center;
+      width: 100%;
+      height: 100%;
+
+      @include breakpoint($jb-bp) {
+        height: 27.6rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        height: 19.5rem;
+      }
+    }
+
+    &__title {
+      font-size: 9.8rem;
+      line-height: 8.8rem;
+      font-weight: $f-s;
+      text-transform: uppercase;
+      text-align: center;
+      position: absolute;
+      max-width: 80%;
+
+      @include breakpoint($mm-bp) {
+        font-size: 6.4rem;
+        line-height: 5.4rem;
+        max-width: 60%;
+      }
+
+      @include breakpoint($jb-bp) {
+        max-width: 16rem;
+        font-size: 3.2rem;
+        line-height: 100%;
+      }
+
+      span {
+        position: relative;
+
+        svg {
+          position: absolute;
+          width: 15rem;
+          height: 13.4rem;
+          bottom: 0;
+          right: -6rem;
+
+          @include breakpoint($mm-bp) {
+            width: 8.4rem;
+            height: 7.5rem;
+            bottom: 0.6rem;
+            right: -2.6rem;
+          }
+
+          @include breakpoint($jb-bp) {
+            width: 4.3rem;
+            height: 3.9rem;
+            bottom: 0.1rem;
+            right: -1.4rem;
+          }
+        }
+      }
+    }
+  }
+
+  &-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    @include breakpoint($jb-bp) {
+      gap: 2.4rem;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      padding: 4rem 22.8rem 4rem 4rem;
+      border-radius: 2.4rem;
+      background-color: #EEEEF4;
+
+      @include breakpoint($mm-bp) {
+        padding: 3.2rem 17.6rem 3.2rem 3.2rem;
+        gap: 0.8rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        padding: 2.4rem;
+      }
+
+      h4 {
+        font-size: 3.2rem;
+        font-weight: $f-s;
+
+        @include breakpoint($mm-bp) {
+          font-size: 2.6rem;
+        }
+
+        @include breakpoint($jb-bp) {
+          font-size: 1.8rem;
+        }
+      }
+
+      p {
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        font-family: $ff-a;
+
+        @include breakpoint($mm-bp) {
+          font-size: 1.6rem;
+          line-height: 2.2rem;
+        }
+
+        @include breakpoint($jb-bp) {
+          font-size: 1.4rem;
+          line-height: 1.8rem;
+        }
+      }
+    }
+  }
+}
