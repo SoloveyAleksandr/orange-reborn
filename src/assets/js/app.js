@@ -593,5 +593,65 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const developmentQuestionsItems = gsap.utils.toArray(".development-questions-list-item");
   developmentQuestionsItems.forEach(item => new Dropdown(item));
+
+  if (document.querySelector(".development-stage")) {
+
+    const marker = document.querySelector(".development-stage-timeline__marker");
+
+    const swiper = new Swiper(".development-stage-swiper", {
+      speed: 500,
+      on: {
+        "slideChange": (swiper) => {
+          const left = 100 / (swiper.slides.length - 1);
+          marker.style.left = `calc(${left * swiper.activeIndex}% - ${swiper.activeIndex > 0 ? marker.offsetWidth : 0}px)`;
+          marker.innerText = swiper.activeIndex + 1 > 9 ? swiper.activeIndex + 1 : "0" + (swiper.activeIndex + 1);
+
+          if (swiper.activeIndex === swiper.slides.length - 1) {
+            marker.classList.add("_orange");
+          } else {
+            marker.classList.remove("_orange");
+          }
+          if (swiper.activeIndex === 0) {
+            marker.style.left = "0px"
+          }
+        },
+      },
+      effect: 'creative',
+      creativeEffect: {
+        prev: {
+          translate: ["-50%", 0, -400],
+          opacity: 0,
+        },
+        next: {
+          translate: ["100%", 0, 0],
+          opacity: 1
+        },
+      },
+      pagination: {
+        el: ".development-stage-pagination",
+        type: "bullets",
+        clickable: true,
+        bulletClass: "development-stage-pagination__bullet",
+        bulletActiveClass: "development-stage-pagination__bullet_active",
+      },
+    });
+
+    window.swiper = swiper
+
+    // const swiper = new Swiper(".development-stage-swiper", {
+    //   speed: 1000,
+    //   scrollbar: {
+    //     el: ".development-stage-timeline",
+    //     draggable: true,
+    //     dragClass: "development-stage-timeline__marker",
+    //     dragSize: 56,
+    //   },
+    //   on: {
+    //     "slideChange": (swiper) => {
+    //       marker.innerText = swiper.activeIndex + 1;
+    //     }
+    //   }
+    // });
+  }
   //<==
 })
