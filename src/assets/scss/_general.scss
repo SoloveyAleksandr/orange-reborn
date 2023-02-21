@@ -31,6 +31,16 @@ span {
     background-color: transparent;
     color: $text-black;
   }
+
+  &_light {
+    color: $text-black;
+    background-color: transparent;
+
+    &:hover {
+      color: #fff;
+      background-color: $orange;
+    }
+  }
 }
 
 .dropdown {
