@@ -654,4 +654,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // });
   }
   //<==
+
+  // SEO
+  if (window.matchMedia("(min-width: 851px)").matches &&  document.querySelector(".seo-steps-swiper")) {
+    const swiper = new Swiper(".seo-steps-swiper", {
+      freeMode: true,
+      slidesPerView: "auto",
+      speed: 500,
+      spaceBetween: 16,
+    })
+  }
+  //<==
 })

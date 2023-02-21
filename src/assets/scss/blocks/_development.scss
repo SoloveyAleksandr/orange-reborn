@@ -116,6 +116,25 @@
         color: #fff;
       }
 
+      @include breakpoint($jb-bp) {
+        .big-icon-btn-icon {
+          width: 8rem;
+          height: 8rem;
+          background-color: $orange;
+          border-radius: 50%;
+
+          &__star {
+            display: none;
+          }
+
+          &__arrow {
+            fill: #fff;
+            width: 3.2rem;
+            height: 3.2rem;
+          }
+        }
+      }
+
       @include breakpoint($xs-bp) {
         width: 100%;
       }
