@@ -1,0 +1,108 @@
+.contacts {
+
+  &-head {
+    &-info {
+      width: fit-content;
+      margin-left: auto;
+      display: grid;
+      grid-template-columns: 52.8rem 63.7rem;
+      gap: 1.6rem;
+
+      @include breakpoint($mm-bp) {
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 9.6rem;
+        width: unset;
+      }
+
+      @include breakpoint($jb-bp) {
+        margin: 0;
+      }
+
+      @include breakpoint($sm-bp) {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+
+      &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 1.6rem;
+        padding: 4rem 4rem 3.9rem 0;
+        border-bottom: 0.1rem solid $grey;
+
+        @include breakpoint($mm-bp) {
+          padding: 3.2rem 3.2rem 3.1rem 0;
+        }
+
+        @include breakpoint($jb-bp) {
+          padding: 1.6rem 1.6rem 1.5rem 0;
+          gap: 0.8rem;
+        }
+      }
+
+      &__title {
+        font-size: 2.4rem;
+        line-height: 2.4rem;
+
+        @include breakpoint($jb-bp) {
+          font-size: 1.6rem;
+        }
+      }
+
+      &__link {
+        font-size: 3.2rem;
+        line-height: 3.2rem;
+        font-weight: $f-s;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: .3s;
+
+        @include breakpoint($mm-bp) {
+          font-size: 2.6rem;
+          line-height: 2.6rem;
+        }
+
+        @include breakpoint($jb-bp) {
+          font-size: 1.8rem;
+          line-height: 1.8rem;
+        }
+
+        &:hover {
+          color: rgba(26, 208, 63, 1);
+
+          span {
+            border-color: rgba(26, 208, 63, 1);
+
+            svg {
+              fill: rgba(26, 208, 63, 1);
+            }
+          }
+        }
+
+        span {
+          flex: none;
+          width: 4.8rem;
+          height: 4.8rem;
+          border-radius: 50%;
+          border: 0.1rem solid $grey;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: .3s;
+
+          svg {
+            object-fit: contain;
+            object-position: center center;
+            width: 1.6rem;
+            height: 1.6rem;
+            fill: $grey;
+            transition: .3s;
+          }
+        }
+      }
+    }
+  }
+}
