@@ -732,6 +732,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const contactsList = gsap.utils.toArray(".request-form-contacts__item");
 
     contactsList.forEach(item => new Input(item));
+
+    if (window.matchMedia("(max-width: 850px)").matches) {
+      new Swiper(".request-form-services__swiper", {
+        freeMode: true,
+        speed: 500,
+        slidesPerView: "auto",
+        spaceBetween: 8,
+      })
+    }
   }
   //<==
 });

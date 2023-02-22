@@ -33,9 +33,13 @@
         gap: 0rem;
       }
 
+      @include breakpoint($jb-bp) {
+        font-size: 3.2rem;
+        margin-bottom: 1.6rem;
+      }
+
       @include breakpoint($sm-bp) {
         display: inline-block;
-        font-size: 3.2rem;
         margin-bottom: 1.2rem;
       }
 
