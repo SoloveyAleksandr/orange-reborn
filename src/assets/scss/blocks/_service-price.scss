@@ -62,8 +62,9 @@
   }
 
   &-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @include breakpoint($jb-bp) {
       display: flex;
@@ -82,6 +83,7 @@
       display: flex;
       flex-direction: column;
       border-radius: 1.2rem;
+      width: 33%;
 
       @include breakpoint($mm-bp) {
         padding-bottom: 5.6rem;
@@ -125,8 +127,9 @@
         }
       }
 
-      &_top {
+      &.service-price-list-item_top {
         position: relative;
+        border: none;
         border-radius: 0;
         background-color: #fff;
         box-shadow: 0 0 1.6rem rgba(45, 34, 31, 0.08);
@@ -239,6 +242,7 @@
               &:nth-child(1) {
                 display: none;
               }
+
               &:nth-child(2) {
                 display: block;
               }
@@ -262,7 +266,7 @@
             object-fit: contain;
             object-position: left top;
             flex: none;
-            
+
             &:nth-child(2) {
               display: none;
             }
