@@ -1,0 +1,156 @@
+.request {
+  padding-bottom: 14.2rem;
+
+  &-head {
+    &__text {
+      max-width: 63.5rem;
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      font-family: $ff-a;
+    }
+  }
+
+  &-container {
+    max-width: 133.8rem;
+    padding: 0rem 2.4rem;
+    margin: 0 auto;
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__title {
+      font-size: 3.8rem;
+      font-weight: $f-s;
+      margin-bottom: 3.3rem;
+    }
+
+    &-services {
+      width: 100%;
+      margin-bottom: 7rem;
+
+      &__list {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 1.2rem;
+        row-gap: 1.6rem;
+        max-width: 105rem;
+      }
+
+      &__item {
+        padding: 1.1rem 1.5rem;
+        border: 0.1rem solid $grey;
+        border-radius: 6.4rem;
+        font-size: 2rem;
+        line-height: 2.4rem;
+        cursor: pointer;
+        transition: .3s;
+        user-select: none;
+
+        &._checked {
+          border-color: $orange;
+          background-color: $orange;
+          color: #fff;
+        }
+      }
+
+      &__input {
+        display: none;
+      }
+    }
+
+    &-contacts {
+      width: 100%;
+      max-width: 181rem;
+      margin-bottom: 4.8rem;
+
+      &__inner {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 12.5rem;
+        row-gap: 4.8rem;
+      }
+
+      &__item {
+        position: relative;
+
+        &._focus {
+          .request-form-contacts__placeholder {
+            font-size: 1.4rem;
+            top: -1.4rem;
+          }
+        }
+      }
+
+      &__placeholder {
+        position: absolute;
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        color: $grey;
+        left: 0;
+        top: 1.6rem;
+        transition: .3s;
+        pointer-events: none;
+      }
+
+      &__input {
+        width: 100%;
+        padding: 1.6rem 1.6rem 1.6rem 0;
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        font-family: $ff-a;
+        border: none;
+        border-radius: 0;
+        border-bottom: 0.1rem solid $grey;
+        outline: none;
+
+        &.error {
+          border-color: #E41B1B;
+        }
+      }
+    }
+
+    &__btn {
+      width: 14.8rem;
+      height: 14.8rem;
+      border-radius: 50%;
+      background-color: $orange;
+      color: #fff;
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+      font-weight: $f-b;
+      text-transform: uppercase;
+      border: none;
+      padding: 2rem;
+      margin-bottom: 2.9rem;
+    }
+
+    &__info {
+      max-width: 53.5rem;
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      font-family: $ff-a;
+      color: $grey;
+      display: inline-block;
+
+      a {
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        font-family: $ff-a;
+        position: relative;
+
+        &::after {
+          content: "";
+          width: 120%;
+          height: 0.1rem;
+          background-color: $text-black;
+          position: absolute;
+          top: 100%;
+          left: -10%;
+        }
+      }
+    }
+  }
+}

@@ -14,6 +14,12 @@ span {
   line-height: inherit;
 }
 
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .default-btn {
   display: inline-block;
   width: fit-content;

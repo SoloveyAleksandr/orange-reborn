@@ -50,6 +50,63 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  class Checkbox {
+    constructor(label) {
+      this.label = typeof label === "string" ? document.querySelector(label) : label;
+      this.input = this.label.querySelector("input");
+
+      if (this.label && this.input) {
+        this.init();
+      }
+    }
+
+    init() {
+      this.input.addEventListener("change", this.handleChange.bind(this));
+
+      if (this.input.checked) {
+        this.label.classList.add("_checked");
+      }
+    }
+
+    handleChange() {
+      if (this.input.checked) {
+        this.label.classList.add("_checked");
+      } else this.label.classList.remove("_checked");
+    }
+  }
+
+  class Input {
+    constructor(container) {
+      this.container = typeof container === "string" ? document.querySelector(container) : container;
+      this.input = this.container.querySelector(".request-form-contacts__input");
+
+      if (this.container && this.input) {
+        this.init();
+      }
+    }
+
+    init() {
+      this.input.addEventListener("focus", this.focusHandler.bind(this));
+      this.input.addEventListener("blur", this.focusHandler.bind(this));
+    }
+
+    setFocus() {
+      this.container.classList.add("_focus");
+    }
+
+    removeFocus() {
+      this.container.classList.remove("_focus");
+    }
+
+    focusHandler() {
+      if (this.input.value === "" && this.container.classList.contains("_focus")) {
+        this.removeFocus();
+      } else {
+        this.setFocus();
+      }
+    }
+  }
+
   // HEADER
   const menuDropdownList = gsap.utils.toArray(".header-menu-dropdown");
   menuDropdownList.forEach(item => new Dropdown(item));
@@ -656,7 +713,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //<==
 
   // SEO
-  if (window.matchMedia("(min-width: 851px)").matches &&  document.querySelector(".seo-steps-swiper")) {
+  if (window.matchMedia("(min-width: 851px)").matches && document.querySelector(".seo-steps-swiper")) {
     const swiper = new Swiper(".seo-steps-swiper", {
       freeMode: true,
       slidesPerView: "auto",
@@ -665,4 +722,16 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
   //<==
-})
+
+  // REQUEST
+  if (document.querySelector(".request")) {
+    const servicesList = gsap.utils.toArray(".request-form-services__item");
+
+    servicesList.forEach(label => new Checkbox(label));
+
+    const contactsList = gsap.utils.toArray(".request-form-contacts__item");
+
+    contactsList.forEach(item => new Input(item));
+  }
+  //<==
+});
