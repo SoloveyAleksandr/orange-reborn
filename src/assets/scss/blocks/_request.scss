@@ -118,6 +118,7 @@
         cursor: pointer;
         transition: .3s;
         user-select: none;
+        width: fit-content;
 
         &._checked {
           border-color: $orange;
@@ -130,7 +131,6 @@
         }
 
         @include breakpoint($sm-bp) {
-          width: fit-content;
           font-size: 1.4rem;
           line-height: 1.6rem;
         }

@@ -107,6 +107,39 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // RESIZE RELOAD
+  const startWindowSize = window.innerWidth;
+
+  const breakpoints = [375, 500, 850, 1200, 1920];
+  let maxBreakpoint = Infinity;
+  let minBreakpoint = 375;
+
+  for (let i = 0; i < breakpoints.length; i++) {
+    if (startWindowSize < breakpoints[i]) {
+      maxBreakpoint = breakpoints[i];
+      break;
+    }
+  }
+
+  for (let i = breakpoints.length - 1; i > 0; i--) {
+    if (startWindowSize > breakpoints[i]) {
+      minBreakpoint = breakpoints[i];
+      break;
+    }
+  }
+
+  if (breakpoints.includes(startWindowSize)) {
+    maxBreakpoint = startWindowSize;
+  }
+
+  window.addEventListener("resize", () => {
+    const width = window.innerWidth;
+    if (width >= maxBreakpoint || width <= minBreakpoint) {
+      location.reload();
+    }
+  })
+  //<==
+
   // HEADER
   const menuDropdownList = gsap.utils.toArray(".header-menu-dropdown");
   menuDropdownList.forEach(item => new Dropdown(item));
@@ -141,29 +174,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const simplex = new SimplexNoise();
 
-      const startWindowSize = window.innerWidth;
+      // const startWindowSize = window.innerWidth;
 
-      const breakpoints = [375, 500, 850, 1200, 1920];
-      let maxBreakpoint = Infinity;
-      let minBreakpoint = null;
+      // const breakpoints = [375, 500, 850, 1200, 1920];
+      // let maxBreakpoint = Infinity;
+      // let minBreakpoint = null;
 
-      for (let i = 0; i < breakpoints.length; i++) {
-        if (startWindowSize < breakpoints[i]) {
-          maxBreakpoint = breakpoints[i];
-          break;
-        }
-      }
+      // for (let i = 0; i < breakpoints.length; i++) {
+      //   if (startWindowSize < breakpoints[i]) {
+      //     maxBreakpoint = breakpoints[i];
+      //     break;
+      //   }
+      // }
 
-      for (let i = breakpoints.length - 1; i > 0; i--) {
-        if (startWindowSize > breakpoints[i]) {
-          minBreakpoint = breakpoints[i];
-          break;
-        }
-      }
+      // for (let i = breakpoints.length - 1; i > 0; i--) {
+      //   if (startWindowSize > breakpoints[i]) {
+      //     minBreakpoint = breakpoints[i];
+      //     break;
+      //   }
+      // }
 
-      if (breakpoints.includes(startWindowSize)) {
-        maxBreakpoint = startWindowSize;
-      }
+      // if (breakpoints.includes(startWindowSize)) {
+      //   maxBreakpoint = startWindowSize;
+      // }
 
       // console.log(minBreakpoint, maxBreakpoint)
 
@@ -177,9 +210,9 @@ document.addEventListener("DOMContentLoaded", () => {
       window.addEventListener("resize", () => {
         const width = window.innerWidth;
         renderer.setSize(window.innerWidth * canvasWidthPrec, window.innerWidth * canvasHeightPrec);
-        if (width >= maxBreakpoint || width <= minBreakpoint) {
-          location.reload();
-        }
+        // if (width >= maxBreakpoint || width <= minBreakpoint) {
+        //   location.reload();
+        // }
       })
 
       renderer.setPixelRatio(window.devicePixelRatio || 1);

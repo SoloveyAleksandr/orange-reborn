@@ -1,5 +1,9 @@
 .contacts {
 
+  @include breakpoint($jb-bp) {
+    padding-top: 6.7rem;
+  }
+
   &-head {
     &-info {
       width: fit-content;
