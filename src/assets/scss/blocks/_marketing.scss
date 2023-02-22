@@ -1,0 +1,59 @@
+.marketing {
+
+  &-service {
+
+    &-info {}
+
+    &-content {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__subtitle {
+      font-size: 5.8rem;
+      line-height: 6.8rem;
+      font-weight: $f-s;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    &__title {
+      position: static;
+    }
+
+    &__icon {
+      position: absolute;
+      display: block;
+      width: 12.7rem;
+      height: 10.4rem;
+      right: 3.4rem;
+      bottom: 1.3rem;
+
+      svg {
+        object-fit: contain;
+        object-position: center center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &-feedback {
+    &__title {
+      margin-bottom: 4rem;
+    }
+
+    &__description {
+      margin-bottom: 3.8rem;
+      padding-left: 10.9rem;
+      font-size: 3.2rem;
+      font-weight: $f-s;
+    }
+
+    &__inner {
+      padding-left: 10.9rem;
+    }
+  }
+}

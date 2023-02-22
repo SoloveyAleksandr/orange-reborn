@@ -28,6 +28,8 @@
     line-height: 7.2rem;
     font-weight: $f-s;
     margin-bottom: 11.8rem;
+    display: flex;
+    flex-direction: column;
 
     @include breakpoint($mm-bp) {
       font-size: 4.8rem;
@@ -39,10 +41,23 @@
       font-size: 2.8rem;
       line-height: 3.2rem;
       margin-bottom: 5rem;
+      display: inline-block;
     }
 
     @include breakpoint($xs-bp) {
       margin-bottom: 3.2rem;
+    }
+
+    span {
+      padding-left: 11.1rem;
+
+      @include breakpoint($mm-bp) {
+        padding-left: 8.6rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        padding: 0;
+      }
     }
   }
 
@@ -216,6 +231,20 @@
           line-height: 2.4rem;
           font-family: $ff-a;
 
+          &._disable {
+            color: #CCBAAD;
+            text-decoration: line-through;
+
+            svg {
+              &:nth-child(1) {
+                display: none;
+              }
+              &:nth-child(2) {
+                display: block;
+              }
+            }
+          }
+
           @include breakpoint($mm-bp) {
             font-size: 1.4rem;
             line-height: 1.8rem;
@@ -233,6 +262,10 @@
             object-fit: contain;
             object-position: left top;
             flex: none;
+            
+            &:nth-child(2) {
+              display: none;
+            }
 
             @include breakpoint($xs-bp) {
               width: 1.6rem;
