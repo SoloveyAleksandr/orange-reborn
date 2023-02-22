@@ -1,0 +1,115 @@
+.video {
+
+  &-head {
+    max-width: 138.6rem;
+  }
+
+  &-types {
+    &__link {
+      margin-top: 2.4rem;
+    }
+  }
+
+  &-keys {
+    padding: 7rem 2.4rem;
+    max-width: 133.8rem;
+    margin: 0 auto;
+
+    &-head {
+      max-width: 117.3rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 4rem;
+      margin-bottom: 5rem;
+    }
+
+    &__title {
+      font-size: 7rem;
+      line-height: 7.2rem;
+      font-weight: $f-s;
+    }
+
+    &__text {
+      max-width: 52rem;
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      font-family: $ff-a;
+    }
+
+    &-list {
+      max-width: 107.2rem;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 1.6rem;
+      row-gap: 3.2rem;
+
+      &-item {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+
+        &:hover & {
+          &__description {
+            p {
+              color: $orange;
+            }
+
+            svg {
+              fill: $orange;
+            }
+          }
+        }
+
+        &__img {
+          width: 100%;
+          height: 27.7rem;
+          border-radius: 2.4rem;
+          overflow: hidden;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            object-fit: cover;
+            object-position: center center;
+            width: 100%;
+            height: 100%;
+          }
+
+          svg {
+            object-fit: contain;
+            object-position: center center;
+            width: 8rem;
+            height: 8rem;
+            position: absolute;
+            pointer-events: none;
+          }
+        }
+
+        &__description {
+          display: flex;
+          align-items: flex-start;
+          padding-right: 2.8rem;
+
+          p {
+            font-size: 2.4rem;
+            line-height: 2.8rem;
+            font-family: $ff-a;
+            transition: .3s;
+          }
+
+          svg {
+            width: 1.8rem;
+            height: 2.8rem;
+            object-fit: contain;
+            object-position: center center;
+            transition: .3s;
+          }
+        }
+      }
+    }
+  }
+}
