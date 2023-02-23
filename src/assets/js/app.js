@@ -776,4 +776,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   //<==
+
+  // IMPORT-DRINKS
+  if (document.querySelector('.import-drinks-main')) {
+    const items = gsap.utils.toArray(".import-drinks-main-item");
+
+    items.forEach((item, index) => {
+      item.innerHTML += item.innerHTML;
+
+      const tl = gsap.timeline({
+        repeat: -1,
+      })
+
+      tl.to(item, {
+        y: "50%",
+        duration: 80 - index * 10,
+        ease: "none",
+      })
+
+      // const speed = gsap.utils.random(20, 50);
+      // const inner = item.querySelector(".import-drinks-main-item__inner");
+      // const innerClone = inner.cloneNode(true);
+      // item.appendChild(innerClone);
+
+      // gsap.to(inner, {
+      //   y: "100%",
+      //   duration: speed,
+      //   ease: "none",
+      //   repeat: -1,
+      // })
+      // gsap.to(innerClone, {
+      //   y: "100%",
+      //   duration: speed,
+      //   ease: "none",
+      //   repeat: -1,
+      // })
+    })
+  }
+  //<==
 });
