@@ -29,6 +29,13 @@
       right: 3.4rem;
       bottom: 1.3rem;
 
+      @include breakpoint($mm-bp) {
+        width: 5.7rem;
+        height: 5.1rem;
+        right: 2.4rem;
+        bottom: 1.8rem;
+      }
+
       svg {
         object-fit: contain;
         object-position: center center;
@@ -39,8 +46,17 @@
   }
 
   &-feedback {
+
+    @include breakpoint($jb-bp) {
+      padding-bottom: 16rem;
+    }
+
     &__title {
       margin-bottom: 4rem;
+
+      @include breakpoint($mm-bp) {
+        margin-bottom: 2.8rem;
+      }
     }
 
     &__description {
@@ -48,10 +64,27 @@
       padding-left: 10.9rem;
       font-size: 3.2rem;
       font-weight: $f-s;
+
+      @include breakpoint($mm-bp) {
+        font-size: 2.6rem;
+        line-height: 3.2rem;
+        margin-bottom: 5.2rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        padding: 0;
+        margin-bottom: 4rem;
+      }
     }
 
     &__inner {
       padding-left: 10.9rem;
+
+      @include breakpoint($jb-bp) {
+        padding: 0;
+      }
     }
   }
 }

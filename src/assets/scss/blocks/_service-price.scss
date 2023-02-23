@@ -38,10 +38,16 @@
     }
 
     @include breakpoint($jb-bp) {
-      font-size: 2.8rem;
-      line-height: 3.2rem;
+      font-size: 3.6rem;
+      line-height: 4.2rem;
       margin-bottom: 5rem;
       display: inline-block;
+    }
+
+    @include breakpoint($sm-bp) {
+      font-size: 2.4rem;
+      line-height: 2.8rem;
+      margin-bottom: 3.2rem;
     }
 
     @include breakpoint($xs-bp) {
@@ -84,6 +90,7 @@
       flex-direction: column;
       border-radius: 1.2rem;
       width: 33%;
+      border: 0.1rem dashed $grey;
 
       @include breakpoint($mm-bp) {
         padding-bottom: 5.6rem;
@@ -127,7 +134,7 @@
         }
       }
 
-      &.service-price-list-item_top {
+      &.service-price-list-item_popular {
         position: relative;
         border: none;
         border-radius: 0;

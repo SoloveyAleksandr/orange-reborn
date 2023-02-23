@@ -34,11 +34,14 @@
       }
 
       @include breakpoint($jb-bp) {
-        font-size: 3.2rem;
+        font-size: 4.8rem;
+        line-height: 5.8rem;
         margin-bottom: 1.6rem;
       }
 
       @include breakpoint($sm-bp) {
+        font-size: 3.2rem;
+        line-height: 3.9rem;
         display: inline-block;
         margin-bottom: 1.2rem;
       }
@@ -66,10 +69,13 @@
         font-size: 2.6rem;
         margin-bottom: 4rem;
         padding-left: 9.6rem;
+        max-width: 78rem;
       }
 
       @include breakpoint($jb-bp) {
         padding: 0;
+        font-size: 2.4rem;
+        line-height: 2.9rem;
       }
 
       @include breakpoint($sm-bp) {
@@ -110,6 +116,11 @@
         font-size: 1.8rem;
         line-height: 2.4rem;
         max-width: 38.3rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
       }
     }
 
@@ -202,6 +213,7 @@
     border-top-right-radius: 6.4rem;
     margin-top: -6rem;
     background-color: #fff;
+    position: relative;
 
     @include breakpoint($mm-bp) {
       padding: 5rem 0;
@@ -247,19 +259,24 @@
       }
 
       @include breakpoint($jb-bp) {
-        font-size: 2.8rem;
-        line-height: 3.2rem;
-        margin-bottom: 1.6rem;
+        font-size: 3.6rem;
+        line-height: 4.2rem;
+        margin-bottom: 3rem;
         display: inline-block;
       }
 
       @include breakpoint($sm-bp) {
         font-size: 2.4rem;
         line-height: 2.8rem;
+        margin-bottom: 1.6rem;
       }
 
       span {
         padding-left: 10.9rem;
+
+        @include breakpoint($mm-bp) {
+          padding-left: 10.3rem;
+        }
 
         @include breakpoint($jb-bp) {
           padding: 0;
@@ -279,9 +296,9 @@
       }
 
       @include breakpoint($jb-bp) {
-        max-width: 47.6rem;
-        font-size: 1.8rem;
-        margin-bottom: 4rem;
+        max-width: 100%;
+        font-size: 2.4rem;
+        margin-bottom: 6.5rem;
       }
 
       @include breakpoint($sm-bp) {
@@ -426,8 +443,8 @@
           height: 26.4rem;
 
           @include breakpoint($jb-bp) {
-            width: 18.1rem;
-            height: 18.1rem;
+            width: 23.3rem;
+            height: 25.3rem;
           }
 
           @include breakpoint($sm-bp) {
@@ -463,8 +480,13 @@
             }
 
             @include breakpoint($jb-bp) {
-              font-size: 1.8rem;
+              font-size: 2.4rem;
               margin-bottom: 1.2rem;
+            }
+
+            @include breakpoint($sm-bp) {
+              font-size: 1.8rem;
+              line-height: 2.2rem;
             }
           }
 
@@ -477,11 +499,6 @@
             @include breakpoint($mm-bp) {
               font-size: 1.6rem;
               line-height: 2.2rem;
-            }
-
-            @include breakpoint($jb-bp) {
-              font-size: 1.4rem;
-              line-height: 1.8rem;
             }
 
             @include breakpoint($sm-bp) {
@@ -550,8 +567,8 @@
       @include breakpoint($jb-bp) {
         display: inline-block;
         margin-bottom: 3rem;
-        font-size: 2.8rem;
-        line-height: 3.2rem;
+        font-size: 3.6rem;
+        line-height: 4.2rem;
       }
 
       @include breakpoint($sm-bp) {

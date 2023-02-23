@@ -12,6 +12,11 @@
   }
 
   @include breakpoint($jb-bp) {
+    // flex-direction: column;
+    // gap: 2.4rem;
+  }
+
+  @include breakpoint($sm-bp) {
     flex-direction: column;
     gap: 2.4rem;
   }
@@ -31,15 +36,27 @@
     }
 
     @include breakpoint($jb-bp) {
-      flex: content;
-      width: 100%;
-      height: 27.6rem;
-      position: static;
+      // flex: content;
+      // width: 100%;
+      // height: 27.6rem;
+      // position: static;
+      height: 34.3rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      position: relative;
+      top: unset;
+      left: unset;
+      height: 23.4rem;
     }
 
     picture {
       width: 100%;
       height: 100%;
+
+      @include breakpoint($sm-bp) {
+        height: 23.4rem;
+      }
     }
 
     &__bg {
@@ -48,13 +65,13 @@
       width: 100%;
       height: 100%;
 
-      @include breakpoint($jb-bp) {
-        height: 27.6rem;
-      }
+      // @include breakpoint($jb-bp) {
+      //   height: 27.6rem;
+      // }
 
-      @include breakpoint($sm-bp) {
-        height: 19.5rem;
-      }
+      // @include breakpoint($sm-bp) {
+      //   height: 19.5rem;
+      // }
     }
 
     &__title {
@@ -73,9 +90,15 @@
       }
 
       @include breakpoint($jb-bp) {
-        max-width: 16rem;
-        font-size: 3.2rem;
+        // max-width: 16rem;
+        font-size: 4.8rem;
+        line-height: 5.9rem;
         line-height: 100%;
+      }
+
+      @include breakpoint($sm-bp) {
+        font-size: 3.2rem;
+        line-height: 3.9rem;
       }
 
       span {
@@ -129,6 +152,10 @@
         gap: 0.8rem;
       }
 
+      @include breakpoint($jb-bp) {
+        padding: 3.2rem;
+      }
+
       @include breakpoint($sm-bp) {
         padding: 2.4rem;
       }
@@ -142,6 +169,10 @@
         }
 
         @include breakpoint($jb-bp) {
+          font-size: 2.4rem;
+        }
+
+        @include breakpoint($sm-bp) {
           font-size: 1.8rem;
         }
       }
@@ -156,7 +187,7 @@
           line-height: 2.2rem;
         }
 
-        @include breakpoint($jb-bp) {
+        @include breakpoint($sm-bp) {
           font-size: 1.4rem;
           line-height: 1.8rem;
         }
