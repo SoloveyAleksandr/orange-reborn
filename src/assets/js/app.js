@@ -790,27 +790,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       tl.to(item, {
         y: "50%",
-        duration: 80 - index * 10,
+        duration: 80 - index * 15,
         ease: "none",
       })
-
-      // const speed = gsap.utils.random(20, 50);
-      // const inner = item.querySelector(".import-drinks-main-item__inner");
-      // const innerClone = inner.cloneNode(true);
-      // item.appendChild(innerClone);
-
-      // gsap.to(inner, {
-      //   y: "100%",
-      //   duration: speed,
-      //   ease: "none",
-      //   repeat: -1,
-      // })
-      // gsap.to(innerClone, {
-      //   y: "100%",
-      //   duration: speed,
-      //   ease: "none",
-      //   repeat: -1,
-      // })
     })
   }
   //<==
