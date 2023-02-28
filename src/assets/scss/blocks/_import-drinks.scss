@@ -217,4 +217,85 @@
       }
     }
   }
+
+  &-concept {
+    padding: 7rem 0rem;
+    border-top-left-radius: 6.4rem;
+    border-top-right-radius: 6.4rem;
+    background-color: #fff;
+    margin-top: -19rem;
+    position: relative;
+    z-index: 1;
+
+    &__inner {
+      display: flex;
+      gap: 1.6rem;
+      height: 124rem;
+      overflow: hidden;
+    }
+
+    &-box {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      width: 100%;
+      overflow: hidden;
+
+      &:nth-child(1) {
+        align-items: flex-end;
+      }
+
+      &:nth-child(1) & {
+        &__top {
+          justify-content: flex-end;
+        }
+      }
+
+      &:nth-child(2) {
+        align-items: flex-start;
+      }
+
+      &:nth-child(2) & {
+        &__top {
+          justify-content: flex-start;
+        }
+      }
+
+      &__top {
+        display: flex;
+        gap: 1.6rem;
+        max-height: 39%;
+      }
+
+      &__bottom {
+        max-height: calc(100% - 39% - 1.6rem);
+        display: flex;
+        gap: 1.6rem;
+      }
+
+      &__img {
+        height: 100%;
+        border-radius: 0.6rem;
+        overflow: hidden;
+
+        img {
+          object-fit: contain;
+          object-position: center center;
+          height: 100%;
+        }
+
+        &.import-drinks-concept-box__img_mask {
+          img {
+            mask-image: url(../images/import-drinks/Mask.svg);
+            mask-size: 100% 100%;
+          }
+        }
+
+        &.import-drinks-concept-box__img_circle {
+          border-radius: 30rem;
+        }
+      }
+    }
+  }
 }
