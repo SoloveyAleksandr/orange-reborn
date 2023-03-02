@@ -795,5 +795,9 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
   }
+
+  if (document.querySelector(".import-drinks-result-images")) {
+    
+  }
   //<==
 });
