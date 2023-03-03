@@ -805,5 +805,47 @@ document.addEventListener("DOMContentLoaded", () => {
   if (importDrinksElements) {
     var parallaxInstance = new Parallax(importDrinksElements);
   }
+
+  if (document.querySelector(".import-drinks-visualization__container")) {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".import-drinks-visualization__container",
+        scrub: 1,
+        start: "-=100px top",
+        end: "95% top",
+      }
+    })
+
+    tl.from(".import-drinks-visualization-mob", {
+      top: 0,
+    }, "sin")
+    tl.from(".import-drinks-visualization-mob__img", {
+      y: 0,
+    }, "sin")
+  }
+
+  const importDrinksTemplates = gsap.utils.toArray(".import-drinks-templates__box");
+  importDrinksTemplates.forEach((box, i) => {
+    const list = box.querySelector(".import-drinks-templates-list");
+    const listClone = list.cloneNode(true);
+
+    box.appendChild(listClone);
+
+    const tl = gsap.timeline({
+      repeat: -1,
+    });
+
+    tl.to(list, {
+      x: i % 2 > 0 ? "100%" : "-100%",
+      duration: list.children.length * 4,
+      ease: "none",
+    }, "sin")
+
+    tl.to(listClone, {
+      x: i % 2 > 0 ? "100%" : "-100%",
+      duration: list.children.length * 4,
+      ease: "none",
+    }, "sin")
+  })
   //<==
 });

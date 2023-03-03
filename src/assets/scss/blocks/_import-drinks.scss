@@ -653,4 +653,212 @@
       }
     }
   }
+
+  &-visualization {
+    background-image: url(../images/import-drinks/bg-path.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 120% 100%;
+    padding: 7rem 0;
+
+    &__container {
+      max-width: 133.8rem;
+      margin: 0 auto;
+      padding: 0 2.4rem;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    &-main {
+      border: 1rem solid #413F3F;
+      border-radius: 2.4rem;
+      width: 75.6rem;
+      overflow: hidden;
+
+      &__img {
+        width: 100%;
+
+        img {
+          object-fit: contain;
+          width: 100%;
+        }
+      }
+    }
+
+    &-mob {
+      border: 1rem solid #413F3F;
+      border-radius: 2.4rem;
+      width: 22.2rem;
+      height: 45.8rem;
+      overflow: hidden;
+      position: absolute;
+      top: calc(100% - 45.8rem);
+      right: 2.4rem;
+
+      &__img {
+        width: 100%;
+        transform: translateY(-85.5%);
+
+        img {
+          object-fit: contain;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &-templates {
+    &__title {
+      max-width: 133.8rem;
+      padding: 0rem 2.4rem;
+      margin: 0 auto;
+      margin-bottom: 6.7rem;
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      row-gap: 5.4rem;
+      padding: 7rem 0;
+      position: relative;
+    }
+
+    &__bg {
+      position: absolute;
+      width: 80%;
+      height: 100%;
+      border-radius: 3.2rem;
+      background-color: #FFF4E7;
+      top: 0;
+      left: 10%;
+      transform: skew(2deg, 0);
+    }
+
+    &__box {
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 2rem;
+
+      &:nth-child(odd) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &-list {
+      height: 33.8rem;
+      display: flex;
+      column-gap: 5.4rem;
+      padding-left: 5.4rem;
+
+      &__item {
+        flex: none;
+        width: 58.8rem;
+        height: 100%;
+        border: 0.4rem solid #413F3F;
+        border-radius: 1.2rem;
+        overflow: hidden;
+        background-color: #ff2a2a;
+
+        img {
+          object-fit: contain;
+          width: 100%;
+          object-position: center top;
+        }
+
+        &_mob {
+          width: 17.3rem;
+        }
+      }
+    }
+  }
+
+  &-conclusion {
+    padding: 7rem 2.4rem;
+
+    &__head {
+      max-width: 133.8rem;
+      margin: 0 auto 7rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    &__subtitle {
+      font-size: 3.4rem;
+      line-height: 3.9rem;
+      font-weight: $f-s;
+      max-width: 88.5rem;
+    }
+
+    &__description {
+      padding-left: 10.7rem;
+      font-size: 2.2rem;
+      line-height: 3rem;
+      max-width: 85.7rem;
+    }
+
+    &__container {
+      display: block;
+      position: relative;
+
+      &:hover {
+        .import-drinks-conclusion-bg__img {
+          img {
+            transform: scale(1.02);
+          }
+        }
+      }
+    }
+
+    &-bg {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      perspective: 50rem;
+
+      &__img {
+        width: 100%;
+        height: 100%;
+        border-radius: 3.2rem;
+        overflow: hidden;
+        transform-style: preserve-3d;
+        transform: rotateX(2deg) rotateY(-0.5deg) translateZ(-2rem) translateX(-1rem);
+
+        img {
+          object-fit: cover;
+          object-position: center center;
+          height: 100%;
+          width: 100%;
+          transition: .3s;
+        }
+      }
+    }
+
+    &-content {
+      position: relative;
+      z-index: 2;
+      padding: 11.4rem 0 25.6rem;
+      max-width: 122.4rem;
+      margin: 0 auto;
+
+      &__text {
+        font-size: 3.2rem;
+        line-height: 3.9rem;
+        font-weight: $f-s;
+        color: #fff;
+        margin-bottom: 12.2rem;
+      }
+
+      &__title {
+        font-size: 7rem;
+        line-height: 7.2rem;
+        font-weight: $f-s;
+        color: #fff;
+        padding-left: 7.6rem;
+      }
+    }
+  }
 }
