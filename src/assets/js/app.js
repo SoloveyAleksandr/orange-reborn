@@ -796,8 +796,14 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  if (document.querySelector(".import-drinks-result-images")) {
-    
+  const importDrinksResult = document.getElementById("import-drinks-result");
+  if (importDrinksResult) {
+    var parallaxInstance = new Parallax(importDrinksResult);
+  }
+
+  const importDrinksElements = document.getElementById("import-drinks-elements");
+  if (importDrinksElements) {
+    var parallaxInstance = new Parallax(importDrinksElements);
   }
   //<==
 });
