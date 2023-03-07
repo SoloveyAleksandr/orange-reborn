@@ -47,6 +47,12 @@ span {
       background-color: $orange;
     }
   }
+
+  @include breakpoint($sm-bp) {
+    font-size: 4.26vw;
+    line-height: 4.33vw;
+    padding: 4.26vw 4.33vw;
+  }
 }
 
 .dropdown {
@@ -78,6 +84,11 @@ span {
       fill: $text-black;
       transform: rotate(180deg);
       transition: 0.3s;
+
+      @include breakpoint($sm-bp) {
+        width: 4.8vw;
+        height: 4.8vw;
+      }
     }
   }
 

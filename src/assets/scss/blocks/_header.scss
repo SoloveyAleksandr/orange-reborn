@@ -22,6 +22,10 @@
     @include breakpoint($jb-bp) {
       padding: 1.2rem 2.4rem;
     }
+
+    @include breakpoint($sm-bp) {
+      padding: 3.2vw 2.4rem;
+    }
   }
 
   &-logo {
@@ -35,8 +39,8 @@
     }
 
     @include breakpoint($sm-bp) {
-      width: 16.3rem;
-      height: 3.5rem;
+      width: 43.46vw;
+      height: 9.33vw;
     }
 
     &__img {
@@ -69,11 +73,19 @@
 
       &_burger {
         width: 3.6rem;
+
+        @include breakpoint($sm-bp) {
+          width: 9.6vw;
+        }
       }
 
       &_close {
         width: 2.4rem;
         transform: scale(0);
+
+        @include breakpoint($sm-bp) {
+          width: 6.4vw;
+        }
       }
     }
 
@@ -91,6 +103,11 @@
 
     @include breakpoint($jb-bp) {
       display: flex;
+    }
+
+    @include breakpoint($sm-bp) {
+      width: 10.66vw;
+      height: 10.66vw;
     }
   }
 
@@ -146,6 +163,11 @@
           font-size: 2.4rem;
           line-height: 2.9rem;
         }
+
+        @include breakpoint($sm-bp) {
+          font-size: 6.4vw;
+          line-height: 7.73vw;
+        }
       }
 
       &__text {
@@ -155,6 +177,11 @@
         @include breakpoint($jb-bp) {
           font-size: 2rem;
           line-height: 2.4rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          font-size: 5.33vw;
+          line-height: 6.4vw;
         }
       }
     }
@@ -179,6 +206,10 @@
         align-items: flex-start;
         order: 1;
         margin-bottom: 7.2rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        margin-bottom: 19.2vw;
       }
 
       &__link {
@@ -207,6 +238,11 @@
             background-color: transparent;
           }
         }
+
+        @include breakpoint($sm-bp) {
+          font-size: 5.33vw;
+          line-height: 5.33vw;
+        }
       }
     }
 
@@ -223,7 +259,7 @@
         order: 3;
       }
 
-      @include breakpoint($xs-bp) {
+      @include breakpoint($sm-bp) {
         width: 100%;
       }
     }
@@ -286,6 +322,12 @@
           font-size: 1.6rem;
           line-height: 2rem;
           color: #848484;
+        }
+
+        @include breakpoint($sm-bp) {
+          padding: 1.06vw 0;
+          font-size: 4.26vw;
+          line-height: 4.33vw;
         }
       }
     }

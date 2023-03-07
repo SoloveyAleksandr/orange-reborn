@@ -421,6 +421,17 @@
           }
         }
 
+        @include breakpoint($sm-bp) {
+          padding: 5.33vw 2.13vw;
+          border-top: 0.1rem solid $grey;
+
+          &._open & {
+            &-content {
+              padding: 2.13vw 0rem 0rem;
+            }
+          }
+        }
+
         &-btn {
           display: flex;
           align-items: flex-start;
