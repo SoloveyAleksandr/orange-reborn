@@ -205,13 +205,18 @@ span {
     line-height: 2.4rem;
   }
 
+  @include breakpoint($sm-bp) {
+    font-size: 3.78vw;
+    line-height: 4.26vw;
+    padding: 3.2vw 4.26vw;
+  }
+
   &.default-tag_light {
     background-color: #feeee9;
     color: $text-black;
   }
 
   &.default-tag_white {
-    padding: 1.1rem 1.5rem;
     color: $text-black;
     background-color: transparent;
     border: 0.1rem solid $grey;
@@ -235,10 +240,12 @@ span {
   }
 
   @include breakpoint($sm-bp) {
+    font-size: 4.26vw;
     border: 0.1rem solid $orange;
-    border-radius: 9.6rem;
+    border-radius: 25.6vw;
     padding: 1.4rem 2.8rem 1.4rem 3.4rem;
-    gap: 2.6rem;
+    padding: 3.78vw 7.46vw 3.78vw 9.06vw;
+    gap: 6.93vw;
   }
 
   &:hover {
@@ -268,8 +275,8 @@ span {
       fill: $orange;
 
       @include breakpoint($sm-bp) {
-        width: 1.2rem;
-        height: 1.2rem;
+        width: 3.2vw;
+        height: 3.2vw;
       }
     }
   }
@@ -285,8 +292,9 @@ span {
   border-radius: 7.2rem;
 
   @include breakpoint($sm-bp) {
-    font-size: 1.2rem;
-    line-height: 1.4rem;
+    font-size: 3.2vw;
+    line-height: 3.78vw;
+    padding: 1.6vw 2.13vw;
   }
 }
 
@@ -300,8 +308,8 @@ span {
   transition: 0.3s;
   width: fit-content;
 
-  @include breakpoint($xs-bp) {
-    font-size: 1.6rem;
+  @include breakpoint($sm-bp) {
+    font-size: 4.26vw;
   }
 
   &:hover {
@@ -318,6 +326,11 @@ span {
     object-fit: contain;
     object-position: center center;
     fill: $text-black;
+
+    @include breakpoint($sm-bp) {
+      width: 4.26vw;
+      height: 4.26vw;
+    }
   }
 }
 
@@ -328,6 +341,12 @@ span {
   display: flex;
   align-items: center;
   gap: 0.6rem;
+
+  @include breakpoint($sm-bp) {
+    padding: 0 6.4vw;
+    margin: 2.13vw auto 0;
+    gap: 1.6vw;
+  }
 
   a+a {
     color: $grey;
@@ -341,12 +360,23 @@ span {
     align-items: center;
     gap: 0.6rem;
 
+    @include breakpoint($sm-bp) {
+      font-size: 3.78vw;
+      line-height: 5.33vw;
+      gap: 1.6vw;
+    }
+
     svg {
       object-fit: contain;
       object-position: center center;
       height: 1.1rem;
       width: 1.7rem;
       fill: $grey;
+
+      @include breakpoint($sm-bp) {
+        height: 2.93vw;
+        width: 4.53vw;
+      }
     }
   }
 }

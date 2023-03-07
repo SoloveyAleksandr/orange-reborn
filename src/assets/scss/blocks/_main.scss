@@ -563,6 +563,11 @@
           color: $orange;
         }
 
+        @include breakpoint($sm-bp) {
+          font-size: 4.26vw;
+          line-height: 6.4vw;
+        }
+
         svg {
           @include breakpoint($jb-bp) {
             fill: $orange;
