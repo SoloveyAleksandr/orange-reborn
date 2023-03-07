@@ -10,6 +10,10 @@
     padding: 3rem 0;
   }
 
+  @include breakpoint($sm-bp) {
+    padding: 8vw 0;
+  }
+
   &-container {
     max-width: 158.3rem;
     padding: 0rem 2.4rem;
@@ -68,8 +72,8 @@
     }
 
     @include breakpoint($sm-bp) {
-      gap: 1.6rem;
-      padding: 3.2rem;
+      padding: 8.53vw 8vw;
+      gap: 4.26vw;
     }
   }
 
@@ -93,8 +97,9 @@
     }
 
     @include breakpoint($sm-bp) {
-      font-size: 2.4rem;
-      line-height: 2.2rem;
+      font-size: 6.4vw;
+      line-height: 5.86vw;
+      row-gap: 2.13vw;
     }
 
     span {
@@ -107,8 +112,8 @@
       white-space: nowrap;
       margin-right: 3.3rem;
 
-      @include breakpoint($xs-bp) {
-        margin-right: 0;
+      @include breakpoint($sm-bp) {
+        row-gap: 2.13vw;
       }
     }
 
@@ -130,9 +135,9 @@
       }
 
       @include breakpoint($sm-bp) {
-        width: 3.5rem;
-        height: 1.7rem;
-        margin-right: 1.2rem;
+        height: 5.86vw;
+        width: 9.33vw;
+        margin-right: 3.2vw;
       }
     }
   }
@@ -154,10 +159,8 @@
     }
 
     @include breakpoint($sm-bp) {
-      font-size: 1.4rem;
-      line-height: 1.8rem;
-      margin-left: 0;
-      margin-bottom: 0.8rem;
+      margin: 0;
+      max-width: 65.3vw;
     }
   }
 
@@ -192,19 +195,15 @@
 
     @include breakpoint($sm-bp) {
       position: static;
-      margin: 0 auto;
-    }
-
-    @include breakpoint($xs-bp) {
       width: 100%;
       height: fit-content;
-      padding: 1.6rem;
-      border-radius: 5.6rem;
-      font-size: 1.6rem;
-      line-height: 2rem;
+      border-radius: 14.93vw;
+      font-size: calc(1.6rem * 1.33);
+      line-height: calc(2rem * 1.33);
       text-transform: none;
       font-family: $ff-a;
       font-weight: $f-r;
+      padding: 4.26vw 0;
     }
   }
 }
