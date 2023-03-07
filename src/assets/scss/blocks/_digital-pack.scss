@@ -7,7 +7,7 @@
   }
 
   @include breakpoint($sm-bp) {
-    padding: 3rem 0;
+    padding: 8vw 0;
   }
 
   &-container {
@@ -51,7 +51,7 @@
         }
 
         @include breakpoint($sm-bp) {
-          left: -16.7rem;
+          left: -27vw;
         }
       }
 
@@ -63,17 +63,13 @@
         }
 
         @include breakpoint($sm-bp) {
-          left: 5.4rem;
+          left: 24vw;
         }
       }
 
       @include breakpoint($mm-bp) {
         width: 44.7rem;
         top: -3rem;
-      }
-
-      @include breakpoint($sm-bp) {
-        width: 32.2rem;
       }
 
       img {
@@ -103,8 +99,8 @@
     }
 
     @include breakpoint($sm-bp) {
-      padding: 3.2rem;
-      gap: 1.6rem;
+      padding: 8.53vw;
+      gap: 4.26vw;
     }
   }
 
@@ -126,8 +122,9 @@
     }
 
     @include breakpoint($sm-bp) {
-      font-size: 2.4rem;
-      line-height: 2.8rem;
+      font-size: 6.4vw;
+      line-height: 7.46vw;
+      max-width: 62.6vw;
     }
 
     span {
@@ -162,7 +159,7 @@
 
     @include breakpoint($sm-bp) {
       flex-direction: column;
-      gap: 2.4rem;
+      gap: 6.4vw;
     }
   }
 
@@ -180,8 +177,8 @@
     }
 
     @include breakpoint($sm-bp) {
-      font-size: 1.2rem;
-      line-height: 1.6rem;
+      font-size: 3.2vw;
+      line-height: 4.26vw;
     }
   }
 
@@ -196,6 +193,10 @@
     @include breakpoint($sm-bp) {
       background-color: #fff;
       color: $orange;
+      width: 100%;
+      padding: 4.26vw 0;
+      font-size: 4.26vw;
+      line-height: 5.33vw;
     }
 
     span {

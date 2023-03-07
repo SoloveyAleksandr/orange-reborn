@@ -6,7 +6,7 @@
   }
 
   @include breakpoint($sm-bp) {
-    padding: 3rem 0;
+    padding: 8vw 0;
   }
 
   &-container {
@@ -30,9 +30,9 @@
     }
 
     @include breakpoint($sm-bp) {
-      font-size: 2.4rem;
-      line-height: 2.8rem;
-      margin-bottom: 2.4rem;
+      font-size: 6.4vw;
+      line-height: 7.46vw;
+      margin-bottom: 6.4vw;
     }
 
     span {
@@ -63,10 +63,10 @@
     }
 
     @include breakpoint($sm-bp) {
-      max-width: 27.1rem;
-      font-size: 1.6rem;
+      max-width: 72.26vw;
+      font-size: 4.26vw;
       margin-left: 0;
-      margin-bottom: 5.2rem;
+      margin-bottom: 13.8vw;
     }
   }
 
@@ -94,8 +94,8 @@
       }
 
       @include breakpoint($sm-bp) {
-        height: 7.3rem;
-        padding: 0 1.3rem;
+        height: 19.46vw;
+        padding: 0 3.46vw;
       }
 
       &__img {
