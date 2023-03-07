@@ -110,7 +110,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // RESIZE RELOAD
   const startWindowSize = window.innerWidth;
 
-  const breakpoints = [375, 500, 850, 1200, 1920];
+  // const breakpoints = [375, 500, 850, 1200, 1920];
+  const breakpoints = [375, 850, 1200, 1920];
   let maxBreakpoint = Infinity;
   let minBreakpoint = 375;
 
