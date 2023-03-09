@@ -5,10 +5,14 @@
     padding-top: 6.7rem;
   }
 
+  @include breakpoint($sm-bp) {
+    padding-top: 8.5rem;
+  }
+
   &-head {
 
     @include breakpoint($sm-bp) {
-      margin-bottom: 1.6rem;
+      margin-bottom: 4.26vw;
     }
 
     &__text {
@@ -28,8 +32,8 @@
       }
 
       @include breakpoint($sm-bp) {
-        font-size: 1.4rem;
-        line-height: 1.8rem;
+        font-size: 3.73vw;
+        line-height: 4.8vw;
       }
 
       strong {
@@ -61,9 +65,9 @@
       }
 
       @include breakpoint($sm-bp) {
-        font-size: 2.8rem;
-        line-height: 3.2rem;
-        margin-bottom: 2.4rem;
+        font-size: 7.46vw;
+        line-height: 8.53vw;
+        margin-bottom: 6.4vw;
       }
     }
 
@@ -76,19 +80,23 @@
       }
 
       @include breakpoint($sm-bp) {
-        margin-bottom: 3.2rem;
+        margin-bottom: 8.53vw
       }
 
       &__title {
         @include breakpoint($jb-bp) {
           margin-bottom: 2rem;
         }
+
+        @include breakpoint($sm-bp) {
+          margin-bottom: 5.33vw;
+        }
       }
 
       &__swiper {
         @include breakpoint($sm-bp) {
-          margin: 0rem -2.4rem;
-          padding: 0 2.4rem;
+          margin: 0rem -6.4vw;
+          padding: 0 6.4vw;
         }
       }
 
@@ -131,8 +139,8 @@
         }
 
         @include breakpoint($sm-bp) {
-          font-size: 1.4rem;
-          line-height: 1.6rem;
+          font-size: 3.73vw;
+          line-height: 4.26vw;
         }
       }
 
@@ -152,7 +160,7 @@
       }
 
       @include breakpoint($sm-bp) {
-        margin-bottom: 3.1rem;
+        margin-bottom: 8.26vw;
       }
 
       &__inner {
@@ -173,7 +181,7 @@
         @include breakpoint($sm-bp) {
           display: flex;
           flex-direction: column;
-          gap: 2.8rem;
+          gap: 7.46vw;
         }
       }
 
@@ -184,6 +192,11 @@
           .request-form-contacts__placeholder {
             font-size: 1.4rem;
             top: -1.4rem;
+
+            @include breakpoint($sm-bp) {
+              font-size: 3.73vw;
+              top: -3.73vw;
+            }
           }
         }
       }
@@ -199,8 +212,8 @@
         pointer-events: none;
 
         @include breakpoint($sm-bp) {
-          font-size: 1.4rem;
-          line-height: 1.8rem;
+          font-size: 3.73vw;
+          line-height: 4.8vw;
         }
       }
 
@@ -220,8 +233,8 @@
         }
 
         @include breakpoint($sm-bp) {
-          font-size: 1.4rem;
-          line-height: 1.8rem;
+          font-size: 3.73vw;
+          line-height: 4.8vw;
         }
       }
     }
@@ -246,14 +259,14 @@
 
       @include breakpoint($sm-bp) {
         width: 100%;
-        padding: 1.6rem 0;
-        margin-bottom: 1.6rem;
+        padding: 4.26vw 0;
+        margin-bottom: 4.26vw;
         text-transform: none;
-        font-size: 1.6rem;
-        line-height: 2rem;
+        font-size: 4.26vw;
+        line-height: 5.33vw;
         font-family: $ff-a;
         font-weight: $f-r;
-        border-radius: 5.6rem;
+        border-radius: 14.93vw;
         height: fit-content;
       }
     }
@@ -267,8 +280,8 @@
       display: inline-block;
 
       @include breakpoint($sm-bp) {
-        font-size: 1.4rem;
-        line-height: 1.8rem;
+        font-size: 3.73vw;
+        line-height: 4.8vw;
       }
 
       a {

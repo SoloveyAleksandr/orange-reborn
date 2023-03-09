@@ -13,8 +13,8 @@
     border-top-right-radius: 4rem;
   }
 
-  @include breakpoint($xs-bp) {
-    padding: 4rem 0rem 9.4rem;
+  @include breakpoint($sm-bp) {
+    padding: 10.66vw 0rem 25.06vw;
   }
 
   &-container {
@@ -45,13 +45,9 @@
     }
 
     @include breakpoint($sm-bp) {
-      font-size: 2.4rem;
-      line-height: 2.8rem;
-      margin-bottom: 3.2rem;
-    }
-
-    @include breakpoint($xs-bp) {
-      margin-bottom: 3.2rem;
+      font-size: 6.4vw;
+      line-height: 7.46vw;
+      margin-bottom: 8.53vw;
     }
 
     span {
@@ -80,7 +76,7 @@
     }
 
     @include breakpoint($xs-bp) {
-      gap: 3.2rem;
+      gap: 8.53vw;
     }
 
     &-item {
@@ -105,9 +101,10 @@
         min-height: 53.6rem;
       }
 
-      @include breakpoint($xs-bp) {
-        padding: 2.4rem 2rem;
-        min-height: 43rem;
+      @include breakpoint($sm-bp) {
+        padding: 6.4vw 5.33vw;
+        min-height: 114.66vw;
+        max-width: unset;
       }
 
       &:first-child {
@@ -147,6 +144,10 @@
           margin-top: 5.4rem;
         }
 
+        @include breakpoint($sm-bp) {
+          margin-top: 14.4vw;
+        }
+
         &::after {
           content: "";
           width: 100%;
@@ -154,7 +155,7 @@
           border-bottom-left-radius: 1.2rem;
           border-bottom-right-radius: 1.2rem;
           background-color: #fff;
-          box-shadow: 0 1rem 1.6 rgb(45 34 31 / 2%);
+          box-shadow: 0 1rem 1.6rem rgb(45 34 31 / 2%);
           position: absolute;
           top: 100%;
           left: 0;
@@ -181,9 +182,9 @@
           margin-bottom: 2.4rem;
         }
 
-        @include breakpoint($xs-bp) {
-          margin-bottom: 2rem;
-          padding-bottom: 1.5rem;
+        @include breakpoint($sm-bp) {
+          margin-bottom: 5.33vw;
+          padding-bottom: 4vw;
         }
       }
 
@@ -196,9 +197,9 @@
           font-size: 1.6rem;
         }
 
-        @include breakpoint($xs-bp) {
-          font-size: 1.4rem;
-          line-height: 1.8rem;
+        @include breakpoint($sm-bp) {
+          font-size: 3.73vw;
+          line-height: 4.8vw;
         }
       }
 
@@ -214,8 +215,8 @@
         }
 
         @include breakpoint($xs-bp) {
-          font-size: 2.4rem;
-          line-height: 2.8rem;
+          font-size: 6.4vw;
+          line-height: 7.46vw;
         }
       }
 
@@ -229,8 +230,8 @@
           gap: 1.6rem;
         }
 
-        @include breakpoint($xs-bp) {
-          gap: 1.2rem;
+        @include breakpoint($sm-bp) {
+          gap: 3.2vw;
         }
 
         li {
@@ -261,10 +262,10 @@
             line-height: 1.8rem;
           }
 
-          @include breakpoint($xs-bp) {
-            font-size: 1.2rem;
-            line-height: 1.6rem;
-            gap: 0.8rem;
+          @include breakpoint($sm-bp) {
+            font-size: 3.2vw;
+            line-height: 4.26vw;
+            gap: 2.13vw;
           }
 
           svg {
@@ -278,9 +279,9 @@
               display: none;
             }
 
-            @include breakpoint($xs-bp) {
-              width: 1.6rem;
-              height: 1.6rem;
+            @include breakpoint($sm-bp) {
+              width: 4.26vw;
+              height: 4.26vw;
             }
           }
         }
@@ -293,8 +294,8 @@
           margin-top: 5.6rem;
         }
 
-        @include breakpoint($xs-bp) {
-          margin-top: 4.8rem;
+        @include breakpoint($sm-bp) {
+          margin-top: 12.8vw;
         }
       }
 
@@ -311,6 +312,12 @@
         @include breakpoint($mm-bp) {
           font-size: 1.4rem;
           margin-bottom: 1.6rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          font-size: 3.73vw;
+          line-height: 4.26vw;
+          margin-bottom: 4.26vw;
         }
       }
 
@@ -333,11 +340,22 @@
         color: #fff;
         box-shadow: 0 -1rem 1.6rem rgba(45, 34, 31, 0.08);
 
+        @include breakpoint($sm-bp) {
+          padding: 4.26vw 8.53vw;
+          font-size: 4.8vw;
+          line-height: 6.4vw;
+        }
+
         svg {
           width: 1.6rem;
           height: 1.6rem;
           object-fit: contain;
           object-position: left center;
+
+          @include breakpoint($sm-bp) {
+            width: 4.26vw;
+            height: 4.26vw;
+          }
         }
       }
     }

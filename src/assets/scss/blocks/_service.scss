@@ -18,7 +18,7 @@
 
   @include breakpoint($sm-bp) {
     flex-direction: column;
-    gap: 2.4rem;
+    gap: 6.4vw;
   }
 
   &-info {
@@ -47,7 +47,7 @@
       position: relative;
       top: unset;
       left: unset;
-      height: 23.4rem;
+      height: 62.4vw;
     }
 
     picture {
@@ -55,7 +55,7 @@
       height: 100%;
 
       @include breakpoint($sm-bp) {
-        height: 23.4rem;
+        height: 62.4vw;
       }
     }
 
@@ -97,8 +97,8 @@
       }
 
       @include breakpoint($sm-bp) {
-        font-size: 3.2rem;
-        line-height: 3.9rem;
+        font-size: 8.53vw;
+        line-height: 10.4vw;
       }
 
       span {
@@ -132,8 +132,8 @@
           }
 
           @include breakpoint($sm-bp) {
-            width: 4.3rem;
-            height: 3.9rem;
+            width: 11.46vw;
+            height: 10.4vw;
             transform: translateX(0rem);
           }
         }
@@ -149,6 +149,10 @@
 
     @include breakpoint($jb-bp) {
       gap: 2.4rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      gap: 6.4vw;
     }
 
     &-item {
@@ -169,7 +173,8 @@
       }
 
       @include breakpoint($sm-bp) {
-        padding: 2.4rem;
+        padding: 6.4vw;
+        gap: 2.13vw;
       }
 
       h4 {
@@ -185,7 +190,7 @@
         }
 
         @include breakpoint($sm-bp) {
-          font-size: 1.8rem;
+          font-size: 4.8vw;
         }
       }
 
@@ -200,8 +205,8 @@
         }
 
         @include breakpoint($sm-bp) {
-          font-size: 1.4rem;
-          line-height: 1.8rem;
+          font-size: 3.73vw;
+          line-height: 4.8vw;
         }
       }
     }
