@@ -5,6 +5,10 @@
     padding-top: 6.7rem;
   }
 
+  @include breakpoint($sm-bp) {
+    padding-top: 8.5rem;
+  }
+
   &-main {
     padding: 6.8rem 0rem 7rem;
 
@@ -13,7 +17,7 @@
     }
 
     @include breakpoint($sm-bp) {
-      padding: 2.4rem 0rem 3.2rem;
+      padding: 6.4vw 0rem 8.53vw;
     }
 
     &-container {
@@ -36,8 +40,8 @@
       }
 
       @include breakpoint($sm-bp) {
-        font-size: 3.2rem;
-        line-height: 100%;
+        font-size: 8.53vw;
+        line-height: 10.4vw;
       }
     }
 
@@ -60,8 +64,8 @@
       }
 
       @include breakpoint($sm-bp) {
-        font-size: 3.2rem;
-        line-height: 100%;
+        font-size: 8.53vw;
+        line-height: 10.4vw;
         margin-bottom: 2.4rem;
       }
     }
@@ -90,10 +94,10 @@
       @include breakpoint($sm-bp) {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.8rem;
-        padding: 1.6rem;
-        margin-bottom: 3.2rem;
-        border-radius: 2.4rem;
+        gap: 2.13vw;
+        padding: 4.26vw;
+        margin-bottom: 8.53vw;
+        border-radius: 6.4vw;
       }
 
       &__text {
@@ -107,9 +111,9 @@
         }
 
         @include breakpoint($sm-bp) {
-          padding: 0 0.8rem;
-          font-size: 1.2rem;
-          line-height: 1.6rem;
+          padding: 0 2.13vw;
+          font-size: 3.2vw;
+          line-height: 4.26vw;
         }
       }
 
@@ -119,7 +123,7 @@
         transform: scaleX(-1);
 
         @include breakpoint($sm-bp) {
-          padding-right: 0.8rem;
+          padding-right: 2.13vw;
         }
 
         &__item {
@@ -136,10 +140,10 @@
           margin-right: -1.2rem;
 
           @include breakpoint($sm-bp) {
-            width: 4rem;
-            height: 4rem;
-            margin-right: -0.8rem;
-            font-size: 1.2rem;
+            width: 10.66vw;
+            height: 10.66vw;
+            margin-right: -2.13vw;
+            font-size: 3.2vw;
             line-height: 100%;
           }
         }
@@ -201,7 +205,7 @@
     }
 
     @include breakpoint($sm-bp) {
-      padding: 3rem 2.4rem;
+      padding: 8vw 6.4vw;
     }
 
     &__title {
@@ -220,10 +224,10 @@
       }
 
       @include breakpoint($sm-bp) {
-        font-size: 2.4rem;
-        line-height: 2.8rem;
-        padding-bottom: 2.4rem;
-        margin-bottom: 4rem;
+        font-size: 6.4vw;
+        line-height: 7.46vw;
+        padding-bottom: 6.4vw;
+        margin-bottom: 10.66vw;
       }
     }
 
@@ -234,6 +238,10 @@
 
       @include breakpoint($mm-bp) {
         gap: 7rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        gap: 18.66vw;
       }
 
       &-item {
@@ -261,8 +269,8 @@
           }
 
           @include breakpoint($sm-bp) {
-            padding-left: 3.6rem;
-            margin-bottom: 0.4rem;
+            padding-left: 9.6vw;
+            margin-bottom: 1.06vw;
           }
         }
 
@@ -275,6 +283,10 @@
             top: 0;
             left: 0;
           }
+
+          @include breakpoint($sm-bp) {
+            font-size: 4.26vw;
+          }
         }
 
         &__title {
@@ -286,7 +298,7 @@
           }
 
           @include breakpoint($sm-bp) {
-            font-size: 1.8rem;
+            font-size: 4.8vw;
           }
         }
 
@@ -323,10 +335,10 @@
           }
 
           @include breakpoint($sm-bp) {
-            margin-left: 3.6rem;
-            margin-bottom: 2rem;
-            font-size: 1.2rem;
-            line-height: 1.6rem;
+            margin-left: 9.6vw;
+            margin-bottom: 5.33vw;
+            font-size: 3.2vw;
+            line-height: 4.26vw;
           }
         }
       }

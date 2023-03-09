@@ -340,6 +340,7 @@
 
       @include breakpoint($sm-bp) {
         display: flex;
+        flex-direction: row;
         gap: 0rem;
         margin-bottom: 4.26vw;
       }

@@ -117,6 +117,12 @@
       margin-bottom: 4rem;
     }
 
+    @include breakpoint($sm-bp) {
+      display: flex;
+      flex-direction: column;
+      gap: 4.26vw;
+    }
+
     &-item {
       position: relative;
 
