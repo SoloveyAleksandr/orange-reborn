@@ -201,9 +201,9 @@
       border-top-right-radius: 4rem;
     }
 
-    @include breakpoint($xs-bp) {
+    @include breakpoint($sm-bp) {
       padding: 10.66vw 0rem 8vw;
-      margin-top: -31.22vw;
+      margin-top: -20vw;
     }
 
     &-container {
@@ -258,12 +258,15 @@
 
       &-wrapper {
         @include breakpoint($jb-bp) {
-          display: flex;
-          flex-direction: column;
-          gap: 6.4rem;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          column-gap: 1.6rem;
+          row-gap: 4.8rem;
         }
 
         @include breakpoint($sm-bp) {
+          display: flex;
+          flex-direction: column;
           gap: 15.46vw;
         }
       }
@@ -285,6 +288,7 @@
 
         @include breakpoint($jb-bp) {
           width: 100%;
+          height: 46.1rem;
         }
 
         @include breakpoint($sm-bp) {
