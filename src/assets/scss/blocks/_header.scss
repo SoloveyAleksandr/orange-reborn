@@ -24,7 +24,7 @@
     }
 
     @include breakpoint($sm-bp) {
-      padding: 3.2vw 2.4rem;
+      padding: calc(1.4rem * 1.28) 2.4rem;
     }
   }
 
@@ -39,8 +39,8 @@
     }
 
     @include breakpoint($sm-bp) {
-      width: 43.46vw;
-      height: 9.33vw;
+      width: calc(16.3rem * 1.28);
+      height: calc(3.5rem * 1.28);
     }
 
     &__img {
@@ -75,7 +75,7 @@
         width: 3.6rem;
 
         @include breakpoint($sm-bp) {
-          width: 9.6vw;
+          width: calc(3.6rem * 1.28);
         }
       }
 
@@ -84,7 +84,7 @@
         transform: scale(0);
 
         @include breakpoint($sm-bp) {
-          width: 6.4vw;
+          width: calc(2.4rem * 1.28)
         }
       }
     }
@@ -106,8 +106,8 @@
     }
 
     @include breakpoint($sm-bp) {
-      width: 10.66vw;
-      height: 10.66vw;
+      width: calc(4rem * 1.28);
+      height: calc(4rem * 1.28);
     }
   }
 
@@ -143,6 +143,10 @@
       }
     }
 
+    @include breakpoint($sm-bp) {
+      padding: calc(2.4rem * 1.28) 2.4rem calc(10rem * 1.28) 2.4rem;
+    }
+
     &-contacts {
       display: flex;
       flex-direction: column;
@@ -152,6 +156,11 @@
         order: 2;
         margin-bottom: 4rem;
         gap: 1.6rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        margin-bottom: calc(4rem * 1.28);
+        gap: calc(1.6rem * 1.28);
       }
 
       &__link {
@@ -165,8 +174,8 @@
         }
 
         @include breakpoint($sm-bp) {
-          font-size: 6.4vw;
-          line-height: 7.73vw;
+          font-size: calc(2.4rem * 1.28);
+          line-height: calc(2.9rem * 1.28);
         }
       }
 
@@ -180,8 +189,8 @@
         }
 
         @include breakpoint($sm-bp) {
-          font-size: 5.33vw;
-          line-height: 6.4vw;
+          font-size: calc(2rem * 1.28);
+          line-height: calc(2.4rem * 1.28);
         }
       }
     }
@@ -209,7 +218,8 @@
       }
 
       @include breakpoint($sm-bp) {
-        margin-bottom: 19.2vw;
+        margin-bottom: calc(7.2rem * 1.28);
+        gap: calc(0.8rem * 1.28);
       }
 
       &__link {
@@ -240,8 +250,9 @@
         }
 
         @include breakpoint($sm-bp) {
-          font-size: 5.33vw;
-          line-height: 5.33vw;
+          padding: calc(0.8rem * 1.28) 0;
+          font-size: calc(1.6rem * 1.28);
+          line-height: calc(2rem * 1.28);
         }
       }
     }
@@ -325,9 +336,9 @@
         }
 
         @include breakpoint($sm-bp) {
-          padding: 1.06vw 0;
-          font-size: 4.26vw;
-          line-height: 4.33vw;
+          padding: calc(0.4rem * 1.28) 0;
+          font-size: calc(1.6rem * 1.28);
+          line-height: calc(2rem * 1.28);
         }
       }
     }

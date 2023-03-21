@@ -111,9 +111,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const startWindowSize = window.innerWidth;
 
   // const breakpoints = [375, 500, 850, 1200, 1920];
-  const breakpoints = [375, 850, 1200, 1920];
+  const breakpoints = [480, 850, 1200, 1920];
   let maxBreakpoint = Infinity;
-  let minBreakpoint = 375;
+  let minBreakpoint = 480;
 
   for (let i = 0; i < breakpoints.length; i++) {
     if (startWindowSize < breakpoints[i]) {
@@ -175,32 +175,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const simplex = new SimplexNoise();
 
-      // const startWindowSize = window.innerWidth;
-
-      // const breakpoints = [375, 500, 850, 1200, 1920];
-      // let maxBreakpoint = Infinity;
-      // let minBreakpoint = null;
-
-      // for (let i = 0; i < breakpoints.length; i++) {
-      //   if (startWindowSize < breakpoints[i]) {
-      //     maxBreakpoint = breakpoints[i];
-      //     break;
-      //   }
-      // }
-
-      // for (let i = breakpoints.length - 1; i > 0; i--) {
-      //   if (startWindowSize > breakpoints[i]) {
-      //     minBreakpoint = breakpoints[i];
-      //     break;
-      //   }
-      // }
-
-      // if (breakpoints.includes(startWindowSize)) {
-      //   maxBreakpoint = startWindowSize;
-      // }
-
-      // console.log(minBreakpoint, maxBreakpoint)
-
       const canvasWidth = canvas.offsetWidth;
       const canvasHeight = canvas.offsetHeight;
       const canvasWidthPrec = canvasWidth / (window.innerWidth / 100) / 100;
@@ -211,9 +185,6 @@ document.addEventListener("DOMContentLoaded", () => {
       window.addEventListener("resize", () => {
         const width = window.innerWidth;
         renderer.setSize(window.innerWidth * canvasWidthPrec, window.innerWidth * canvasHeightPrec);
-        // if (width >= maxBreakpoint || width <= minBreakpoint) {
-        //   location.reload();
-        // }
       })
 
       renderer.setPixelRatio(window.devicePixelRatio || 1);

@@ -1,11 +1,10 @@
 .main {
 
+  @include breakpoint($sm-bp) {
+    padding-top: calc(6.8rem * 1.28);
+  }
+
   &-video {
-
-    @include breakpoint($jb-bp) {
-      padding-top: 6.7rem;
-    }
-
     &-container {
       max-width: 154rem;
       padding: 0 2.4rem;
@@ -464,7 +463,7 @@
             color: inherit;
             transition: .3;
 
-            @include breakpoint($sm-bp)  {
+            @include breakpoint($sm-bp) {
               font-size: 3.2vw;
               line-height: 4vw;
             }
