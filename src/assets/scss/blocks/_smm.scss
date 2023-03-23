@@ -4,6 +4,10 @@
     padding-top: 6.7rem;
   }
 
+  @include breakpoint($sm-bp) {
+    padding-top: calc(6.8rem * 1.28);
+  }
+
   &-price {
     
     &__title {
