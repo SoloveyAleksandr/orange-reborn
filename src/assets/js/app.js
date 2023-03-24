@@ -820,4 +820,49 @@ document.addEventListener("DOMContentLoaded", () => {
     }, "sin")
   })
   //<==
+
+  //==>
+  if (document.querySelector(".vacancy-open-filter")) {
+    class RadioController {
+      constructor(wrapper) {
+        this.wrapper = typeof wrapper === "string" ? document.querySelector(wrapper) : wrapper;
+        if (this.wrapper) {
+          this.init();
+        }
+      }
+
+      init() {
+        this.labels = gsap.utils.toArray("label", this.wrapper);
+        this.labels.forEach(el => {
+          const input = el.querySelector("input");
+          if (input.checked) {
+            el.classList.remove("default-tag_white");
+          } else {
+            el.classList.add("default-tag_white");
+          }
+
+          input.addEventListener("change", this.handleChange.bind(this));
+        })
+      }
+
+      handleChange() {
+        this.labels.forEach(el => {
+          const input = el.querySelector("input");
+          if (input.checked) {
+            el.classList.remove("default-tag_white");
+          } else {
+            el.classList.add("default-tag_white");
+          }
+        })
+      }
+    }
+
+    new RadioController(".vacancy-open-filter-container");
+
+    new Swiper(".vacancy-open-filter", {
+      freeMode: true,
+      slidesPerView: "auto",
+    })
+  }
+  //<==
 });
