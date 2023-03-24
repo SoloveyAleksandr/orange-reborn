@@ -23,18 +23,18 @@
     z-index: 1;
     height: 100%;
     width: calc(100% - 4.8rem);
+    perspective: 50rem;
 
 
     &__fill {
       width: 100%;
       height: 100%;
-
-      img {
-        object-fit: fill;
-        object-position: left top;
-        width: 100%;
-        height: 100%;
-      }
+      transform-style: preserve-3d;
+      background-color: $orange;
+      border-radius: 3.2rem;
+      position: relative;
+      transform: rotateX(-1deg) rotateY(-1deg) translateX(-2rem) translateZ(-2rem);
+      overflow: hidden;
     }
 
     &__arrow {
@@ -44,7 +44,7 @@
       top: -5rem;
 
       &:nth-child(2) {
-        left: 10.4rem;
+        left: 36rem;
 
         @include breakpoint($mm-bp) {
           left: 7.7rem;
@@ -151,7 +151,7 @@
       align-items: flex-start;
     }
 
-    @include breakpoint($jb-bp)  {
+    @include breakpoint($jb-bp) {
       width: 100%;
       gap: 0rem;
       justify-content: space-between;

@@ -105,25 +105,24 @@
   &-pack {
     &-bg {
       &__img {
-        height: 95rem;
+        height: 155%;
         position: absolute;
 
         img {
           object-fit: contain;
-          object-position: left top;
           height: 100%;
         }
 
-        &_left {
-          top: 0;
-          right: 60%;
-          transform: translateY(-50%);
+        &:nth-child(1) {
+          top: -27%;
+          left: 0;
+          transform: translateX(-50%);
         }
 
-        &_right {
-          top: 100%;
-          left: 70%;
-          transform: translateY(70%);
+        &:nth-child(2) {
+          top: 31%;
+          right: 0;
+          transform: translateX(50%);
         }
       }
     }
