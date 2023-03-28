@@ -17,17 +17,9 @@ html {
     font-size: calc(100vw / 850 * 10);
   }
 
-  // @include breakpoint($sm-bp) {
-  //   font-size: calc(100vw / 500 * 10);
-  // }
-
   @include breakpoint($sm-bp) {
     font-size: calc(100vw / 480 * 10);
   }
-
-  // @include breakpoint($xs-bp) {
-  //   font-size: calc(100vw / 375 * 10);
-  // }
 }
 
 *,
@@ -70,3 +62,4 @@ svg {
 
 @import "./blocks/import-drinks";
 @import "./blocks/vacancy";
+@import "./blocks/offer";
