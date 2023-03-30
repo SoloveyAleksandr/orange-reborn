@@ -4,12 +4,39 @@
   column-gap: 12.5rem;
   row-gap: 4.8rem;
 
+  @include breakpoint($mm-bp) {
+    column-gap: 11.2rem;
+    row-gap: 4rem;
+  }
+
+  @include breakpoint($jb-bp) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include breakpoint($sm-bp) {
+    row-gap: calc(3rem * 1.28);
+  }
+
   &-container {
     max-width: 133.8rem;
     padding: 9.6rem 2.4rem 14rem;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+
+    @include breakpoint($mm-bp) {
+      padding-top: 7.9rem;
+      padding-bottom: 10rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      padding-top: 13.8rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      padding-top: calc(9rem * 1.28);
+    }
   }
 
   &__title {
@@ -17,6 +44,24 @@
     line-height: 9.8rem;
     margin-bottom: 2rem;
     font-weight: 500;
+
+    @include breakpoint($mm-bp) {
+      font-size: 6.4rem;
+      line-height: 7.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      font-size: 3.2rem;
+      line-height: 3.9rem;
+      margin-bottom: 1.6rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      margin-bottom: calc(1.4rem * 1.28);
+      font-size: calc(3.2rem * 1.28);
+      line-height: calc(3.9rem * 1.28);
+    }
   }
 
   &__subtitle {
@@ -26,11 +71,34 @@
     line-height: 2.4rem;
     max-width: 41.9rem;
     margin-bottom: 7rem;
+
+    @include breakpoint($mm-bp) {
+      margin-bottom: 4rem;
+      max-width: 46.4rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      max-width: 100%;
+    }
+
+    @include breakpoint($sm-bp) {
+      font-size: calc(1.4rem * 1.28);
+      line-height: calc(2rem * 1.28);
+      margin-bottom: calc(4rem * 1.28);
+    }
   }
 
   &-input {
     &__item {
       width: 52.8rem;
+
+      @include breakpoint($mm-bp) {
+        width: 46.4rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        width: 100%;
+      }
     }
   }
 
@@ -42,6 +110,10 @@
     width: fit-content;
     height: fit-content;
     position: relative;
+
+    @include breakpoint($sm-bp) {
+      gap: calc(1.6rem * 1.28);
+    }
 
     &__icon {
       width: 6.4rem;
@@ -61,10 +133,20 @@
         border-radius: 0.2rem;
         background-color: #fff;
         position: absolute;
+
+        @include breakpoint($sm-bp) {
+          width: calc(1.6rem * 1.28);
+          height: calc(0.2rem * 1.28);
+        }
       }
 
       &::after {
         transform: rotate(90deg);
+      }
+
+      @include breakpoint($sm-bp) {
+        width: calc(4.8rem * 1.28);
+        height: calc(4.8rem * 1.28);
       }
     }
 
@@ -74,6 +156,11 @@
       line-height: 1.6rem;
       letter-spacing: 0.02em;
       text-transform: uppercase;
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.4rem * 1.28);
+        line-height: calc(1.6rem * 1.28);
+      }
     }
 
     &__name {
@@ -91,6 +178,12 @@
         opacity: 0;
         pointer-events: none;
       }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.4rem * 1.28);
+        line-height: calc(1.6rem * 1.28);
+        left: calc(4.8rem * 1.28 + 1.6rem * 1.28);
+      }
     }
 
     &__input {
@@ -103,10 +196,51 @@
     align-items: center;
     gap: 4rem;
 
+    @include breakpoint($jb-bp) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2.4rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      gap: calc(2.4rem * 1.28);
+    }
+
     &__btn {
       margin: 0;
       opacity: 0.5;
       pointer-events: none;
+
+      @include breakpoint($jb-bp) {
+        width: 100%;
+        height: fit-content;
+        border-radius: 5.6rem;
+        padding: 1.6rem 0;
+        text-align: center;
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 2rem;
+        text-transform: none;
+      }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.6rem * 1.28);
+        line-height: calc(2rem * 1.28);
+        padding: calc(1.6rem * 1.28) 0;
+      }
+    }
+
+    &__text {
+      @include breakpoint($jb-bp) {
+        max-width: 100%;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.4rem * 1.28);
+        line-height: calc(1.8rem * 1.28);
+      }
     }
   }
 
