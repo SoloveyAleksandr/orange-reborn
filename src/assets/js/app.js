@@ -107,6 +107,67 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  class InputFile {
+      constructor (container) {
+        this.container = typeof container === "string" ? document.querySelector(container) : container;
+        this.input = this.container.querySelector("input[type=file]");
+        this.fileName = this.container.querySelector(".offer-form-file__name");
+
+        if (this.container && this.input && this.fileName) {
+          this.init();
+        }
+      }
+
+      init() {
+        this.setActive();
+        this.input.addEventListener("change", this.setActive.bind(this));
+      }
+
+      setActive() {
+        if (this.input.value) {
+          this.fileName.classList.remove("_hidden");
+          this.fileName.innerText = this.input.files[0].name.length > 15 ? `(${this.input.files[0].name.slice(0, 15)}...)` : `(${this.input.files[0].name})`;
+        } else {
+          this.fileName.classList.add("_hidden");
+        }
+      }
+  }
+
+  class FormValid {
+    constructor (form) {
+      this.form = typeof form === "string" ? document.querySelector(form) : form;
+      this.inputList = gsap.utils.toArray("input", this.container);
+      this.btn = this.form.querySelector("button");
+      this.isValid = false;
+
+      if (this.form && this.btn) {
+        this.init();
+      }
+    }
+
+    init() {
+      this.checkValid();
+      this.form.addEventListener("submit", (e) => this.submitHandler.call(this, e));
+      this.inputList.forEach(input => input.addEventListener("change", this.checkValid.bind(this)));
+    }
+
+    checkValid() {
+      if (this.inputList.every(input => input.value)) {
+        this.isValid = true;
+        this.form.classList.add("_valid");
+      } else {
+        this.isValid = false;
+        this.form.classList.remove("_valid");
+      }
+    }
+
+    submitHandler(e) {
+      if (!this.isValid) {
+        e.preventDefault();
+      }
+    }
+  }
+
   // RESIZE RELOAD
   const startWindowSize = window.innerWidth;
 
@@ -865,4 +926,14 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
   //<==
+
+  const offerForm = document.querySelector(".offer-form");
+  if (offerForm) {
+    const inputList = gsap.utils.toArray(".offer-form-input__item");
+    inputList.forEach((item) => new Input(item));
+
+    new InputFile(".offer-form-file");
+
+    new FormValid(".offer-form");
+  }
 });

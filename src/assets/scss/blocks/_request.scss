@@ -228,6 +228,7 @@
         border-radius: 0;
         border-bottom: 0.1rem solid $grey;
         outline: none;
+        transition: .3s;
 
         &.error {
           border-color: #E41B1B;
@@ -241,6 +242,7 @@
     }
 
     &__btn {
+      flex: none;
       width: 14.8rem;
       height: 14.8rem;
       border-radius: 50%;
