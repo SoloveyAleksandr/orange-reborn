@@ -936,4 +936,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     new FormValid(".offer-form");
   }
+
+  if (document.querySelector(".smm-keys-target-swiper")) {
+    new Swiper(".smm-keys-target-swiper", {
+      freeMode: true,
+      slidesPerView: "auto",
+    })
+  }
 });
