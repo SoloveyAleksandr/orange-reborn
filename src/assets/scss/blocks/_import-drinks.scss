@@ -226,11 +226,23 @@
     position: relative;
     z-index: 1;
 
+    @include breakpoint($mm-bp) {
+      padding: 5rem 2.4rem;
+    }
+
     &__inner {
       display: flex;
       gap: 1.6rem;
       height: 124rem;
       overflow: hidden;
+
+      @include breakpoint($mm-bp) {
+        height: 63.5rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        height: 45.4rem;
+      }
     }
 
     &-box {
@@ -265,12 +277,22 @@
         display: flex;
         gap: 1.6rem;
         max-height: 39%;
+
+        @include breakpoint($mm-bp) {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+        }
       }
 
       &__bottom {
         max-height: calc(100% - 39% - 1.6rem);
         display: flex;
         gap: 1.6rem;
+
+        @include breakpoint($mm-bp) {
+          width: 100%;
+        }
       }
 
       &__img {
@@ -278,13 +300,27 @@
         border-radius: 0.6rem;
         overflow: hidden;
 
+        @include breakpoint($mm-bp) {
+          flex: 1;
+        }
+
         img {
           object-fit: contain;
           object-position: center center;
           height: 100%;
+
+          @include breakpoint($mm-bp) {
+            object-fit: cover;
+            width: 100%;
+          }
         }
 
         &.import-drinks-concept-box__img_mask {
+
+          @include breakpoint($mm-bp) {
+            grid-area: 1/2/2/4;
+          }
+
           img {
             mask-image: url(../images/import-drinks/Mask.svg);
             mask-size: 100% 100%;
@@ -294,6 +330,11 @@
         &.import-drinks-concept-box__img_circle {
           border-radius: 30rem;
           width: 64.6rem;
+
+          @include breakpoint($mm-bp) {
+            grid-area: 1/1/2/3;
+            width: unset;
+          }
 
           img {
             object-fit: cover;
@@ -730,6 +771,21 @@
       row-gap: 5.4rem;
       padding: 7rem 0;
       position: relative;
+
+      @include breakpoint($mm-bp) {
+        row-gap: 4rem;
+        padding: 5.6rem 0;
+      }
+
+      @include breakpoint($jb-bp) {
+        row-gap: 2.4rem;
+        padding: 4rem 0;
+      }
+
+      @include breakpoint($sm-bp) {
+        row-gap: calc(2.4rem * 1.28);
+        padding: calc(4rem * 1.28) 0;
+      }
     }
 
     &__bg {
@@ -741,6 +797,17 @@
       top: 0;
       left: 10%;
       transform: skew(2deg, 0);
+
+      @include breakpoint($mm-bp) {
+        width: calc(100% - 8.8rem);
+        left: 4.4rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        border-radius: 2.4rem;
+        width: calc(100% - 6.8rem);
+        left: 3.4rem;
+      }
     }
 
     &__box {
@@ -759,6 +826,21 @@
       display: flex;
       column-gap: 5.4rem;
       padding-left: 5.4rem;
+
+      @include breakpoint($mm-bp) {
+        column-gap: 4rem;
+        padding-left: 4rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        column-gap: 2.4rem;
+        padding-left: 2.4rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        column-gap: calc(2.4rem * 1.28);
+        padding-left: calc(2.4rem * 1.28);
+      }
 
       &__item {
         flex: none;
@@ -785,12 +867,52 @@
   &-conclusion {
     padding: 7rem 2.4rem;
 
+    @include breakpoint($mm-bp) {
+      padding: 5rem 2.4rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      padding: calc(3rem * 1.28) 2.4rem;
+    }
+
     &__head {
       max-width: 133.8rem;
       margin: 0 auto 7rem;
       display: flex;
       flex-direction: column;
       gap: 1.8rem;
+
+      @include breakpoint($mm-bp) {
+        margin-bottom: 5.6rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        gap: 1.2rem;
+        margin-bottom: 6.2rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        margin-bottom: calc(3.2rem * 1.28);
+        gap: calc(1.2rem * 1.28);
+      }
+    }
+
+    &__title {
+
+      @include breakpoint($mm-bp) {
+        font-size: 3.2rem;
+        line-height: 3.9rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        font-size: 2.4rem;
+        line-height: 2.9rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.6rem * 1.28);
+        line-height: calc(2rem * 1.28);
+      }
     }
 
     &__subtitle {
@@ -798,15 +920,50 @@
       line-height: 3.9rem;
       font-weight: $f-s;
       max-width: 88.5rem;
+
+      @include breakpoint($mm-bp) {
+        font-size: 3.2rem;
+        line-height: 3.9rem;
+        max-width: 84.8rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        font-size: 2.4rem;
+        line-height: 2.9rem;
+        max-width: 53.5rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.6rem * 1.28);
+        line-height: calc(2rem * 1.28);
+        margin-bottom: calc(0.8rem * 1.28);
+      }
     }
 
     &__description {
       padding-left: 10.7rem;
       font-size: 2.2rem;
       line-height: 3rem;
+      font-family: 'Arial';
+      font-weight: 400;
       max-width: 85.7rem;
 
-      & > {
+      @include breakpoint($mm-bp) {
+        padding-left: 9.6rem;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        padding: 0;
+      }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.4rem * 1.28);
+        line-height: calc(2rem * 1.28);
+      }
+
+      &> {
         * {
           font-size: inherit;
           line-height: inherit;
@@ -850,6 +1007,14 @@
         transform-style: preserve-3d;
         transform: rotateX(2deg) rotateY(-0.5deg) translateZ(-2rem) translateX(-1rem);
 
+        @include breakpoint($jb-bp) {
+          transform: rotateX(-2deg) rotateY(-1.5deg) translateZ(-2rem) translateX(-1rem);
+        }
+      
+        @include breakpoint($sm-bp) {
+          transform: rotateX(-2deg) rotateY(-1.5deg) translateZ(-2rem) translateX(0rem);
+        }
+
         img {
           object-fit: cover;
           object-position: center center;
@@ -867,12 +1032,42 @@
       max-width: 122.4rem;
       margin: 0 auto;
 
+      @include breakpoint($mm-bp) {
+        padding: 6.4rem 9.6rem 19rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        padding: 5rem 8.2rem 13rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        padding: calc(4rem * 1.28) calc(4rem * 1.28) calc(13.5rem * 1.28) calc(6.4rem * 1.28);
+      }
+
       &__text {
         font-size: 3.2rem;
         line-height: 3.9rem;
         font-weight: $f-s;
         color: #fff;
         margin-bottom: 12.2rem;
+
+        @include breakpoint($mm-bp) {
+          margin-bottom: 9.4rem;
+          font-size: 2.6rem;
+          line-height: 3.2rem;
+        }
+
+        @include breakpoint($jb-bp) {
+          font-size: 1.8rem;
+          line-height: 2.2rem;
+          margin-bottom: 5.6rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          font-size: calc(1.6rem * 1.28);
+          line-height: calc(2rem * 1.28);
+          margin-bottom: calc(7.6rem * 1.28);
+        }
       }
 
       &__title {
@@ -881,6 +1076,24 @@
         font-weight: $f-s;
         color: #fff;
         padding-left: 7.6rem;
+
+        @include breakpoint($mm-bp) {
+          padding-left: 12.8rem;
+          font-size: 4.8rem;
+          line-height: 5.2rem;
+        }
+
+        @include breakpoint($jb-bp) {
+          font-size: 3.6rem;
+          line-height: 4.2rem;
+          padding-left: 6rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          padding: 0;
+          font-size: calc(2.4rem * 1.28);
+          line-height: calc(2.8rem * 1.28);
+        }
       }
     }
   }

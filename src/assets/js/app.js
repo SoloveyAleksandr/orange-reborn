@@ -939,8 +939,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (document.querySelector(".smm-keys-target-swiper")) {
     new Swiper(".smm-keys-target-swiper", {
-      freeMode: true,
-      slidesPerView: "auto",
+      freeMode: false,
+      slidesPerView: 1,
+      spaceBetween: 50,
+      speed: 500,
+      autoHeight: true,
+      pagination: {
+        el: ".smm-keys-target-bullets",
+        type: "bullets",
+        bulletClass: "smm-keys-target-bullets__item",
+        bulletActiveClass: "_active",
+        clickable: true,
+      },
+
+      breakpoints: {
+        481: {
+          slidesPerView: "auto",
+          freeMode: true,
+          spaceBetween: 0,
+          pagination: false,
+          autoHeight: false,
+        },
+      }
     })
   }
 });
