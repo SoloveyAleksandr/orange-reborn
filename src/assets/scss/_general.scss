@@ -6,12 +6,14 @@
   font-weight: $f-r;
   font-family: "Gilroy";
   color: $text-black;
+  // outline: 0.1rem solid red;
 }
 
 span {
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
+  color: inherit;
 }
 
 .page {
@@ -125,6 +127,12 @@ span {
     }
   }
 
+  @include breakpoint($sm-bp) {
+    padding: calc(1.6rem * 1.28) calc(2rem * 1.28);
+    font-size: calc(1.6rem * 1.28);
+    line-height: calc(2rem * 1.28);
+  }
+
   &__text {
     max-width: 10.7rem;
     font-size: 1.4rem;
@@ -217,9 +225,9 @@ span {
   }
 
   @include breakpoint($sm-bp) {
-    font-size: 3.78vw;
-    line-height: 4.26vw;
-    padding: 3.2vw 4.26vw;
+    font-size: calc(1.4rem * 1.28);
+    line-height: calc(1.6rem * 1.28);
+    padding: calc(1.2rem * 1.28) calc(1.6rem * 1.28);
   }
 
   &.default-tag_light {
@@ -231,6 +239,11 @@ span {
     color: $text-black;
     background-color: transparent;
     border: 0.1rem solid $grey;
+    padding: 1.1rem 1.4rem;
+
+    @include breakpoint($sm-bp) {
+      padding: calc(1.1rem * 1.28) calc(1.5rem * 1.28);
+    }
   }
 }
 
@@ -352,6 +365,11 @@ span {
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  flex-wrap: wrap;
+
+  @include breakpoint($jb-bp) {
+    display: inline-block;
+  }
 
   @include breakpoint($sm-bp) {
     padding: 0 6.4vw;
@@ -359,7 +377,7 @@ span {
     gap: 1.6vw;
   }
 
-  a+a {
+  a + a {
     color: $grey;
   }
 
@@ -370,6 +388,17 @@ span {
     display: flex;
     align-items: center;
     gap: 0.6rem;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: center;
+
+    &:last-child {
+      pointer-events: none;
+    }
+
+    @include breakpoint($jb-bp) {
+      white-space: normal;
+    }
 
     @include breakpoint($sm-bp) {
       font-size: 3.78vw;
