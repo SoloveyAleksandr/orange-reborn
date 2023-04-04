@@ -230,11 +230,15 @@
       padding: 5rem 2.4rem;
     }
 
-    &__inner {
+    @include breakpoint($sm-bp) {
+      padding: calc(3rem * 1.28) 2.4rem;
+    }
+
+    &__wrapper {
       display: flex;
+      justify-content: center;
       gap: 1.6rem;
-      height: 124rem;
-      overflow: hidden;
+      height: 107.4rem;
 
       @include breakpoint($mm-bp) {
         height: 63.5rem;
@@ -243,107 +247,143 @@
       @include breakpoint($jb-bp) {
         height: 45.4rem;
       }
+
+      @include breakpoint($sm-bp) {
+        display: none;
+      }
     }
 
-    &-box {
+    &__container {
       flex: 1;
-      display: flex;
-      flex-direction: column;
+      display: grid;
       gap: 1.6rem;
-      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-rows: repeat(12, 1fr);
+
+      @include breakpoint($sm-bp) {
+        display: none;
+      }
+
+      &:nth-child(odd) {
+        .import-drinks-concept__inner {
+          justify-content: flex-end;
+
+          &:nth-child(1) {
+            grid-area: 1/1/6/2;
+          }
+          &:nth-child(2) {
+            grid-area: 6/1/13/2;
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        .import-drinks-concept__inner {
+          justify-content: flex-start;
+
+          &:nth-child(1) {
+            grid-area: 1/1/8/2;
+          }
+          &:nth-child(2) {
+            grid-area: 8/1/13/2;
+          }
+        }
+      }
+    }
+
+    &__inner {
+      display: flex;
+      gap: 1.6rem;
+    }
+
+    &__img {
+      height: 100%;
+      flex: 1;
+      border-radius: 0.6rem;
       overflow: hidden;
 
-      &:nth-child(1) {
-        align-items: flex-end;
-      }
-
-      &:nth-child(1) & {
-        &__top {
-          justify-content: flex-end;
-        }
-      }
-
-      &:nth-child(2) {
-        align-items: flex-start;
-      }
-
-      &:nth-child(2) & {
-        &__top {
-          justify-content: flex-start;
-        }
-      }
-
-      &__top {
-        display: flex;
-        gap: 1.6rem;
-        max-height: 39%;
-
-        @include breakpoint($mm-bp) {
-          width: 100%;
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-
-      &__bottom {
-        max-height: calc(100% - 39% - 1.6rem);
-        display: flex;
-        gap: 1.6rem;
-
-        @include breakpoint($mm-bp) {
-          width: 100%;
-        }
-      }
-
-      &__img {
+      @include breakpoint($sm-bp) {
+        width: 100%;
         height: 100%;
-        border-radius: 0.6rem;
+        flex: none;
+      }
+
+      &_circle {
+        flex: none;
+        border-radius: 30rem;
+        width: 64.6rem;
         overflow: hidden;
 
         @include breakpoint($mm-bp) {
-          flex: 1;
+          width: 37.8rem;
+        }
+
+        @include breakpoint($jb-bp) {
+          width: 26.5rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          border-radius: 0.6rem;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &_masked {
+        flex: none;
+        width: 64.6rem;
+
+        @include breakpoint($mm-bp) {
+          width: 37.8rem;
+        }
+
+        @include breakpoint($jb-bp) {
+          width: 26.5rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          width: 100%;
+          height: 100%;
         }
 
         img {
-          object-fit: contain;
-          object-position: center center;
-          height: 100%;
+          mask-image: url(../images/import-drinks/Mask.svg);
+          mask-size: 100% 100%;
 
-          @include breakpoint($mm-bp) {
-            object-fit: cover;
-            width: 100%;
-          }
-        }
-
-        &.import-drinks-concept-box__img_mask {
-
-          @include breakpoint($mm-bp) {
-            grid-area: 1/2/2/4;
-          }
-
-          img {
-            mask-image: url(../images/import-drinks/Mask.svg);
-            mask-size: 100% 100%;
-          }
-        }
-
-        &.import-drinks-concept-box__img_circle {
-          border-radius: 30rem;
-          width: 64.6rem;
-
-          @include breakpoint($mm-bp) {
-            grid-area: 1/1/2/3;
-            width: unset;
-          }
-
-          img {
-            object-fit: cover;
-            object-position: center center;
-            width: 100%;
-            height: 100%;
+          @include breakpoint($sm-bp) {
+            mask-image: none;
           }
         }
       }
+
+      img {
+        object-fit: cover;
+        object-position: center center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-swiper {
+      width: calc(100% + 4.8rem);
+      margin: 0 -2.4rem;
+      padding: 0 2.4rem;
+      height: calc(22.4rem * 1.28);
+      margin-bottom: calc(2rem * 1.28);
+
+      display: none;
+
+      @include breakpoint($sm-bp) {
+        display: block;
+      }
+    }
+
+    &-bullets {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
     }
   }
 
@@ -898,7 +938,6 @@
     }
 
     &__title {
-
       @include breakpoint($mm-bp) {
         font-size: 3.2rem;
         line-height: 3.9rem;
@@ -944,7 +983,7 @@
       padding-left: 10.7rem;
       font-size: 2.2rem;
       line-height: 3rem;
-      font-family: 'Arial';
+      font-family: "Arial";
       font-weight: 400;
       max-width: 85.7rem;
 
@@ -963,7 +1002,7 @@
         line-height: calc(2rem * 1.28);
       }
 
-      &> {
+      & > {
         * {
           font-size: inherit;
           line-height: inherit;
@@ -1010,7 +1049,7 @@
         @include breakpoint($jb-bp) {
           transform: rotateX(-2deg) rotateY(-1.5deg) translateZ(-2rem) translateX(-1rem);
         }
-      
+
         @include breakpoint($sm-bp) {
           transform: rotateX(-2deg) rotateY(-1.5deg) translateZ(-2rem) translateX(0rem);
         }

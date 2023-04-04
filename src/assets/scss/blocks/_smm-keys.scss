@@ -1,5 +1,4 @@
 .smm-keys {
-
   @include breakpoint($jb-bp) {
     padding-top: 6.7rem;
   }
@@ -232,7 +231,7 @@
           line-height: calc(2rem * 1.28);
         }
 
-        &> {
+        & > {
           * {
             &:not(strong) {
               font-weight: inherit;
@@ -689,8 +688,8 @@
       &__item {
         width: calc(1.6rem * 1.28);
         height: calc(1.6rem * 1.28);
-        background-color: #EEEEF4;
-        transition: .3s;
+        background-color: #eeeef4;
+        transition: 0.3s;
         border-radius: 50%;
 
         &._active {
@@ -990,6 +989,12 @@
         line-height: 4.2rem;
         margin-bottom: 2rem;
       }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(2.4rem * 1.28);
+        line-height: calc(2.8rem * 1.28);
+        margin-bottom: calc(2.4rem * 1.28);
+      }
     }
   }
 
@@ -1054,12 +1059,12 @@
       @include breakpoint($mm-bp) {
         height: 55.6rem;
         border-radius: 3.2rem;
-        transform: rotateX(-.5deg) rotateY(-1deg) translateX(-1.2rem);
+        transform: rotateX(-0.5deg) rotateY(-1deg) translateX(-1.2rem);
       }
 
       @include breakpoint($jb-bp) {
         height: 38.5rem;
-        transform: rotateX(-.5deg) rotateY(-1deg) translateX(-0.5rem);
+        transform: rotateX(-0.5deg) rotateY(-1deg) translateX(-0.5rem);
       }
 
       @include breakpoint($sm-bp) {

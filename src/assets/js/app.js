@@ -108,33 +108,33 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   class InputFile {
-      constructor (container) {
-        this.container = typeof container === "string" ? document.querySelector(container) : container;
-        this.input = this.container.querySelector("input[type=file]");
-        this.fileName = this.container.querySelector(".offer-form-file__name");
+    constructor(container) {
+      this.container = typeof container === "string" ? document.querySelector(container) : container;
+      this.input = this.container.querySelector("input[type=file]");
+      this.fileName = this.container.querySelector(".offer-form-file__name");
 
-        if (this.container && this.input && this.fileName) {
-          this.init();
-        }
+      if (this.container && this.input && this.fileName) {
+        this.init();
       }
+    }
 
-      init() {
-        this.setActive();
-        this.input.addEventListener("change", this.setActive.bind(this));
-      }
+    init() {
+      this.setActive();
+      this.input.addEventListener("change", this.setActive.bind(this));
+    }
 
-      setActive() {
-        if (this.input.value) {
-          this.fileName.classList.remove("_hidden");
-          this.fileName.innerText = this.input.files[0].name.length > 15 ? `(${this.input.files[0].name.slice(0, 15)}...)` : `(${this.input.files[0].name})`;
-        } else {
-          this.fileName.classList.add("_hidden");
-        }
+    setActive() {
+      if (this.input.value) {
+        this.fileName.classList.remove("_hidden");
+        this.fileName.innerText = this.input.files[0].name.length > 15 ? `(${this.input.files[0].name.slice(0, 15)}...)` : `(${this.input.files[0].name})`;
+      } else {
+        this.fileName.classList.add("_hidden");
       }
+    }
   }
 
   class FormValid {
-    constructor (form) {
+    constructor(form) {
       this.form = typeof form === "string" ? document.querySelector(form) : form;
       this.inputList = gsap.utils.toArray("input", this.container);
       this.btn = this.form.querySelector("button");
@@ -961,6 +961,31 @@ document.addEventListener("DOMContentLoaded", () => {
           autoHeight: false,
         },
       }
+    })
+  }
+
+  if (document.querySelector(".import-drinks-concept") && window.matchMedia("(max-width: 480px)").matches) {
+    const slides = gsap.utils.toArray(".import-drinks-concept__img");
+
+    const swiperWrapper = document.querySelector(".import-drinks-concept-swiper-wrapper");
+    const docFragment = document.createDocumentFragment();
+
+    slides.forEach(slide => {
+      slide.classList.add("swiper-slide");
+      docFragment.appendChild(slide.cloneNode(true));
+    });
+    swiperWrapper.append(docFragment);
+
+    new Swiper(".import-drinks-concept-swiper", {
+      speed: 500,
+      spaceBetween: 50,
+      pagination: {
+        el: ".import-drinks-concept-bullets",
+        type: "bullets",
+        bulletClass: "smm-keys-target-bullets__item",
+        bulletActiveClass: "_active",
+        clickable: true,
+      },
     })
   }
 });
