@@ -64,7 +64,7 @@
       cursor: pointer;
 
       @include breakpoint($sm-bp) {
-        padding: 5.33vw;
+        padding: calc(2rem * 1.28);
       }
 
       &._open {

@@ -288,12 +288,12 @@
 
         @include breakpoint($jb-bp) {
           width: 100%;
-          height: 46.1rem;
+          height: unset;
+          padding: 4rem 3.2rem;
         }
 
         @include breakpoint($sm-bp) {
-          height: 85.33vw;
-          padding: 4.26vw;
+          padding: calc(4rem * 1.28) calc(2.8rem * 1.28);
         }
 
         &__number {

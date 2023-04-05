@@ -1,5 +1,13 @@
 .video {
 
+  @include breakpoint($jb-bp) {
+    padding-top: 6.7rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    padding-top: calc(6.8rem * 1.28);
+  }
+
   &-head {
     max-width: 138.6rem;
   }
@@ -7,6 +15,13 @@
   &-types {
     &__link {
       margin-top: 2.4rem;
+
+      @include breakpoint($sm-bp) {
+        margin: 0;
+        position: absolute;
+        right: calc(2rem * 1.28);
+        bottom: calc(2rem * 1.28);
+      }
     }
   }
 
