@@ -30,6 +30,14 @@
     max-width: 133.8rem;
     margin: 0 auto;
 
+    @include breakpoint($mm-bp) {
+      padding: 5rem 2.4rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      padding: calc(3rem * 1.28) 2.4rem;
+    }
+
     &-head {
       max-width: 117.3rem;
       display: flex;
@@ -37,12 +45,45 @@
       justify-content: space-between;
       gap: 4rem;
       margin-bottom: 5rem;
+
+      @include breakpoint($mm-bp) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.6rem;
+        margin-bottom: 4.8rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        margin-bottom: 2.8rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        margin-bottom: calc(2rem * 1.28);
+      }
     }
 
     &__title {
       font-size: 7rem;
       line-height: 7.2rem;
       font-weight: $f-s;
+
+      @include breakpoint($mm-bp) {
+        font-size: 4.8rem;
+        line-height: 5.2rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        font-size: 3.6rem;
+        line-height: 4.2rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(2.4rem * 1.28);
+        line-height: calc(2.8rem * 1.28);
+      }
     }
 
     &__text {
@@ -50,6 +91,17 @@
       font-size: 1.8rem;
       line-height: 2.4rem;
       font-family: $ff-a;
+
+      @include breakpoint($mm-bp) {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        max-width: 100%;
+      }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.4rem * 1.28);
+        line-height: calc(2rem * 1.28);
+      }
     }
 
     &-list {
@@ -59,6 +111,15 @@
       grid-template-columns: repeat(2, 1fr);
       column-gap: 1.6rem;
       row-gap: 3.2rem;
+
+      @include breakpoint($mm-bp) {
+        gap: 1.6rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        grid-template-columns: 1fr;
+        gap: calc(1.6rem * 1.28);
+      }
 
       &-item {
         display: flex;
@@ -77,6 +138,14 @@
           }
         }
 
+        @include breakpoint($jb-bp) {
+          gap: 1.2rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          gap: calc(0.8rem * 1.28);
+        }
+
         &__img {
           width: 100%;
           height: 27.7rem;
@@ -86,6 +155,17 @@
           display: flex;
           align-items: center;
           justify-content: center;
+          background-color: #fff;
+
+          @include breakpoint($jb-bp) {
+            height: 22.9rem;
+            border-radius: 1.6rem;
+          }
+
+          @include breakpoint($sm-bp) {
+            height: calc(17.5rem * 1.28);
+            border-radius: calc(1.6rem * 1.28);
+          }
 
           img {
             object-fit: cover;
@@ -101,6 +181,16 @@
             height: 8rem;
             position: absolute;
             pointer-events: none;
+
+            @include breakpoint($jb-bp) {
+              width: 6rem;
+              height: 6rem;
+            }
+
+            @include breakpoint($sm-bp) {
+              width: calc(6rem * 1.28);
+              height: calc(6rem * 1.28);
+            }
           }
         }
 
@@ -109,22 +199,52 @@
           align-items: flex-start;
           padding-right: 2.8rem;
 
+          @include breakpoint($mm-bp) {
+            gap: 0.7rem;
+            padding-right: 3.5rem;
+          }
+
+          @include breakpoint($jb-bp) {
+            gap: 0.4rem;
+            padding-right: 3.2rem;
+          }
+
           p {
             font-size: 2.4rem;
             line-height: 2.8rem;
             font-family: $ff-a;
             transition: .3s;
+
+            @include breakpoint($jb-bp) {
+              font-size: 1.8rem;
+              line-height: 2.4rem;
+            }
+
+            @include breakpoint($sm-bp) {
+              font-size: calc(1.8rem * 1.28);
+              line-height: calc(2.4rem * 1.28);
+            }
           }
 
           svg {
+            flex: none;
             width: 1.8rem;
             height: 2.8rem;
             object-fit: contain;
             object-position: center center;
             transition: .3s;
+
+            @include breakpoint($sm-bp) {
+              width: calc(1.8rem * 1.28);
+              height: calc(2.8rem * 1.28);
+            }
           }
         }
       }
     }
+  }
+
+  &-stage {
+    margin-top: 0;
   }
 }
