@@ -163,6 +163,8 @@
   }
 
   &-project {
+    overflow: hidden;
+
     &__head {
       padding: 7rem 2.4rem;
       max-width: 133.8rem;
@@ -177,6 +179,22 @@
       position: relative;
       display: flex;
       justify-content: center;
+
+      @include breakpoint($mm-bp) {
+        padding: 6.4rem 0rem 21.6rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        border-top-left-radius: 4rem;
+        border-top-right-radius: 4rem;
+        padding: 5rem 0 19.2rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        border-top-left-radius: calc(4rem * 1.28);
+        border-top-right-radius: calc(4rem * 1.28);
+        padding: calc(3rem * 1.28) 0 calc(10.5rem * 1.28);
+      }
     }
 
     &__bg {
@@ -184,6 +202,7 @@
       width: 124%;
       height: 78%;
       top: 1.3rem;
+      pointer-events: none;
 
       img {
         object-fit: contain;
@@ -198,6 +217,14 @@
       max-width: 113rem;
       padding: 0 2.4rem;
       margin: 0 auto;
+
+      @include breakpoint($mm-bp) {
+        max-width: 99.2rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        max-width: 100%;
+      }
     }
 
     &__img {
@@ -206,7 +233,12 @@
       width: 100vw;
       max-width: 100%;
       background-color: #fff;
-      height: 61.2rem;
+      overflow: hidden;
+      // height: 61.2rem;
+
+      @include breakpoint($jb-bp) {
+        border-radius: 1.6rem;
+      }
 
       img {
         object-fit: contain;
@@ -272,6 +304,7 @@
           &:nth-child(1) {
             grid-area: 1/1/6/2;
           }
+
           &:nth-child(2) {
             grid-area: 6/1/13/2;
           }
@@ -285,6 +318,7 @@
           &:nth-child(1) {
             grid-area: 1/1/8/2;
           }
+
           &:nth-child(2) {
             grid-area: 8/1/13/2;
           }
@@ -887,9 +921,13 @@
         width: 58.8rem;
         height: 100%;
         border: 0.4rem solid #413f3f;
-        border-radius: 1.2rem;
+        border-radius: 0.6rem;
         overflow: hidden;
-        background-color: #ff2a2a;
+        background-color: #fff;
+
+        @include breakpoint($sm-bp) {
+          border-radius: calc(0.6rem * 1.28);
+        }
 
         img {
           object-fit: contain;
@@ -1002,7 +1040,7 @@
         line-height: calc(2rem * 1.28);
       }
 
-      & > {
+      &> {
         * {
           font-size: inherit;
           line-height: inherit;

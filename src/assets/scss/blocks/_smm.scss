@@ -9,12 +9,12 @@
   }
 
   &-price {
-    
+
     &__title {
       margin-bottom: 5rem;
 
       @include breakpoint($sm-bp) {
-        margin-bottom: 2.8rem;
+        margin-bottom: calc(2.8rem * 1.28);
       }
     }
 
@@ -30,7 +30,7 @@
       }
 
       @include breakpoint($sm-bp) {
-        margin-bottom: 2.8rem;
+        margin-bottom: calc(2.8rem * 1.28);
       }
     }
   }
@@ -43,6 +43,11 @@
     @include breakpoint($mm-bp) {
       margin-bottom: 5rem;
       padding: 5rem 2.4rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      padding: calc(3rem * 1.28) 2.4rem;
+      margin-bottom: calc(3rem * 1.28);
     }
 
     &__title {
@@ -64,8 +69,8 @@
       }
 
       @include breakpoint($sm-bp) {
-        font-size: 2.4rem;
-        line-height: 2.8rem;
+        font-size: calc(2.4rem * 1.28);
+        line-height: calc(2.8rem * 1.28);
       }
     }
 
@@ -82,6 +87,7 @@
       @include breakpoint($sm-bp) {
         display: flex;
         flex-direction: column;
+        gap: calc(5.2rem * 1.28);
       }
 
       &-item {
@@ -97,7 +103,7 @@
         }
 
         @include breakpoint($sm-bp) {
-          height: 18rem;
+          height: unset;
         }
 
         h4 {
@@ -112,8 +118,8 @@
           }
 
           @include breakpoint($sm-bp) {
-            font-size: 2rem;
-            line-height: 2.4rem;
+            font-size: calc(2rem * 1.28);
+            line-height: calc(2.4rem * 1.28);
           }
         }
       }

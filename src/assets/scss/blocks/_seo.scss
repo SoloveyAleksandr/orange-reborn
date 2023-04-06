@@ -338,40 +338,28 @@
         ul {
           display: flex;
           flex-direction: column;
+          list-style: disc;
+          padding-left: 1.5em;
+          font-size: 1.8rem;
+          line-height: 2.4rem;
+          font-family: $ff-a;
 
-          li {
-            font-size: 1.8rem;
-            line-height: 2.4rem;
-            padding-left: 1rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
+          @include breakpoint($mm-bp) {
+            font-size: 1.6rem;
+            line-height: 2.2rem;
+          }
 
-            @include breakpoint($mm-bp) {
-              font-size: 1.6rem;
-              line-height: 2.2rem;
-            }
+          @include breakpoint($sm-bp) {
+            font-size: calc(1.6rem * 1.28);
+            line-height: calc(2.4rem * 1.28);
+          }
 
-            @include breakpoint($sm-bp) {
-              font-size: 3.2;
-              line-height: 4.8vw;
-            }
-
-            &::before {
-              content: "";
-              flex: none;
-              width: 0.4rem;
-              height: 0.4rem;
-              border-radius: 50%;
-              margin-top: 0.9rem;
-              background-color: $text-black;
-
-              @include breakpoint($sm-bp) {
-                width: 1.06vw;
-                height: 1.06vw;
-                margin-top: 2.4vw;
-              }
-            }
+          *,
+          *>* {
+            font-size: inherit;
+            line-height: inherit;
+            font-weight: inherit;
+            font-family: inherit;
           }
         }
       }

@@ -110,6 +110,23 @@
         font-size: calc(1.4rem * 1.28);
         line-height: calc(2rem * 1.28);
       }
+
+      *,
+      *>* {
+        font-size: inherit;
+        line-height: inherit;
+        font-family: inherit;
+
+        *:not(strong) {
+          font-weight: inherit;
+        }
+      }
+
+      &> {
+        strong {
+          font-weight: 700;
+        }
+      }
     }
 
     &-labels {
@@ -231,7 +248,7 @@
           line-height: calc(2rem * 1.28);
         }
 
-        & > {
+        &> {
           * {
             &:not(strong) {
               font-weight: inherit;
@@ -512,7 +529,7 @@
     .import-drinks-templates-list__item {
       width: unset;
       border: none;
-      border-radius: 0;
+      // border-radius: 0;
       background-color: transparent;
 
       img {
