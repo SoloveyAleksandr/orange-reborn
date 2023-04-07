@@ -68,6 +68,7 @@
       font-weight: $f-s;
       padding-left: 10.9rem;
       margin-bottom: 4.5rem;
+      max-width: 85.5rem;
 
       @include breakpoint($mm-bp) {
         font-size: 2.6rem;

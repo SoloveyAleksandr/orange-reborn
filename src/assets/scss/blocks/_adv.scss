@@ -1,0 +1,26 @@
+.adv {
+  &-steps {
+    margin: 0;
+  }
+
+  &-price {
+    &-list {
+      padding-top: 5rem;
+    }
+
+    .service-price-list-item {
+      height: 73rem;
+    }
+
+    .service-price-list-item__package {
+      gap: 1.6rem;
+    }
+  }
+
+  &-advantages {
+    .landing-advantages-list {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+    }
+  }
+}

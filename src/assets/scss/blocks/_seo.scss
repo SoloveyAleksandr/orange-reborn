@@ -362,6 +362,30 @@
             font-family: inherit;
           }
         }
+
+        p {
+          font-size: 1.8rem;
+          line-height: 2.4rem;
+          font-family: $ff-a;
+
+          @include breakpoint($mm-bp) {
+            font-size: 1.6rem;
+            line-height: 2.2rem;
+          }
+
+          @include breakpoint($sm-bp) {
+            font-size: calc(1.6rem * 1.28);
+            line-height: calc(2.4rem * 1.28);
+          }
+
+          *,
+          *>* {
+            font-size: inherit;
+            line-height: inherit;
+            font-weight: inherit;
+            font-family: inherit;
+          }
+        }
       }
     }
   }

@@ -135,6 +135,9 @@
         font-size: 2.2rem;
         line-height: 3rem;
         transition: .3s;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8em;
 
         @include breakpoint($mm-bp) {
           font-size: 1.8rem;
@@ -149,6 +152,31 @@
         @include breakpoint($sm-bp) {
           font-size: calc(1.4rem * 1.28);
           line-height: calc(2rem * 1.28);
+        }
+
+        *,
+        *>* {
+          font-size: inherit;
+          line-height: inherit;
+          font-family: inherit;
+          color: inherit;
+        }
+
+        h4 {
+          font-family: 'Gilroy';
+          font-weight: 600;
+          font-size: 3.2rem;
+          line-height: 3.9rem;
+
+          @include breakpoint($jb-bp) {
+            font-size: 2.4rem;
+            line-height: 2.9rem;
+          }
+
+          @include breakpoint($sm-bp) {
+            font-size: calc(1.8rem * 1.28);
+            line-height: calc(2.2rem * 1.28);
+          }
         }
       }
     }
