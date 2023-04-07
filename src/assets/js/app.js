@@ -988,4 +988,33 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     })
   }
+
+  const landingAdvantagesList = document.querySelector(".landing-advantages-list");
+
+  if (landingAdvantagesList) {
+    class LandingItemsController {
+      constructor(wrapper) {
+        this.itemsList = [...wrapper.children];
+        this.init();
+      }
+
+      init() {
+        this.itemsList.forEach((item, index) => {
+          item.addEventListener("mouseenter", this.setActive.bind(this, index));
+        });
+      }
+
+      setActive(i) {
+        this.itemsList.forEach((item, index) => {
+          if (i === index) {
+            item.classList.add("_active");
+          } else {
+            item.classList.remove("_active");
+          }
+        })
+      }
+    }
+
+    new LandingItemsController(landingAdvantagesList);
+  }
 });
