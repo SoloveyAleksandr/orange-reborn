@@ -1017,4 +1017,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     new LandingItemsController(landingAdvantagesList);
   }
+
+  const importDrinksFontsContainer = document.querySelector(".import-drinks-fonts__container");
+  if (importDrinksFontsContainer && window.matchMedia("(max-width: 480px)").matches) {
+    const doxList = importDrinksFontsContainer.querySelectorAll(".import-drinks-fonts__box");
+    const fragment = document.createDocumentFragment();
+    doxList.forEach(box => {
+      fragment.appendChild(box.cloneNode(true));
+    });
+    importDrinksFontsContainer.innerHTML = "";
+    importDrinksFontsContainer.appendChild(fragment);
+  }
 });
