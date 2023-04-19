@@ -179,6 +179,10 @@
     line-height: 1.6rem;
     font-weight: $f-b;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 
     @include breakpoint($mm-bp) {
       top: 11.5rem;

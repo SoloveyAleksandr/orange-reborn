@@ -2192,6 +2192,13 @@ svg {
     line-height: 1.6rem;
     font-weight: bold;
     text-transform: uppercase;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
 }
 
 @media (max-width: 1200px) {
