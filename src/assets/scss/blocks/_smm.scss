@@ -19,7 +19,7 @@
     }
 
     &-labels {
-      margin-bottom: 9rem;
+      margin-bottom: 4rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -31,6 +31,57 @@
 
       @include breakpoint($sm-bp) {
         margin-bottom: calc(2.8rem * 1.28);
+      }
+    }
+
+    &-list {
+      gap: 1.6rem;
+
+      @include breakpoint($jb-bp) {
+        flex-direction: row;
+      }
+
+      @include breakpoint($sm-bp) {
+        flex-direction: column;
+        gap: 3.2rem;
+      }
+
+      &-item {
+        height: 73.4rem;
+
+        @include breakpoint($mm-bp) {
+          height: 63.1rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          min-height: calc(53.2rem * 1.28);
+          height: fit-content;
+        }
+
+        &.service-price-list-item {
+          border-radius: 1.2rem;
+          border: 0.1rem dashed #bdbdbd;
+        }
+
+        &.service-price-list-item_popular {
+          padding-top: 8.8rem;
+          border-radius: 1.2rem;
+          box-shadow: none;
+          border: none;
+
+          &::after {
+            display: none;
+          }
+
+          @include breakpoint($jb-bp) {
+            margin: 0;
+          }
+
+          .service-price-list-item__label {
+            bottom: unset;
+            top: 0;
+          }
+        }
       }
     }
   }
