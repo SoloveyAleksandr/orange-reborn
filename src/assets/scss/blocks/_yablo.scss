@@ -1,0 +1,19 @@
+.yablo {
+  &-concept {
+    margin: 0;
+  }
+
+  &-conclusion {
+    margin-top: -10rem;
+    border-top-left-radius: 6.4rem;
+    border-top-right-radius: 6.4rem;
+    background-color: #fff;
+    position: relative;
+    z-index: 2;
+
+    @include breakpoint($jb-bp) {
+      border-top-left-radius: 4rem;
+      border-top-right-radius: 4rem;
+    }
+  }
+}
