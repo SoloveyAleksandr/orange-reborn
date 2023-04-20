@@ -218,6 +218,7 @@ span {
   font-size: 2rem;
   line-height: 2.4rem;
   border: 0.2rem solid $orange;
+  transition: .3s;
 
   @include breakpoint($mm-bp) {
     font-size: 1.6rem;
@@ -378,7 +379,7 @@ span {
     gap: 1.6vw;
   }
 
-  a + a {
+  a+a {
     color: $grey;
   }
 

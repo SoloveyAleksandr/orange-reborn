@@ -737,6 +737,7 @@ span {
     font-size: 2rem;
     line-height: 2.4rem;
     border: 0.2rem solid #F35322;
+    transition: 0.3s;
 }
 
 @media (max-width: 1200px) {
@@ -1834,6 +1835,18 @@ svg {
     width: fit-content;
 }
 
+.works-tag__item button:hover {
+    background-color: #feeee9;
+    color: #222222;
+    border-color: #F35322;
+}
+
+.works-tag__item button._active {
+    border-color: #F35322;
+    background-color: #F35322;
+    color: #fff;
+}
+
 .works-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1963,6 +1976,10 @@ svg {
 
 .works-link {
     margin: 0 auto;
+}
+
+.works-swiper-slide {
+    background-color: #fff;
 }
 
 .business-baner {

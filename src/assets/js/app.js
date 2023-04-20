@@ -168,6 +168,35 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  class SwiperController {
+    constructor(swiper, btns) {
+      this.swiper = swiper;
+      this.btns = btns;
+
+      if (this.swiper && this.btns.length === this.swiper.slides.length) {
+        this.init();
+      }
+    }
+
+    init() {
+      this.setActiveSlide(this.swiper.activeIndex);
+      this.btns.forEach((btn, i) => {
+        btn.addEventListener("click", this.setActiveSlide.bind(this, i));
+      });
+    }
+
+    setActiveSlide(index) {
+      this.btns.forEach((btn, i) => {
+        if (i === index) {
+          btn.classList.add("_active");
+        } else {
+          btn.classList.remove("_active");
+        }
+      });
+      this.swiper.slideTo(index);
+    }
+  }
+
   // RESIZE RELOAD
   const startWindowSize = window.innerWidth;
 
@@ -326,23 +355,84 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  const mainWorks = document.querySelector(".main-works");
-
-  if (mainWorks) {
-    if (window.matchMedia("(max-width: 500px)").matches) {
-      const swiper = new Swiper(mainWorks, {
+  // WORKS 
+  const worksContainer = document.querySelector(".works");
+  if (worksContainer) {
+    const worksTags = worksContainer.querySelector(".works-tag-wrapper");
+    if (worksTags) {
+      new Swiper(worksTags, {
         speed: 400,
-        spaceBetween: 16,
-        pagination: {
-          el: ".main-works-pagination",
-          type: "bullets",
-          bulletClass: "main-works-pagination__item",
-          bulletActiveClass: "main-works-pagination__item_active",
-          clickable: true,
-        },
+        slidesPerView: "auto",
+        freeMode: true,
+        spaceBetween: 0,
+        breakpoints: {
+          850: {
+            spaceBetween: 10
+          },
+        }
       });
+
+      const worksSwiper = worksContainer.querySelector(".works-swiper");
+      const swiper = new Swiper(worksSwiper, {
+        effect: "fade",
+        speed: 500,
+        spaceBetween: 100,
+      });
+
+      const tabs = worksTags.querySelectorAll(".works-tag__item button");
+      new SwiperController(swiper, tabs);
+    }
+
+    if (window.matchMedia("(max-width: 500px)").matches) {
+      const mainWorks = worksContainer.querySelectorAll(".main-works");
+      mainWorks.forEach((item) => {
+        new Swiper(item, {
+          speed: 400,
+          spaceBetween: 16,
+          pagination: {
+            el: ".main-works-pagination",
+            type: "bullets",
+            bulletClass: "main-works-pagination__item",
+            bulletActiveClass: "main-works-pagination__item_active",
+            clickable: true,
+          },
+        });
+      })
     }
   }
+  // const worksTags = document.querySelector(".works-tag-wrapper");
+  // if (worksTags) {
+  //   const swiper = new Swiper(worksTags, {
+  //     speed: 400,
+  //     slidesPerView: "auto",
+  //     freeMode: true,
+  //     spaceBetween: 0,
+  //     breakpoints: {
+  //       850: {
+  //         spaceBetween: 10
+  //       },
+  //     }
+  //   });
+  // }
+
+  // const mainWorks = document.querySelector(".main-works");
+
+  // if (mainWorks) {
+  //   if (window.matchMedia("(max-width: 500px)").matches) {
+  //     const swiper = new Swiper(mainWorks, {
+  //       speed: 400,
+  //       spaceBetween: 16,
+  //       pagination: {
+  //         el: ".main-works-pagination",
+  //         type: "bullets",
+  //         bulletClass: "main-works-pagination__item",
+  //         bulletActiveClass: "main-works-pagination__item_active",
+  //         clickable: true,
+  //       },
+  //     });
+  //   }
+  // }
+  //<==
 
   const mainServiceSwiper = document.querySelector(".main-service-swiper");
   const mainServiceItems = gsap.utils.toArray(".main-service-list-item");
@@ -395,23 +485,6 @@ document.addEventListener("DOMContentLoaded", () => {
     mainServiceItems.forEach(item => new Dropdown(item));
   }
   // <==
-
-  // WORKS 
-  const worksTags = document.querySelector(".works-tag-wrapper");
-  if (worksTags) {
-    const swiper = new Swiper(worksTags, {
-      speed: 400,
-      slidesPerView: "auto",
-      freeMode: true,
-      spaceBetween: 0,
-      breakpoints: {
-        850: {
-          spaceBetween: 10
-        },
-      }
-    });
-  }
-  //<==
 
   // TEAM
   if (document.querySelector(".team")) {

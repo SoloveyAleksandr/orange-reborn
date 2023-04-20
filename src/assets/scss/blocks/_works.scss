@@ -102,6 +102,20 @@
 
     &__item {
       width: fit-content;
+
+      button {
+        &:hover {
+          background-color: #feeee9;
+          color: $text-black;
+          border-color: $orange;
+        }
+
+        &._active {
+          border-color: $orange;
+          background-color: $orange;
+          color: #fff;
+        }
+      }
     }
   }
 
@@ -210,5 +224,11 @@
 
   &-link {
     margin: 0 auto;
+  }
+
+  &-swiper {
+    &-slide {
+      background-color: #fff;
+    }
   }
 }
