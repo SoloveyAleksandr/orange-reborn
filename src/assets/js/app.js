@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
           this.wrapper.addEventListener("mouseenter", this.open.bind(this));
           this.wrapper.addEventListener("mouseleave", this.close.bind(this));
         } else {
-          this.btn.addEventListener("click", this.handleClick.bind(this));
+          this.btn.addEventListener("click", (e) => this.handleClick.call(this, e));
         }
       }
 
@@ -31,8 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
       } else this.close();
     }
 
-    handleClick() {
-      this.isOpen ? this.close() : this.open();
+    handleClick(e) {
+      if (!this.isOpen) {
+        e.preventDefault();
+        this.open();
+      } else {
+        this.close();
+      }
     }
 
     open() {
@@ -400,38 +405,6 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     }
   }
-  // const worksTags = document.querySelector(".works-tag-wrapper");
-  // if (worksTags) {
-  //   const swiper = new Swiper(worksTags, {
-  //     speed: 400,
-  //     slidesPerView: "auto",
-  //     freeMode: true,
-  //     spaceBetween: 0,
-  //     breakpoints: {
-  //       850: {
-  //         spaceBetween: 10
-  //       },
-  //     }
-  //   });
-  // }
-
-  // const mainWorks = document.querySelector(".main-works");
-
-  // if (mainWorks) {
-  //   if (window.matchMedia("(max-width: 500px)").matches) {
-  //     const swiper = new Swiper(mainWorks, {
-  //       speed: 400,
-  //       spaceBetween: 16,
-  //       pagination: {
-  //         el: ".main-works-pagination",
-  //         type: "bullets",
-  //         bulletClass: "main-works-pagination__item",
-  //         bulletActiveClass: "main-works-pagination__item_active",
-  //         clickable: true,
-  //       },
-  //     });
-  //   }
-  // }
   //<==
 
   const mainServiceSwiper = document.querySelector(".main-service-swiper");
