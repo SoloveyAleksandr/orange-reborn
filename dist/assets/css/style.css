@@ -4176,6 +4176,7 @@ svg {
 }
 
 .service-price-list-item__btn {
+    text-align: center;
     width: 100%;
 }
 
@@ -8316,7 +8317,6 @@ svg {
     align-items: center;
     -ms-flex-pack: center;
     justify-content: center;
-    pointer-events: none;
 }
 
 @media (max-width: 850px) {
@@ -8329,6 +8329,18 @@ svg {
     .smm-price-labels {
         margin-bottom: 3.584rem;
     }
+}
+
+.smm-price-labels button:hover {
+    background-color: #feeee9;
+    color: #222222;
+    border-color: #F35322;
+}
+
+.smm-price-labels button._active {
+    border-color: #F35322;
+    background-color: #F35322;
+    color: #fff;
 }
 
 .smm-price-list {
@@ -8394,6 +8406,16 @@ svg {
 .smm-price-list-item.service-price-list-item_popular .service-price-list-item__label {
     bottom: unset;
     top: 0;
+}
+
+.smm-price-swiper {
+    margin: 0 -2.4rem;
+    padding: 0 2.4rem;
+    width: calc(100% + 4.8rem);
+}
+
+.smm-price-swiper__slide {
+    background-color: #feecdf;
 }
 
 .smm-social {
