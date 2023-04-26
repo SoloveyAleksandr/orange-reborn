@@ -103,7 +103,8 @@
     &__item {
       width: fit-content;
 
-      button {
+      button,
+      a {
         &:hover {
           background-color: #feeee9;
           color: $text-black;

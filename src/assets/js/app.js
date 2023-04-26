@@ -376,15 +376,19 @@ document.addEventListener("DOMContentLoaded", () => {
           },
         }
       });
+    }
 
-      const worksSwiper = worksContainer.querySelector(".works-swiper");
+    const worksSwiper = worksContainer.querySelector(".works-swiper");
+    const tabs = worksTags.querySelectorAll(".works-tag__item button");
+
+    if (worksSwiper && tabs.length > 0) {
       const swiper = new Swiper(worksSwiper, {
         effect: "fade",
         speed: 500,
         spaceBetween: 100,
+        autoHeight: true,
       });
 
-      const tabs = worksTags.querySelectorAll(".works-tag__item button");
       new SwiperController(swiper, tabs);
     }
 

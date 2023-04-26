@@ -223,52 +223,487 @@
   </svg>
   <div class="page">
 
-    <ul style="
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 10rem;
-    ">
-      <a href="main.html" class="default-btn" target="_blank">Главная</a>
+    <header class="header">
+      <div class="header-container">
+        <a href="#" class="header-logo">
+          <img src="assets/images/logo.png" alt="logo" class="header-logo__img">
+        </a>
     
-      <a href="about.html" class="default-btn" target="_blank">О нас</a>
+        <button class="header-btn">
+          <svg class="header-btn__icon header-btn__icon_burger">
+            <use href="#menu-burger-icon"></use>
+          </svg>
+          <svg class="header-btn__icon header-btn__icon_close">
+            <use href="#menu-close-icon"></use>
+          </svg>
+        </button>
     
-      <a href="development.html" class="default-btn" target="_blank">Разработка сайтов</a>
+        <nav class="header-menu">
+          <div class="header-menu-contacts">
+            <a href="tel:+79002830333" class="header-menu-contacts__link">+7 (900) 283-03-33</a>
+            <p class="header-menu-contacts__text">
+              Старокубанская 92, оф.205
+            </p>
+          </div>
     
-      <a href="seo.html" class="default-btn" target="_blank">SEO</a>
+          <ul class="header-menu-list">
+            <li class="header-menu-list-item">
+              <div class="dropdown header-menu-dropdown">
+                <button type="button" class="dropdown-btn header-menu-list__link">
+                  Компания
+                  <svg>
+                    <use href="#drop-arrow-icon"></use>
+                  </svg>
+                </button>
+                <div class="dropdown-content header-menu-dropdown__content">
+                  <a href="#" class="header-menu-dropdown__link">Корпоративный сайт</a>
+                  <a href="#" class="header-menu-dropdown__link">Интернет магазин</a>
+                  <a href="#" class="header-menu-dropdown__link">Landing Page</a>
+                  <a href="#" class="header-menu-dropdown__link">Имиджевый сайт</a>
+                  <a href="#" class="header-menu-dropdown__link">Поддержка сайтов</a>
+                </div>
+              </div>
+            </li>
+            <li class="header-menu-list-item">
+              <div class="dropdown header-menu-dropdown">
+                <a href="#" class="dropdown-btn header-menu-list__link">
+                  Разработка
+                  <svg>
+                    <use href="#drop-arrow-icon"></use>
+                  </svg>
+                </a>
+                <div class="dropdown-content header-menu-dropdown__content">
+                  <a href="#" class="header-menu-dropdown__link">Корпоративный сайт</a>
+                  <a href="#" class="header-menu-dropdown__link">Интернет магазин</a>
+                  <a href="#" class="header-menu-dropdown__link">Landing Page</a>
+                  <a href="#" class="header-menu-dropdown__link">Имиджевый сайт</a>
+                  <a href="#" class="header-menu-dropdown__link">Поддержка сайтов</a>
+                </div>
+              </div>
+            </li>
+            <li class="header-menu-list-item">
+              <div class="dropdown header-menu-dropdown">
+                <button type="button" class="dropdown-btn header-menu-list__link">
+                  Маркетинг
+                  <svg>
+                    <use href="#drop-arrow-icon"></use>
+                  </svg>
+                </button>
+                <div class="dropdown-content header-menu-dropdown__content">
+                  <a href="#" class="header-menu-dropdown__link">Корпоративный сайт</a>
+                  <a href="#" class="header-menu-dropdown__link">Интернет магазин</a>
+                  <a href="#" class="header-menu-dropdown__link">Landing Page</a>
+                  <a href="#" class="header-menu-dropdown__link">Имиджевый сайт</a>
+                  <a href="#" class="header-menu-dropdown__link">Поддержка сайтов</a>
+                </div>
+              </div>
+            </li>
+            <li class="header-menu-list-item">
+              <a href="#" class="header-menu-list__link">Кейсы</a>
+            </li>
+            <li class="header-menu-list-item">
+              <a href="#" class="header-menu-list__link">Контакты</a>
+            </li>
+          </ul>
     
-      <a href="contacts.html" class="default-btn" target="_blank">Контакты</a>
+          <button type="button" class="default-btn header-menu__btn">Оставить заявку</button>
+        </nav>
+      </div>
+    </header>
+    <section class="keys">
     
-      <a href="request.html" class="default-btn" target="_blank">Заявка</a>
+      <div class="page-nav">
+        <a href="#" class="page-nav__link">
+          Главная
+        </a>
+        <a href="#" class="page-nav__link">
+          <svg>
+            <use href="#arrow-icon"></use>
+          </svg>
+          Кейсы
+        </a>
+      </div>
     
-      <a href="marketing.html" class="default-btn" target="_blank">Комплексный маркетинг</a>
+      <div class="development-head keys-head">
+        <h1 class="development-head__title">
+          Кейсы
+        </h1>
+      </div>
     
-      <a href="video.html" class="default-btn" target="_blank">Видеопродакшн</a>
+      <div class="works keys-wrapper">
+        <div class="works-container">
     
-      <a href="smm.html" class="default-btn" target="_blank">SMM</a>
+          <div class="works-inner keys-inner">
+            <div class="swiper works-tag-wrapper">
+              <ul class="swiper-wrapper works-tag">
+                <li class="swiper-slide works-tag__item">
+                  <a href="#" class="default-tag">Разработка</a>
+                </li>
+                <li class="swiper-slide works-tag__item">
+                  <a href="#" class="default-tag default-tag_white">SEO-продвижение</a>
+                </li>
+                <li class="swiper-slide works-tag__item">
+                  <a href="#" class="default-tag default-tag_white">Контекстная реклама</a>
+                </li>
+                <li class="swiper-slide works-tag__item">
+                  <a href="#" class="default-tag default-tag_white">Видео продакшн</a>
+                </li>
+                <li class="swiper-slide works-tag__item">
+                  <a href="#" class="default-tag default-tag_white">SMM</a>
+                </li>
+              </ul>
+            </div>
     
-      <a href="import-drinks.html" class="default-btn" target="_blank">Сайт Import Drinks</a>
+            <ul class="keys-list">
+              <li class="works-list-item">
+                <a href="#" class="works-list-item__link">
+                  <div class="works-list-item-img">
+                    <img src="assets/images/works-4.jpg" alt="work" class="works-list-item-img__img">
+                  </div>
     
-      <a href="vacancy.html" class="default-btn" target="_blank">Вакансии</a>
+                  <p class="works-list-item__text">
+                    Panh Helicopters
+                    <svg>
+                      <use href="#link-arrow-icon"></use>
+                    </svg>
+                  </p>
+                </a>
+              </li>
+              <li class="works-list-item">
+                <a href="#" class="works-list-item__link">
+                  <div class="works-list-item-img">
+                    <img src="assets/images/works-3.jpg" alt="work" class="works-list-item-img__img">
+                  </div>
     
-      <a href="offer.html" class="default-btn" target="_blank">Вакансии детальная</a>
+                  <p class="works-list-item__text">
+                    Panh Helicopters
+                    <svg>
+                      <use href="#link-arrow-icon"></use>
+                    </svg>
+                  </p>
+                </a>
+              </li>
+              <li class="works-list-item">
+                <a href="#" class="works-list-item__link">
+                  <div class="works-list-item-img">
+                    <img src="assets/images/works-2.jpg" alt="work" class="works-list-item-img__img">
+                  </div>
     
-      <a href="offer-form.html" class="default-btn" target="_blank">Откликнуться на вакансию</a>
+                  <p class="works-list-item__text">
+                    Panh Helicopters
+                    <svg>
+                      <use href="#link-arrow-icon"></use>
+                    </svg>
+                  </p>
     
-      <a href="smm-keys.html" class="default-btn" target="_blank">Кейс SMM</a>
+                  <ul class="works-list-item__labels">
+                    <li class="works-list-item__label default-label">ux/ui</li>
+                    <li class="works-list-item__label default-label">frontend</li>
+                    <li class="works-list-item__label default-label">backend</li>
+                  </ul>
+                </a>
+              </li>
+              <li class="works-list-item">
+                <a href="#" class="works-list-item__link">
+                  <div class="works-list-item-img">
+                    <img src="assets/images/works-1.jpg" alt="work" class="works-list-item-img__img">
+                  </div>
+                  <p class="works-list-item__text">
+                    Panh Helicopters
+                    <svg>
+                      <use href="#link-arrow-icon"></use>
+                    </svg>
+                  </p>
+                </a>
+              </li>
+              <li class="works-list-item">
+                <a href="#" class="works-list-item__link">
+                  <div class="works-list-item-img">
+                    <img src="assets/images/works-4.jpg" alt="work" class="works-list-item-img__img">
+                  </div>
     
-      <a href="seo-keys.html" class="default-btn" target="_blank">Кейс SEO</a>
+                  <p class="works-list-item__text">
+                    Panh Helicopters
+                    <svg>
+                      <use href="#link-arrow-icon"></use>
+                    </svg>
+                  </p>
+                </a>
+              </li>
+              <li class="works-list-item">
+                <a href="#" class="works-list-item__link">
+                  <div class="works-list-item-img">
+                    <img src="assets/images/works-3.jpg" alt="work" class="works-list-item-img__img">
+                  </div>
     
-      <a href="landing.html" class="default-btn" target="_blank">Лендинг</a>
+                  <p class="works-list-item__text">
+                    Panh Helicopters
+                    <svg>
+                      <use href="#link-arrow-icon"></use>
+                    </svg>
+                  </p>
+                </a>
+              </li>
+              <li class="works-list-item">
+                <a href="#" class="works-list-item__link">
+                  <div class="works-list-item-img">
+                    <img src="assets/images/works-2.jpg" alt="work" class="works-list-item-img__img">
+                  </div>
     
-      <a href="adv.html" class="default-btn" target="_blank">Контекстная реклама</a>
+                  <p class="works-list-item__text">
+                    Panh Helicopters
+                    <svg>
+                      <use href="#link-arrow-icon"></use>
+                    </svg>
+                  </p>
     
-      <a href="yablo.html" class="default-btn" target="_blank">Кейс видео продакшн</a>
+                  <ul class="works-list-item__labels">
+                    <li class="works-list-item__label default-label">ux/ui</li>
+                    <li class="works-list-item__label default-label">frontend</li>
+                    <li class="works-list-item__label default-label">backend</li>
+                  </ul>
+                </a>
+              </li>
+              <li class="works-list-item">
+                <a href="#" class="works-list-item__link">
+                  <div class="works-list-item-img">
+                    <img src="assets/images/works-1.jpg" alt="work" class="works-list-item-img__img">
+                  </div>
+                  <p class="works-list-item__text">
+                    Panh Helicopters
+                    <svg>
+                      <use href="#link-arrow-icon"></use>
+                    </svg>
+                  </p>
+                </a>
+              </li>
+            </ul>
     
-      <a href="keys.html" class="default-btn" target="_blank">Кейсы (все)</a>
+            <div class="keys-pagination">
+              <a href="#" class="keys-pagination__link keys-pagination__link_prev">
+                <svg>
+                  <use href="#arrow-icon"></use>
+                </svg>
+              </a>
     
-    </ul>
-
+              <div class="keys-pagination-list">
+                <a href="#" class="keys-pagination-list__link _active">1</a>
+                <a href="#" class="keys-pagination-list__link">2</a>
+                <a href="#" class="keys-pagination-list__link">3</a>
+              </div>
+    
+              <a href="#" class="keys-pagination__link">
+                <svg>
+                  <use href="#arrow-icon"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    
+      <div class="business-baner">
+        <div class="business-baner-container">
+      
+          <div class="business-baner-bg">
+            <div class="business-baner-bg__fill">
+              <picture>
+                <source srcset="assets/images/business-fill_mob.png" media="(max-width: 500px)">
+                <img src="assets/images/business-fill.png" alt="fill">
+              </picture>
+            </div>
+            <div class="business-baner-bg__line">
+              <img src="assets/images/business-line.svg" alt="line">
+            </div>
+          </div>
+      
+          <div class="business-baner-content">
+            <h3 class="business-baner__title">
+              <span>
+                Расскажите, чт
+                <svg>
+                  <use href="#letter-o"></use>
+                </svg>
+              </span>
+              <span>
+                нужн
+                <svg>
+                  <use href="#letter-o"></use>
+                </svg>
+                <span>
+                  вашему
+                </span>
+                <span>
+                  бизнесу
+                </span>
+              </span>
+            </h3>
+            <p class="business-baner__text">
+              Проведем анализ текущей ситуациии предложим конкретные решения в тот же день
+            </p>
+            <button type="button" class="business-baner__btn">
+              Оставить заявку
+            </button>
+            <!-- <button type="button" class="big-icon-btn business-baner__btn">
+              <div class="big-icon-btn-icon">
+                <svg class="big-icon-btn-icon__star big-icon-btn-icon__star_1">
+                  <use href="#star-icon"></use>
+                </svg>
+                <svg class="big-icon-btn-icon__star big-icon-btn-icon__star_2">
+                  <use href="#star-icon"></use>
+                </svg>
+                <svg class="big-icon-btn-icon__arrow">
+                  <use href="#big-arrow-icon"></use>
+                </svg>
+              </div>
+      
+              <span class="big-icon-btn__text">
+                Оставить
+                заявку
+              </span>
+            </button> -->
+          </div>
+      
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-top">
+          <div class="footer-top-item">
+            <h3 class="footer-top-item__title">Разработка сайтов</h3>
+    
+            <ul class="footer-top-item-list">
+              <li class="footer-top-item-list__item">
+                <a href="#" class="footer-top-item-list__link">Корпоративный сайт</a>
+              </li>
+              <li class="footer-top-item-list__item">
+                <a href="#" class="footer-top-item-list__link">Интернет магазин</a>
+              </li>
+              <li class="footer-top-item-list__item">
+                <a href="#" class="footer-top-item-list__link">Landing Page</a>
+              </li>
+              <li class="footer-top-item-list__item">
+                <a href="#" class="footer-top-item-list__link">Поддержка сайтов</a>
+              </li>
+            </ul>
+          </div>
+    
+          <div class="footer-top-item">
+            <h3 class="footer-top-item__title">Маркетинг</h3>
+    
+            <ul class="footer-top-item-list">
+              <li class="footer-top-item-list__item">
+                <a href="#" class="footer-top-item-list__link">SEO-продвижение</a>
+              </li>
+              <li class="footer-top-item-list__item">
+                <a href="#" class="footer-top-item-list__link">Контекстная реклама</a>
+              </li>
+              <li class="footer-top-item-list__item">
+                <a href="#" class="footer-top-item-list__link">SMM</a>
+              </li>
+              <li class="footer-top-item-list__item">
+                <a href="#" class="footer-top-item-list__link">Комплексный маркетинг</a>
+              </li>
+              <li class="footer-top-item-list__item">
+                <a href="#" class="footer-top-item-list__link">Видеопродакшн</a>
+              </li>
+            </ul>
+          </div>
+    
+          <div class="footer-top-item">
+            <h3 class="footer-top-item__title">Навигация</h3>
+    
+            <ul class="footer-top-item-list">
+              <li class="footer-top-item-list__item">
+                <a href="#" class="footer-top-item-list__link">О нас</a>
+              </li>
+              <li class="footer-top-item-list__item">
+                <a href="#" class="footer-top-item-list__link">Вакансии</a>
+              </li>
+              <li class="footer-top-item-list__item">
+                <a href="#" class="footer-top-item-list__link">Контакты</a>
+              </li>
+              <li class="footer-top-item-list__item">
+                <a href="#" class="footer-top-item-list__link">Кейсы</a>
+              </li>
+            </ul>
+          </div>
+    
+          <div class="footer-top-item">
+            <button type="button" class="big-icon-btn footer-top-item__btn">
+              <div class="big-icon-btn-icon">
+                <svg class="big-icon-btn-icon__star big-icon-btn-icon__star_1">
+                  <use href="#star-icon"></use>
+                </svg>
+                <svg class="big-icon-btn-icon__star big-icon-btn-icon__star_2">
+                  <use href="#star-icon"></use>
+                </svg>
+                <svg class="big-icon-btn-icon__arrow">
+                  <use href="#big-arrow-icon"></use>
+                </svg>
+              </div>
+    
+              <span class="big-icon-btn__text">
+                Оставить
+                заявку
+              </span>
+            </button>
+          </div>
+    
+          <div class="footer-top-item">
+            <a href="#" class="footer-top-item__link_icon">
+              <svg>
+                <use href="#logo-mini-icon"></use>
+              </svg>
+            </a>
+          </div>
+    
+          <div class="footer-top-item">
+            <h3 class="footer-top-item__title">Офис</h3>
+    
+            <p class="footer-top-item__text">
+              г. Краснодар, <br>
+              Старокубанская 92, оф.205
+            </p>
+          </div>
+    
+          <div class="footer-top-item">
+            <h3 class="footer-top-item__title">Телефон</h3>
+    
+            <p class="footer-top-item__text">
+              +7 (900) 283-03-33 <br>
+              +7 (861) 210-83-33
+            </p>
+          </div>
+    
+          <div class="footer-top-item">
+            <h3 class="footer-top-item__title">Эллектронный адрес</h3>
+    
+            <p class="footer-top-item__text">
+              company@orange-marketing.ru
+            </p>
+          </div>
+        </div>
+    
+        <div class="footer-legal">
+          <p class="footer-legal__text">
+            © 2014 - 2023 Orange Marketing.
+          </p>
+    
+          <a href="#" class="footer-legal__link">
+            Политика обработки персональных данных
+          </a>
+    
+          <div class="footer-legal-social">
+            <a href="#" class="footer-legal-social__link">Telegram</a>
+            <a href="#" class="footer-legal-social__link">Vkontakte</a>
+            <a href="#" class="footer-legal-social__link">YouTube</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
