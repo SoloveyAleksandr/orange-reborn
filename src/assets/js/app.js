@@ -387,6 +387,16 @@ document.addEventListener("DOMContentLoaded", () => {
         speed: 500,
         spaceBetween: 100,
         autoHeight: true,
+        effect: 'creative',
+        creativeEffect: {
+          perspective: false,
+          prev: {
+            opacity: 1,
+          },
+          next: {
+            opacity: 0,
+          },
+        },
       });
 
       new SwiperController(swiper, tabs);

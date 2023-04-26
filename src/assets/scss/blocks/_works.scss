@@ -125,11 +125,11 @@
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1.6rem;
     row-gap: 3.2rem;
-    margin-bottom: 4.8rem;
+    // margin-bottom: 4.8rem;
 
     @include breakpoint($mm-bp) {
       row-gap: 2.4rem;
-      margin-bottom: 4rem;
+      // margin-bottom: 4rem;
     }
 
     @include breakpoint($sm-bp) {
@@ -228,6 +228,12 @@
   }
 
   &-swiper {
+    margin-bottom: 4.8rem;
+
+    @include breakpoint($mm-bp) {
+      margin-bottom: 4rem;
+    }
+
     &-slide {
       background-color: #fff;
     }
