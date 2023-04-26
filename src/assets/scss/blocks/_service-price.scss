@@ -288,6 +288,7 @@
       }
 
       &__btn {
+        text-align: center;
         width: 100%;
 
         @include breakpoint($jb-bp) {

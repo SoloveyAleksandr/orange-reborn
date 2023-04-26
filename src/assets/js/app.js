@@ -1078,4 +1078,18 @@ document.addEventListener("DOMContentLoaded", () => {
     importDrinksFontsContainer.innerHTML = "";
     importDrinksFontsContainer.appendChild(fragment);
   }
+
+  // smm-price
+  const smmPriceWrapper = document.querySelector(".smm-price");
+  if (smmPriceWrapper) {
+    const btns = smmPriceWrapper.querySelectorAll(".smm-price-labels button");
+    const swiperContainer = smmPriceWrapper.querySelector(".smm-price-swiper");
+
+    const swiper = new Swiper(swiperContainer, {
+      effect: "fade",
+      speed: 500,
+    });
+
+    new SwiperController(swiper, btns);
+  }
 });
