@@ -165,7 +165,7 @@
         border-radius: 2.4rem;
         overflow: hidden;
         filter: grayscale(25%);
-        transition: .3s;
+        transition: 0.3s;
 
         @include breakpoint($sm-bp) {
           height: 46.6vw;
@@ -199,7 +199,7 @@
           object-fit: contain;
           object-position: center center;
           fill: $text-black;
-          transition: .3s;
+          transition: 0.3s;
 
           @include breakpoint($sm-bp) {
             width: 4.8vw;
@@ -212,12 +212,17 @@
         position: absolute;
         display: flex;
         align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap-reverse;
         left: 1.6rem;
-        top: 22.5rem;
+        // top: 22.5rem;
+        bottom: 5.6rem;
+        max-width: calc(100% - 3.2rem);
 
         @include breakpoint($sm-bp) {
           left: 3.2vw;
-          top: 36vw;
+          // top: 36vw;
+          bottom: calc(4.6rem * 1.28);
         }
       }
     }

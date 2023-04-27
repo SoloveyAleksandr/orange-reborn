@@ -379,7 +379,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const worksSwiper = worksContainer.querySelector(".works-swiper");
-    const tabs = worksTags.querySelectorAll(".works-tag__item button");
+    const tabs = worksTags ? worksTags.querySelectorAll(".works-tag__item button") : [];
 
     if (worksSwiper && tabs.length > 0) {
       const swiper = new Swiper(worksSwiper, {

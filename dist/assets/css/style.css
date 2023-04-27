@@ -1963,14 +1963,19 @@ svg {
     display: flex;
     -ms-flex-align: center;
     align-items: center;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -ms-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
     left: 1.6rem;
-    top: 22.5rem;
+    bottom: 5.6rem;
+    max-width: calc(100% - 3.2rem);
 }
 
 @media (max-width: 480px) {
     .works-list-item__labels {
         left: 3.2vw;
-        top: 36vw;
+        bottom: 5.888rem;
     }
 }
 
