@@ -206,10 +206,16 @@
 
             @include breakpoint($sm-bp) {
               width: calc(1rem * 1.28);
-            height: calc(1rem * 1.28);
+              height: calc(1rem * 1.28);
             }
           }
         }
+      }
+    }
+
+    &-swiper {
+      .swiper-slide {
+        background-color: #fff;
       }
     }
   }

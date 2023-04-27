@@ -11464,6 +11464,10 @@ svg {
     }
 }
 
+.vacancy-open-swiper .swiper-slide {
+    background-color: #fff;
+}
+
 .vacancy-pack-bg__img {
     height: 155%;
     position: absolute;
@@ -12069,8 +12073,6 @@ svg {
 
 .offer-form-btn__btn {
     margin: 0;
-    opacity: 0.5;
-    pointer-events: none;
 }
 
 @media (max-width: 850px) {
@@ -12110,11 +12112,6 @@ svg {
         font-size: 1.792rem;
         line-height: 2.304rem;
     }
-}
-
-.offer-form._valid .offer-form-btn__btn {
-    opacity: 1;
-    pointer-events: fill;
 }
 
 @media (max-width: 850px) {

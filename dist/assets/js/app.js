@@ -943,48 +943,82 @@ document.addEventListener("DOMContentLoaded", () => {
   //<==
 
   //==>
-  if (document.querySelector(".vacancy-open-filter")) {
-    class RadioController {
-      constructor(wrapper) {
-        this.wrapper = typeof wrapper === "string" ? document.querySelector(wrapper) : wrapper;
-        if (this.wrapper) {
-          this.init();
-        }
-      }
+  const vacancy = document.querySelector(".vacancy");
+  if (vacancy) {
+    const tabsContainer = vacancy.querySelector(".vacancy-open-filter");
+    const tabs = vacancy.querySelectorAll(".vacancy-open-filter__item button");
+    const swiperContainer = vacancy.querySelector(".vacancy-open-swiper");
 
-      init() {
-        this.labels = gsap.utils.toArray("label", this.wrapper);
-        this.labels.forEach(el => {
-          const input = el.querySelector("input");
-          if (input.checked) {
-            el.classList.remove("default-tag_white");
-          } else {
-            el.classList.add("default-tag_white");
-          }
+    if (swiperContainer) {
+      const swiper = new Swiper(swiperContainer, {
+        effect: "fade",
+        speed: 500,
+        spaceBetween: 100,
+        autoHeight: true,
+        effect: 'creative',
+        creativeEffect: {
+          perspective: false,
+          prev: {
+            opacity: 1,
+          },
+          next: {
+            opacity: 0,
+          },
+        },
+      });
 
-          input.addEventListener("change", this.handleChange.bind(this));
-        })
-      }
+      if (tabsContainer) {
+        new Swiper(tabsContainer, {
+          freeMode: true,
+          slidesPerView: "auto",
+        });
 
-      handleChange() {
-        this.labels.forEach(el => {
-          const input = el.querySelector("input");
-          if (input.checked) {
-            el.classList.remove("default-tag_white");
-          } else {
-            el.classList.add("default-tag_white");
-          }
-        })
+        new SwiperController(swiper, tabs);
       }
     }
-
-    new RadioController(".vacancy-open-filter-container");
-
-    new Swiper(".vacancy-open-filter", {
-      freeMode: true,
-      slidesPerView: "auto",
-    })
   }
+  // if (document.querySelector(".vacancy-open-filter")) {
+  //   class RadioController {
+  //     constructor(wrapper) {
+  //       this.wrapper = typeof wrapper === "string" ? document.querySelector(wrapper) : wrapper;
+  //       if (this.wrapper) {
+  //         this.init();
+  //       }
+  //     }
+
+  //     init() {
+  //       this.labels = gsap.utils.toArray("label", this.wrapper);
+  //       this.labels.forEach(el => {
+  //         const input = el.querySelector("input");
+  //         if (input.checked) {
+  //           el.classList.remove("default-tag_white");
+  //         } else {
+  //           el.classList.add("default-tag_white");
+  //         }
+
+  //         input.addEventListener("change", this.handleChange.bind(this));
+  //       })
+  //     }
+
+  //     handleChange() {
+  //       this.labels.forEach(el => {
+  //         const input = el.querySelector("input");
+  //         if (input.checked) {
+  //           el.classList.remove("default-tag_white");
+  //         } else {
+  //           el.classList.add("default-tag_white");
+  //         }
+  //       })
+  //     }
+  //   }
+
+  //   new RadioController(".vacancy-open-filter-container");
+
+  //   new Swiper(".vacancy-open-filter", {
+  //     freeMode: true,
+  //     slidesPerView: "auto",
+  //   })
+  // }
   //<==
 
   const offerForm = document.querySelector(".offer-form");
@@ -994,7 +1028,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     new InputFile(".offer-form-file");
 
-    new FormValid(".offer-form");
+    // new FormValid(".offer-form");
   }
 
   if (document.querySelector(".smm-keys-target-swiper")) {
