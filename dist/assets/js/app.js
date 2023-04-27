@@ -206,9 +206,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const startWindowSize = window.innerWidth;
 
   // const breakpoints = [375, 500, 850, 1200, 1920];
-  const breakpoints = [480, 850, 1200, 1920];
+  const breakpoints = [0, 480, 850, 1200, 1920];
   let maxBreakpoint = Infinity;
-  let minBreakpoint = 480;
+  let minBreakpoint = 0;
 
   for (let i = 0; i < breakpoints.length; i++) {
     if (startWindowSize < breakpoints[i]) {
@@ -224,10 +224,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  if (breakpoints.includes(startWindowSize)) {
-    maxBreakpoint = startWindowSize;
-  }
-
+  // if (breakpoints.includes(startWindowSize)) {
+  //   maxBreakpoint = startWindowSize;
+  // }
+  console.log("Start sizi: " + startWindowSize + "; " + minBreakpoint + "/" + maxBreakpoint);
   window.addEventListener("resize", () => {
     const width = window.innerWidth;
     if (width >= maxBreakpoint || width <= minBreakpoint) {
@@ -977,48 +977,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
-  // if (document.querySelector(".vacancy-open-filter")) {
-  //   class RadioController {
-  //     constructor(wrapper) {
-  //       this.wrapper = typeof wrapper === "string" ? document.querySelector(wrapper) : wrapper;
-  //       if (this.wrapper) {
-  //         this.init();
-  //       }
-  //     }
-
-  //     init() {
-  //       this.labels = gsap.utils.toArray("label", this.wrapper);
-  //       this.labels.forEach(el => {
-  //         const input = el.querySelector("input");
-  //         if (input.checked) {
-  //           el.classList.remove("default-tag_white");
-  //         } else {
-  //           el.classList.add("default-tag_white");
-  //         }
-
-  //         input.addEventListener("change", this.handleChange.bind(this));
-  //       })
-  //     }
-
-  //     handleChange() {
-  //       this.labels.forEach(el => {
-  //         const input = el.querySelector("input");
-  //         if (input.checked) {
-  //           el.classList.remove("default-tag_white");
-  //         } else {
-  //           el.classList.add("default-tag_white");
-  //         }
-  //       })
-  //     }
-  //   }
-
-  //   new RadioController(".vacancy-open-filter-container");
-
-  //   new Swiper(".vacancy-open-filter", {
-  //     freeMode: true,
-  //     slidesPerView: "auto",
-  //   })
-  // }
   //<==
 
   const offerForm = document.querySelector(".offer-form");
