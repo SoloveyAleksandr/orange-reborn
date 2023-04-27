@@ -143,7 +143,9 @@
 
       &:hover & {
         &-img {
-          filter: grayscale(0%);
+          &__img {
+            filter: grayscale(0%);
+          }
         }
 
         &__text {
@@ -164,8 +166,8 @@
         height: 27.7rem;
         border-radius: 2.4rem;
         overflow: hidden;
-        filter: grayscale(25%);
         transition: 0.3s;
+        position: relative;
 
         @include breakpoint($sm-bp) {
           height: 46.6vw;
@@ -173,10 +175,12 @@
         }
 
         &__img {
+          filter: grayscale(25%);
           object-fit: cover;
           object-position: center center;
           width: 100%;
           height: 100%;
+          transition: 0.3s;
         }
       }
 
@@ -216,13 +220,13 @@
         flex-wrap: wrap-reverse;
         left: 1.6rem;
         // top: 22.5rem;
-        bottom: 5.6rem;
+        bottom: 1.6rem;
         max-width: calc(100% - 3.2rem);
 
         @include breakpoint($sm-bp) {
           left: 3.2vw;
           // top: 36vw;
-          bottom: calc(4.6rem * 1.28);
+          bottom: calc(1.6rem * 1.28);
         }
       }
     }

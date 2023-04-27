@@ -1878,7 +1878,7 @@ svg {
     position: relative;
 }
 
-.works-list-item:hover .works-list-item-img {
+.works-list-item:hover .works-list-item-img__img {
     -webkit-filter: grayscale(0%);
     filter: grayscale(0%);
 }
@@ -1900,9 +1900,8 @@ svg {
     height: 27.7rem;
     border-radius: 2.4rem;
     overflow: hidden;
-    -webkit-filter: grayscale(25%);
-    filter: grayscale(25%);
     transition: 0.3s;
+    position: relative;
 }
 
 @media (max-width: 480px) {
@@ -1913,12 +1912,15 @@ svg {
 }
 
 .works-list-item-img__img {
+    -webkit-filter: grayscale(25%);
+    filter: grayscale(25%);
     -o-object-fit: cover;
     object-fit: cover;
     -o-object-position: center center;
     object-position: center center;
     width: 100%;
     height: 100%;
+    transition: 0.3s;
 }
 
 .works-list-item__text {
@@ -1968,14 +1970,14 @@ svg {
     -ms-flex-wrap: wrap-reverse;
     flex-wrap: wrap-reverse;
     left: 1.6rem;
-    bottom: 5.6rem;
+    bottom: 1.6rem;
     max-width: calc(100% - 3.2rem);
 }
 
 @media (max-width: 480px) {
     .works-list-item__labels {
         left: 3.2vw;
-        bottom: 5.888rem;
+        bottom: 2.048rem;
     }
 }
 
